@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>System architecture and components in this repository :: Modelix Documentation</title>
+    <link rel="prev" href="structure.html">
+    <link rel="next" href="mps.html">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://modelix.github.io/docs">Modelix Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="component-documentation" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Modelix Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">General</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components.html">Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../roadmap.html">Roadmap</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../faq.html">FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../glossary.html">Gloassay</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Components 🔗</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Samples</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="structure.html">Repository Structure</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="architecture.html">System Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Parts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="mps.html">MPS</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="model-server.html">Local model-server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="openapi.html">Intermediate OpenAPI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="rest-api-json-bulk.html">JSON bulk access</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="rest-api-model-server.html">model-server</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="rest-api-model-ql.html">modelQL</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="usecase.html">Use Cases</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="usecase-1.html">Use Case 1: Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="usecase-2.html">Use Case 2: Write from Web</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modelix Documentation</span>
+    <span class="version">0.1-beta.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Modelix Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.1-beta.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Modelix Documentation</a></li>
+    <li>Components 🔗</li>
+    <li><a href="index.html">Samples</a></li>
+    <li><a href="architecture.html">System Architecture</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/doc/modules/samples/pages/architecture.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">System architecture and components in this repository</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This project allows you to run different use cases.
+Depending on the chosen use case, only a subset of the components in this repository are used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_full_system_architecture"><a class="anchor" href="#_full_system_architecture"></a>Full system architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The full architecture includes components for multiple use cases.
+One does not need all components to realize individual use cases.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/system-diagram-full.svg" alt="system diagram full">
+</div>
+</div>
+<div class="paragraph">
+<p>In the following a short overview is given on each component.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_mps_language"><a class="anchor" href="#_the_mps_language"></a><strong>The MPS Language</strong></h3>
+<div class="paragraph">
+<p>The language (meta-model) and model used in all examples.
+[See the 'Language' section in the MPS README.md](mps/README.md#language)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generated_model_api_domain_api"><a class="anchor" href="#_generated_model_api_domain_api"></a><strong>Generated model API (domain API)</strong></h3>
+<div class="paragraph">
+<p>An API based on the meta-model generated with the [api-gen](<a href="https://github.com/modelix/api-gen" class="bare">https://github.com/modelix/api-gen</a>) plugin from modelix.
+[See the 'Generated API' section in the MPS README.md](mps/README.md#generated-api)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_domain_specific_openapi"><a class="anchor" href="#_domain_specific_openapi"></a><strong>Domain-specific OpenAPI</strong></h3>
+<div class="paragraph">
+<p>In this example project, an extra domain-specific API layer is added which is defined in the [OpenAPI](<a href="https://www.openapis.org/" class="bare">https://www.openapis.org/</a>) [specification](/openapi).
+This layer is meant educational as no noteworthy abstractions from the language itself happen in this definition.
+It intends to show how one introduces a clearly defined domain-specific abstraction decoupling the language engineering (meta-modeling) and the web development.</p>
+</div>
+<div class="paragraph">
+<p>We provide two backends (i.e. implementations of the API layer): The [<code>rest-api-json-bulk</code>](/rest-api-json-bulk) and [<code>rest-api-model-server</code>](/rest-api-model-server) components.</p>
+</div>
+<div class="paragraph">
+<p>For more details, also see the ['OpenAPI of the Courses domain' section in the MPS README.md](openapi/README.md)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openapi_implementation"><a class="anchor" href="#_openapi_implementation"></a><strong>OpenAPI implementation</strong></h3>
+<div class="paragraph">
+<p>This project provides two implementations of the [OpenAPI](openapi) domain abstraction.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A. MPS as a source (<code>rest-api-json-bulk</code> component)</p>
+<div class="literalblock">
+<div class="content">
+<pre>This backend provides access to the model by obtaining the model knowledge directly from a running MPS instance.
+It is implemented using ktor and connects to the [`json-bulk-model-access`](https://github.com/modelix/mps-rest-model-access) plugin running inside of MPS.
+This component can only provide **read only access** as the `json-bulk-model-access` is read only.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>For more details, also see the [`rest-api-json-bulk` README.md](rest-api-json-bulk/README.md) for details.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>B. model-server as a source (<code>rest-api-model-server</code> component)</p>
+<div class="literalblock">
+<div class="content">
+<pre>This backend provides access to the model by connecting to a running [`modelix model-server`](https://github.com/modelix/modelix.core/tree/main/model-server).
+It is implemented using Quarkus and can provide **read access** to the underlying model.
+Additionally, a websocket for push notifications about ongoing model changes is provided.
+This is realized using websockets exposed by the `model-server`.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>For more details, also see the [`rest-api-model-server` README.md](/rest-api-model-server/README.md) for details.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_single_page_application_spa_dashboard"><a class="anchor" href="#_single_page_application_spa_dashboard"></a><strong>Single-page application (SPA) Dashboard</strong></h3>
+<div class="paragraph">
+<p>The dashboard provides access to model knowledge through a browser.
+As it is conforming to the OpenAPI specification, the dashboard is able to obtain the model content from both backend implementations.
+However, the dashboard is consequently limited by the chosen backend.</p>
+</div>
+<div class="paragraph">
+<p>For more details, also see the [<code>spa-dashboard-angular</code> README.md](spa-dashboard-angular/README.md) for details.</p>
+</div>
+<div class="paragraph">
+<p>Note: Requires an OpenAPI implementation to obtain model knowledge from.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_real_time_collaboration_web_application"><a class="anchor" href="#_real_time_collaboration_web_application"></a><strong>'Real-time' collaboration web application</strong></h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>⚠️ TBD</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deploying_to_docker_kubernetes"><a class="anchor" href="#_deploying_to_docker_kubernetes"></a><strong>Deploying to Docker / Kubernetes</strong></h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>⚠️ TBD</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="structure.html">Repository Structure</a></span>
+  <span class="next"><a href="mps.html">MPS</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
