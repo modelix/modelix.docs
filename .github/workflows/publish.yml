@@ -15,7 +15,7 @@ jobs:
     - name: Install Antora and the Antora Lunr Extension
       run: npm i antora @antora/lunr-extension
     - name: Generate Site
-      run: npx antora antora-playbook.yml
+      run: npx antora --stacktrace antora-playbook.yml
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
