@@ -1,0 +1,34 @@
+= How to build
+
+To build this component via gradle, simply call the following in the top level folder:
+
+``` sh
+./gradlew build # mac/linux
+
+gradlew.bat build # windows
+```
+
+= modelix Artifact Publication
+
+At the moment most modelix artifacts are stored on the https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix[itemis nexus] with no access restriction.
+As a consequence, when you build modelix or use modelix components via gradle there is no repository access setup required.
+
+
+= How to set up GitHub packages authentication
+
+NOTE: This is optional when you want to obtain modelix artifacts from GitHub packages rather than the itemis nexus server.
+
+Most packages are also published to GitHub packages for which a GithHub account and credentials are required.
+
+To access GitHub packaged you need to specify your credentials.
+First of all you will need to generate a https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages[personal access token] with access to GitHub Packages.
+The project assumes that your username is available as the variable `gpr.user` and the token as `gpr.key`.
+The easiest way to configure the credentials is copy the example below, paste it into the `gradle.properties` file in the repository and replace the values with your credentials:
+
+```
+gpr.user=<your GitHub login>
+gpr.key=<your personal access token>
+```
+
+Gradle also supports https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties[other locations] for specifying these properties.
+

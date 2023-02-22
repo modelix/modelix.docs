@@ -1,0 +1,39 @@
+site:
+  title: Modelix Documentation
+  url: https://modelix.github.io/docs
+  start_page: component-documentation::index.adoc
+
+content:
+  sources:
+  # For local development
+  # - url: ./
+  - url: https://github.com/modelix/modelix.doc.git
+    branches: HEAD
+    start_path: doc
+
+  # use local path for faster developing
+  # - url: ./../modelix-sample-feature
+  - url: https://github.com/modelix/modelix-samples
+    branches: feature/improved-documentation
+    start_path: doc
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files:
+  - path: ui.yml
+    contents: |
+      static_files:
+      - .nojekyll
+  - path: .nojekyll
+
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+
+asciidoc:
+  attributes:
+    page-pagination: true
+    page-partial: true
+

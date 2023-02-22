@@ -1,0 +1,25 @@
+* General
+** xref:index.adoc[]
+** xref:architecture.adoc[]
+** xref:components.adoc[]
+** xref:roadmap.adoc[]
+** xref:faq.adoc[]
+** xref:glossary.adoc[]
+* Components 🔗
++
+--
+include::component-documentation:samples:partial$nav.adoc[]
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
