@@ -8,18 +8,6 @@
 * Components 🔗
 +
 --
-include::component-documentation:samples:partial$nav.adoc[]
+include::modelix:samples:partial$nav.adoc[]
 --
-
-
-
-
-
-
-
-
-
-
-
-
 

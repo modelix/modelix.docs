@@ -1,0 +1,8 @@
+= TODO Fallback
+
+This page represents a fallback page for open TODOs within the documentation.
+If you end up here please add an issue to https://github.com/modelix/modelix.docs[modelix/modelix.docs] and tell us where you found this link or consider supporting us by creating a corresponding pull request.
+
+// TODO components
+
+

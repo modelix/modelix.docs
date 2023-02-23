@@ -1,21 +1,23 @@
 site:
   title: Modelix Documentation
-  url: https://modelix.github.io/docs
-  start_page: component-documentation::index.adoc
+  url: https://docs.modelix.org
+  start_page: modelix::index.adoc
 
 content:
   sources:
-  # For local development
+  ## For local development
   # - url: ./
-  - url: https://github.com/modelix/modelix.doc.git
-    branches: HEAD
-    start_path: doc
-
-  # use local path for faster developing
+  - url: https://github.com/modelix/modelix.doc
+    branches: main
+    start_path: docs
+  ## use local path for faster developing
   # - url: ./../modelix-sample-feature
   - url: https://github.com/modelix/modelix-samples
     branches: feature/improved-documentation
-    start_path: doc
+    start_path: docs
+
+urls:
+  latest_version_segment: latest
 
 ui:
   bundle:

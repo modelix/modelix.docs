@@ -1,9 +1,7 @@
-name: component-documentation
+name: modelix
 title: Modelix Documentation
 version: 0.1
 prerelease: -beta.1
 nav:
 - modules/ROOT/pages/nav.adoc
-
-
 
