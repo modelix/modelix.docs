@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Architecture :: Modelix Documentation</title>
-    <link rel="prev" href="index.html">
-    <link rel="next" href="components.html">
+    <title>Modelix Goals :: Modelix Documentation</title>
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -14,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://modelix.github.io/docs">Modelix Documentation</a>
+      <a class="navbar-item" href="https://docs.modelix.org">Modelix Documentation</a>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Search the docs">
@@ -55,7 +53,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="component-documentation" data-version="0.1">
+<div class="nav-container" data-component="modelix" data-version="0.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -71,7 +69,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="architecture.html">Architecture</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -182,86 +180,35 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Modelix Documentation</a></li>
-    <li>General</li>
-    <li><a href="architecture.html">Architecture</a></li>
+    <li><a href="goals.html">Modelix Goals</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/doc/modules/ROOT/pages/architecture.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/docs/modules/ROOT/pages/goals.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Architecture</h1>
+<h1 class="page">Modelix Goals</h1>
 <div class="sect1">
-<h2 id="_an_architectural_overview_of_the_modelix_project"><a class="anchor" href="#_an_architectural_overview_of_the_modelix_project"></a>An architectural overview of the modelix project</h2>
+<h2 id="_vison"><a class="anchor" href="#_vison"></a>Vison</h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/overview.png" alt="overview">
-</div>
-</div>
-<div class="paragraph">
-<p>The image above shows the components that modelix currently consists of.</p>
-</div>
-<div class="paragraph">
-<p>MPS is running in headless mode on the server with an HTTP server installed as a plugin. The browser connects to that server and receives the HTML and JavaScript code required for the interactive <a href="glossary.html#model" class="xref page">model</a> editor.</p>
-</div>
-<div class="paragraph">
-<p>A second plugin connects to a <a href="glossary.html#model-server" class="xref page">model-server</a> and replicates the data into MPS’ internal module repository. All MPS instances connected to that model server will stay synchronized. This can also be a local MPS instance without a web editor. Both options are supported at the same time.</p>
-</div>
-<div class="paragraph">
-<p>The next image gives an overview over the different docker images running in the kubernetes cluster.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/kubernetes.png" alt="kubernetes">
-</div>
-</div>
-<div class="paragraph">
-<p>The model server uses an Apache Ignite cluster and just provides a REST API on top of it. A high load can be distributed over multiple instances.</p>
-</div>
-<div class="paragraph">
-<p>Running multiple MPS instances for scalability is possible, because the model has the same state on all instances.</p>
-</div>
-<div class="paragraph">
-<p>If you want to run MPS instances with different configurations (languages, plugins) or allow external instances to connect to the model server, a reverse proxy is used to forward the request to the correct instance.</p>
-</div>
-<div class="paragraph">
-<p>To access the web editor a user has to login in with a google account first. An OAuth proxy takes care of that and adds an HTTP header with the users e-mail address to the request.</p>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="_editor"><a class="anchor" href="#_editor"></a>Editor</h2>
+<h2 id="_mission"><a class="anchor" href="#_mission"></a>Mission</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>modelix provides an editor in the browser for the languages implemented in MPS. This can be an image based editor that renders the editor in MPS using the default editor definition or an HTML based editor that requires a separate editor definition in a language provided by modelix.</p>
-</div>
-<div class="paragraph">
-<p>Common to both approaches is that the user input (keyboard, mouse) is processed on the server and the update of the projection after a model change also happens on the server. Even in case of the HTML based editor the resulting HTML is computed on the server side. This removes the need to replicate the model into the browser, which would result in a bad performance in case of big models.</p>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="_model"><a class="anchor" href="#_model"></a>Model</h2>
+<h2 id="_what_we_provide"><a class="anchor" href="#_what_we_provide"></a>What we provide</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Running MPS in the cloud requires an alternative to the file system for storing models. modelix implements a data structure that allows replication between all MPS instances connected to the same model server. It is very similar to the git storage format, but instead of files it stores nodes in its key-value data store.</p>
-</div>
-<div class="paragraph">
-<p>To support realtime collaboration, in addition to the snapshot of a version it also stores the operations that were applied on the previous version to produce the new version. Conflicts between concurrent modification are resolved using operational transformation (OT). The usually hard part of OT is to guarantee convergence, meaning that all clients end up with the same result indepent of the order in which they receive changes. This problem becomes trivial, because versions are identified by a hash over all the content. Any divergence will result in a different hash which can easily be detected.</p>
-</div>
-<div class="paragraph">
-<p>The remaining problem is what to do when a divergence is detected. From git we know that switching between versions is fast, because it only has to apply the difference between these versions. The same is true here. Fixing a divergence is as easy as switching to the correct version. If a client doesn’t have any local changes it doesn’t even need to apply the change operations itself. It can just switch to the new version. So in the rare case of a divergence fixing it is nothing special. It’s an operation that happens all the time.</p>
+
 </div>
 </div>
-</div>
-<nav class="pagination">
-  <span class="prev"><a href="index.html">Introduction</a></span>
-  <span class="next"><a href="components.html">Components</a></span>
-</nav>
 </article>
   </div>
 </main>

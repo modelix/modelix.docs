@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Single page application: An Angular based dashboard :: Modelix Documentation</title>
-    <link rel="prev" href="model-server.html">
-    <link rel="next" href="openapi.html">
+    <title>Repository Structure :: Modelix Documentation</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="architecture.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -14,7 +14,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://modelix.github.io/docs">Modelix Documentation</a>
+      <a class="navbar-item" href="https://docs.modelix.org">Modelix Documentation</a>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Search the docs">
@@ -55,7 +55,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="component-documentation" data-version="0.1">
+<div class="nav-container" data-component="modelix" data-version="0.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -99,7 +99,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="structure.html">Repository Structure</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -115,7 +115,7 @@
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="model-server.html">Local model-server</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="dashboard.html">Dashboard</a>
   </li>
   <li class="nav-item" data-depth="4">
@@ -184,108 +184,99 @@
     <li><a href="../index.html">Modelix Documentation</a></li>
     <li>Components 🔗</li>
     <li><a href="index.html">Samples</a></li>
-    <li>Components</li>
-    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="structure.html">Repository Structure</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/doc/modules/samples/pages/dashboard.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/docs/modules/samples/pages/structure.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Single page application: An Angular based dashboard</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/spa-sample-1.png" alt="spa sample 1">
-</div>
-<div class="title">Figure 1. The SPA Dashboard</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/spa-sample-2.png" alt="spa sample 2">
-</div>
-<div class="title">Figure 2. View on a single Lecture in the Dashboard</div>
-</div>
+<h1 class="page">Repository Structure</h1>
 <div class="paragraph">
-<p>This project provides a single page application which accesses an implementation of this projects <a href="openapi.html" class="xref page">OpenAPI</a>.</p>
+<p>The repository is a single gradle project to make building everything at once easy.
+The examples are organized by the technology they use into the various sub-folders:</p>
 </div>
-<div class="paragraph">
-<p>The idea here is to illustrate a read only use case where a system/service outside of MPS wants to consume the content of models defined in MPS.
-This dashboard is a single-page app showing content obtained from the intermediate REST APIs.
-A user cannot edit that models from the browser.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_building_running"><a class="anchor" href="#_building_running"></a>Building &amp; Running</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_1_build_spa_dashboard_angular"><a class="anchor" href="#_1_build_spa_dashboard_angular"></a>1. Build <code>spa-dashboard-angular</code></h3>
-<div class="paragraph">
-<p>You can build this subproject individually from the parent folder via via gradle:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:build</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_start_an_openapi_implementation"><a class="anchor" href="#_2_start_an_openapi_implementation"></a>2. Start an OpenAPI implementation</h3>
-<div class="paragraph">
-<p>To run this application you will need a component which provides an API implementation conforming to the OpenAPI spec.
-Thus, you need to start one of the available OpenAPI implementations in this project:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Either start the <a href="rest-api-json-bulk.html" class="xref page">rest-api-json-bulk</a> implementation,</p>
-</li>
-<li>
-<p>or alternatively you can start the <a href="#samples:rest-api-model-server">rest-api-model-server</a> implementation.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Check the documentation of the corresponding project parts on how to start them.</p>
-</div>
-<div class="admonitionblock note">
-<table>
+<table class="tableblock frame-none grid-rows stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 60%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Make sure you have the correct ports defined in the API URLs.
-This app expects <code>8090</code> by default.
-</td>
+<th class="tableblock halign-left valign-top">Components/Tech</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Folder</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mps.html" class="xref page">MPS + <code>cloud-plugin</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS language definition that is used by all examples. The MPS language structure is used to generate a Java API consumed by all examples.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mps</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mps.html#api-gen.adoc" class="xref page">MPS, <code>metamodel-generator</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated Kotlin API from the MPS language.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mps/metamodel</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="openapi.html" class="xref page">OpenAPI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A hand-crafted OpenAPI specification that defines domain-specific REST endpoints which expose the model contents.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openapi</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-api-json-bulk.html" class="xref page">MPS w/ <code>mps-json-bulk-access</code> + Ktor</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents via REST. Obtains model data from MPS using the <code>mps-json-bulk-access</code> plugin. (⚠️ deprecated!)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-json-bulk</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-api-model-server.html" class="xref page"><code>model-server</code> + Quarkus</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents REST. Obtains model data from a running <code>model-server</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-model-server</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-api-model-ql.html" class="xref page"><code>ligh-model-server</code>+ ModelQL + Ktor</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents REST. Obtains model data from a running <code>the light-model-server</code> MPS plugin.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-model-ql</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dashboard.html" class="xref page">Angular via REST</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A single page app that realizes a read-only dashboard. Can connect to either of the OpenAPI implementations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>spa-dashboard-angular</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../todo.html" class="xref page">❔ + websockets</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A web application that allows editing of MPS models and realtime collaboration.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">❌</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>collaboration-web-app</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../todo.html" class="xref page">docker / kubernetes</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">❌</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deployment</code></p></td>
+</tr>
+</tbody>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3_run_the_angular_app"><a class="anchor" href="#_3_run_the_angular_app"></a>3. Run the angular app</h3>
 <div class="paragraph">
-<p>Next run this single page application via:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:npmRun</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can then go to <a href="http://localhost:4200" class="bare">http://localhost:4200</a> to see a dashboard with the courses model content.</p>
-</div>
-</div>
-</div>
+<p>Each component documentation with component specific content.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="model-server.html">Local model-server</a></span>
-  <span class="next"><a href="openapi.html">Intermediate OpenAPI</a></span>
+  <span class="prev"><a href="index.html">Samples</a></span>
+  <span class="next"><a href="architecture.html">System Architecture</a></span>
 </nav>
 </article>
   </div>

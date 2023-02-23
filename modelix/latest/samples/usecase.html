@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Repository Structure :: Modelix Documentation</title>
-    <link rel="prev" href="index.html">
-    <link rel="next" href="architecture.html">
+    <title>Use cases :: Modelix Documentation</title>
+    <link rel="prev" href="rest-api-model-ql.html">
+    <link rel="next" href="usecase-1.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -14,7 +14,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://modelix.github.io/docs">Modelix Documentation</a>
+      <a class="navbar-item" href="https://docs.modelix.org">Modelix Documentation</a>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Search the docs">
@@ -55,7 +55,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="component-documentation" data-version="0.1">
+<div class="nav-container" data-component="modelix" data-version="0.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -99,7 +99,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="structure.html">Repository Structure</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -135,7 +135,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="usecase.html">Use Cases</a>
 <ul class="nav-list">
@@ -184,99 +184,23 @@
     <li><a href="../index.html">Modelix Documentation</a></li>
     <li>Components 🔗</li>
     <li><a href="index.html">Samples</a></li>
-    <li><a href="structure.html">Repository Structure</a></li>
+    <li><a href="usecase.html">Use Cases</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/doc/modules/samples/pages/structure.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/docs/modules/samples/pages/usecase.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Repository Structure</h1>
+<h1 class="page">Use cases</h1>
 <div class="paragraph">
-<p>The repository is a single gradle project to make building everything at once easy.
-The examples are organized by the technology they use into the various sub-folders:</p>
-</div>
-<table class="tableblock frame-none grid-rows stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 60%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Components/Tech</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Folder</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mps.html" class="xref page">MPS + <code>cloud-plugin</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MPS language definition that is used by all examples. The MPS language structure is used to generate a Java API consumed by all examples.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mps</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mps.html#api-gen.adoc" class="xref page">MPS, <code>metamodel-generator</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generated Kotlin API from the MPS language.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mps/metamodel</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="openapi.html" class="xref page">OpenAPI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A hand-crafted OpenAPI specification that defines domain-specific REST endpoints which expose the model contents.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openapi</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-api-json-bulk.html" class="xref page">MPS w/ <code>mps-json-bulk-access</code> + Ktor</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents via REST. Obtains model data from MPS using the <code>mps-json-bulk-access</code> plugin. (⚠️ deprecated!)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-json-bulk</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-api-model-server.html" class="xref page"><code>model-server</code> + Quarkus</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents REST. Obtains model data from a running <code>model-server</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-model-server</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="rest-api-model-ql.html" class="xref page"><code>ligh-model-server</code>+ ModelQL + Ktor</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents REST. Obtains model data from a running <code>the light-model-server</code> MPS plugin.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-model-ql</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dashboard.html" class="xref page">Angular via REST</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A single page app that realizes a read-only dashboard. Can connect to either of the OpenAPI implementations.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>spa-dashboard-angular</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#samples:todo.adoc" class="xref unresolved">❔ + websockets</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A web application that allows editing of MPS models and realtime collaboration.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">❌</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>collaboration-web-app</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#samples:todo.adoc" class="xref unresolved">docker / kubernetes</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">❌</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deployment</code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Each component documentation with component specific content.</p>
+<p>To illustrate different use cases, this section provides a short description of each use case alongside with the required system architecture.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="index.html">Samples</a></span>
-  <span class="next"><a href="architecture.html">System Architecture</a></span>
+  <span class="prev"><a href="rest-api-model-ql.html">modelQL</a></span>
+  <span class="next"><a href="usecase-1.html">Use Case 1: Dashboard</a></span>
 </nav>
 </article>
   </div>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>API via json-bulk :: Modelix Documentation</title>
-    <link rel="prev" href="openapi.html">
-    <link rel="next" href="rest-api-model-server.html">
+    <title>Single page application: An Angular based dashboard :: Modelix Documentation</title>
+    <link rel="prev" href="model-server.html">
+    <link rel="next" href="openapi.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -14,7 +14,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://modelix.github.io/docs">Modelix Documentation</a>
+      <a class="navbar-item" href="https://docs.modelix.org">Modelix Documentation</a>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Search the docs">
@@ -55,7 +55,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="component-documentation" data-version="0.1">
+<div class="nav-container" data-component="modelix" data-version="0.1">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -115,14 +115,14 @@
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="model-server.html">Local model-server</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="dashboard.html">Dashboard</a>
   </li>
   <li class="nav-item" data-depth="4">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="openapi.html">Intermediate OpenAPI</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="5">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="rest-api-json-bulk.html">JSON bulk access</a>
   </li>
   <li class="nav-item" data-depth="5">
@@ -185,24 +185,107 @@
     <li>Components 🔗</li>
     <li><a href="index.html">Samples</a></li>
     <li>Components</li>
-    <li><a href="openapi.html">Intermediate OpenAPI</a></li>
-    <li><a href="rest-api-json-bulk.html">JSON bulk access</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/doc/modules/samples/pages/rest-api-json-bulk.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/docs/modules/samples/pages/dashboard.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">API via json-bulk</h1>
+<h1 class="page">Single page application: An Angular based dashboard</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/spa-sample-1.png" alt="spa sample 1">
+</div>
+<div class="title">Figure 1. The SPA Dashboard</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/spa-sample-2.png" alt="spa sample 2">
+</div>
+<div class="title">Figure 2. View on a single Lecture in the Dashboard</div>
+</div>
 <div class="paragraph">
-<p>TODO</p>
+<p>This project provides a single page application which accesses an implementation of this projects <a href="openapi.html" class="xref page">OpenAPI</a>.</p>
+</div>
+<div class="paragraph">
+<p>The idea here is to illustrate a read only use case where a system/service outside of MPS wants to consume the content of models defined in MPS.
+This dashboard is a single-page app showing content obtained from the intermediate REST APIs.
+A user cannot edit that models from the browser.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_running"><a class="anchor" href="#_building_running"></a>Building &amp; Running</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_build_spa_dashboard_angular"><a class="anchor" href="#_1_build_spa_dashboard_angular"></a>1. Build <code>spa-dashboard-angular</code></h3>
+<div class="paragraph">
+<p>You can build this subproject individually from the parent folder via via gradle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:build</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_start_an_openapi_implementation"><a class="anchor" href="#_2_start_an_openapi_implementation"></a>2. Start an OpenAPI implementation</h3>
+<div class="paragraph">
+<p>To run this application you will need a component which provides an API implementation conforming to the OpenAPI spec.
+Thus, you need to start one of the available OpenAPI implementations in this project:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Either start the <a href="rest-api-json-bulk.html" class="xref page">rest-api-json-bulk</a> implementation,</p>
+</li>
+<li>
+<p>or alternatively you can start the <a href="#samples:rest-api-model-server">rest-api-model-server</a> implementation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the documentation of the corresponding project parts on how to start them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Make sure you have the correct ports defined in the API URLs.
+This app expects <code>8090</code> by default.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_run_the_angular_app"><a class="anchor" href="#_3_run_the_angular_app"></a>3. Run the angular app</h3>
+<div class="paragraph">
+<p>Next run this single page application via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:npmRun</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then go to <a href="http://localhost:4200" class="bare">http://localhost:4200</a> to see a dashboard with the courses model content.</p>
+</div>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="openapi.html">Intermediate OpenAPI</a></span>
-  <span class="next"><a href="rest-api-model-server.html">model-server</a></span>
+  <span class="prev"><a href="model-server.html">Local model-server</a></span>
+  <span class="next"><a href="openapi.html">Intermediate OpenAPI</a></span>
 </nav>
 </article>
   </div>
