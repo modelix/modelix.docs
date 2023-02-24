@@ -14,11 +14,13 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://docs.modelix.org">Modelix Documentation</a>
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Docs</a>
+      </div>
       <div class="navbar-item search hide-for-print">
-        <div id="search-field" class="field">
-          <input id="search-input" type="text" placeholder="Search the docs">
-        </div>
+        <input id="search-input" type="text" placeholder="Search the docs">
       </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
@@ -28,32 +30,46 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="#">Home</a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Products</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
           </div>
         </div>
-        <div class="navbar-item">
-          <span class="control">
-            <a class="button is-primary" href="#">Download</a>
-          </span>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
         </div>
       </div>
     </div>
   </nav>
 </header>
+
 <div class="body">
 <div class="nav-container" data-component="modelix" data-version="0.1">
   <aside class="nav">
