@@ -1,4 +1,5 @@
-= Welcome to the modelix platform!
+= Welcome to modelix!
+:favicon: ./satic/favicon.png
 :navtitle: Introduction
 
 == Introduction
@@ -21,7 +22,7 @@ Head over to the xref:glossary.adoc[Glossary] if you are unsure about what exact
 
 == Contact
 
-To contact us join our https://jetbrains-mps.slack.com/archives/C01ADCD6VSM[#modelix Slack channel] which is part of the JetBrains MPS workspace or write us mailto:TODO@TODO.TODO[an Email with your questions and feedback,role=email].
+To contact us join our https://jetbrains-mps.slack.com/archives/C01ADCD6VSM[#modelix Slack channel] which is part of the JetBrains MPS workspace or write us mailto:modelix@itemis.com[an Email with your questions and feedback,role=email].
 
 
 == About this documentation
