@@ -1,0 +1,48 @@
+// General section
+* xref:index.adoc[General]
+** xref:index.adoc[]
+** xref:main/roadmap.adoc[]
+
+
+// Tutorials section
+* xref:tutorial/index.adoc[]
+** xref:modelix:ROOT:tutorial/build-component.adoc[]
+
++
+--
+include::modelix:samples:partial$nav-tutorial.adoc[]
+--
+
+
+// How-To Guides section
+* xref:howto/index.adoc[]
+** General
+
++
+--
+include::modelix:samples:partial$nav-howto.adoc[Samples]
+--
+
+
+// Reference section
+* xref:reference/index.adoc[]
+** General
+*** xref:modelix:ROOT:reference/components.adoc[]
+
++
+--
+include::modelix:samples:partial$nav-reference.adoc[Samples]
+--
+
+
+// Explanation section
+* xref:ROOT:explanation/index.adoc[]
+** xref:ROOT:explanation/architecture.adoc[]
+** xref:ROOT:explanation/goals.adoc[]
+** xref:ROOT:explanation/glossary.adoc[]
+
++
+--
+include::modelix:samples:partial$nav-explanation.adoc[]
+--
+

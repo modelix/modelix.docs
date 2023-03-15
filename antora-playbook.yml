@@ -5,16 +5,27 @@ site:
 
 content:
   sources:
-  ## For local development
-  # - url: ./
+
   - url: https://github.com/modelix/modelix.doc
+  # - url: ./
     branches: main
+    # tags: [2023.R1]
     start_path: docs
-  ## use local path for faster developing
-  # - url: ./../modelix-sample-feature
+
+
   - url: https://github.com/modelix/modelix-samples
+  # - url: ./../modelix-sample-feature
     branches: feature/improved-documentation
-    start_path: docs
+    # tags: [2023.R1]
+    start_path: docs/global
+
+
+  - url: https://github.com/modelix/modelix-samples
+  # - url: ./../modelix-sample-feature
+    branches: [feature/improved-documentation]
+    # tags: [2023.R1]
+    start_path: docs/local
+
 
 urls:
   latest_version_segment: latest

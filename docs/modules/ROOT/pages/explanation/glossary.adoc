@@ -1,0 +1,20 @@
+= Glossary
+
+This glossary is a lose collection of keywords used throughout the modelix documentation.
+
+[#model]
+Model::
+TODO
+
+[#MPS]
+MPS::
+TODO
+
+[#node]
+Node::
+TODO
+
+[#model-server]
+model-server::
+TODO
+

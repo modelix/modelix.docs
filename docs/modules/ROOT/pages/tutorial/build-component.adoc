@@ -1,4 +1,6 @@
-= How to build
+= Build component using Gradle
+
+== Build from console
 
 To build this component via gradle, simply call the following in the top level folder:
 
@@ -8,13 +10,13 @@ To build this component via gradle, simply call the following in the top level f
 gradlew.bat build # windows
 ```
 
-= modelix Artifact Publication
+== modelix Artifact Publication
 
 At the moment most modelix artifacts are stored on the https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix[itemis nexus] with no access restriction.
 As a consequence, when you build modelix or use modelix components via gradle there is no repository access setup required.
 
 
-= How to set up GitHub packages authentication
+== How to set up GitHub packages authentication
 
 NOTE: This is optional when you want to obtain modelix artifacts from GitHub packages rather than the itemis nexus server.
 

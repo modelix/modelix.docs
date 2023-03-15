@@ -1,7 +1,0 @@
-= Components of modelix
-:navtitle: Components
-
-
-== List of currently available components in modelix
-
-TODO

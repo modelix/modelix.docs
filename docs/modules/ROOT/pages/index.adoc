@@ -2,36 +2,72 @@
 :favicon: ./satic/favicon.png
 :navtitle: Introduction
 
+image:logo-with-small-text-dark.svg[]
+
+:tip-caption: 🔭 Vision
+[TIP]
+**We develop an open source platform for models on the web to reduce distributed modeling friction for domain experts**
+
+:tip-caption: 🚀 Mission
+[TIP]
+**We apply established web and cloud technologies to create a modeling tool in the browser which integrates with existing language workbenches whilst exploring new approaches**
+
+:tip-caption: TIP
+
 == Introduction
 
 The modelix project develops an open source platform for (meta-)models on the web.
-We are native to the web and the cloud, inspired by xref:glossary.adoc#whitepaper[this whitepaper].
-On the path to this final vision, we currently develop multiple components that implment parts of this vision.
+We are native to the web and the cloud, inspired by http://voelter.de/data/pub/APlatformForSystemsAndBusinessModeling.pdf[this whitepaper]footnote:["An open platform for systems and business engineering tools: collaborative modeling and analysis at scale" http://voelter.de/data/pub/APlatformForSystemsAndBusinessModeling.pdf ].
+
+
+On the path to this final idea, we currently develop multiple interoperable components that implement parts of our vision.
 Consequently, some parts are very stable and already in productive use while others are in a more experimental and explorative state.
-
-Follow the 'Next' button in the bottom right to find out more details on architecture and components available, or dive directly xref:samples:index.adoc[into our samples] to get started!
-
-Otherwise, the xref:faq.adoc[FAQ] section might give answers to some of your immediate questions.
+To gain an overview over components, head over to the xref:modelix:ROOT:reference/components.adoc[] reference.
 
 
-== Glossary
 
-In this documentation we use various acronyms and domain-specific wording.
-Head over to the xref:glossary.adoc[Glossary] if you are unsure about what exactly we mean when talking about a model, meta-model, MPS, or others.
-
-
-== Contact
-
-To contact us join our https://jetbrains-mps.slack.com/archives/C01ADCD6VSM[#modelix Slack channel] which is part of the JetBrains MPS workspace or write us mailto:modelix@itemis.com[an Email with your questions and feedback,role=email].
+Follow the 'Next' button in the bottom right to find out more details on our current roadmap, or dive directly into xref:samples:index.adoc[Tutorials of our sample project] to get started!
+Otherwise, the xref:howto/index.adoc[How-To] section serves as an implicit FAQ which might give answers to some of your immediate questions.
 
 
-== About this documentation
 
-This is the modelix documentation for modelix version *{page-component-display-version}*.
+== About this Documentation
+
+This is the full modelix documentation for modelix version *{page-component-display-version}*.
 You can choose different versions at the bottom left of this page.
+This documentation brings together the documentation from all individual modelix components.
+If you are only intersted in one specific component, you can select it in the menu at the bottom left.
+
+
+=== Structure Framework
+
+We follow the systematic https://diataxis.fr/[Diátaxis]footnote:["A systematic framework for technical documentation authoring", see https://pyvideo.org/pycon-au-2017/what-nobody-tells-you-about-documentation.html[this video] for an in depth explanation of the motives of this framework] approach in this documentation.
+As a result, we separate the documentation in the following four mayor categories:
+
+1. xref:tutorial/index.adoc[Tutorials (learning-oriented)]
++
+Lessons that take the reader by the hand through a series of steps to complete a project of some kind. **New users start here.**
+2. xref:howto/index.adoc[]
+3. xref:reference/index.adoc[]
+4. xref:explanation/index.adoc[]
+
+
+
+
+=== Technical Framework
 
 This documentation is built using the https://antora.org/[Antora] framework.
 All individual software components contain their own documentation within their own repository but are aggregated here.
 The playbook for aggregation and central source source for this documentation can be found in the https://github.com/modelix/modelix.doc[modelix/modelix.doc] repository.
 If you find any bugs or errors in our documentation please add pull requests or issues in the corresponding repository.
+
+
+== Glossary
+
+In this documentation we use various acronyms and domain-specific wording.
+Head over to the xref:modelix:ROOT:explanation/glossary.adoc[Glossary] if you are unsure about what exactly we mean when talking about a model, meta-model, MPS, or others.
+
+== Contact
+
+To contact us join our https://jetbrains-mps.slack.com/archives/C01ADCD6VSM[#modelix Slack channel] which is part of the JetBrains MPS workspace or write us mailto:modelix@itemis.com[an Email with your questions and feedback 📫,role=email].
 

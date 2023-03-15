@@ -1,0 +1,21 @@
+= Modelix Goals
+
+// TODO
+
+== Vison
+
+[sidebar]
+We develop an open source platform for models on the web to reduce modeling friction for domain experts
+
+== Mission
+
+[sidebar]
+We apply established web and cloud technologies to create a modeling tool in the browser which integrates with existing language workbenches whilst exploring new approaches
+
+== What we provide
+
+// 📦 components
+//
+// 🚀 Scalability
+//
+// ❌ Limitation.

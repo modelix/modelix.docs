@@ -11,12 +11,12 @@ The image above shows the components that modelix currently consists of.
 
 
 
-MPS is running in headless mode on the server with an HTTP server installed as a plugin. The browser connects to that server and receives the HTML and JavaScript code required for the interactive xref:glossary.adoc#model[model] editor.
+MPS is running in headless mode on the server with an HTTP server installed as a plugin. The browser connects to that server and receives the HTML and JavaScript code required for the interactive xref:explanation/glossary.adoc#model[model] editor.
 
 
 
 
-A second plugin connects to a xref:glossary.adoc#model-server[model-server] and replicates the data into MPS’ internal module repository. All MPS instances connected to that model server will stay synchronized. This can also be a local MPS instance without a web editor. Both options are supported at the same time.
+A second plugin connects to a xref:explanation/glossary.adoc#model-server[model-server] and replicates the data into MPS’ internal module repository. All MPS instances connected to that model server will stay synchronized. This can also be a local MPS instance without a web editor. Both options are supported at the same time.
 
 The next image gives an overview over the different docker images running in the kubernetes cluster.
 
