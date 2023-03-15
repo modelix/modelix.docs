@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>API via model-server :: Modelix Documentation</title>
+    <title>How-To Guides :: Modelix Documentation</title>
+    <link rel="prev" href="../tutorial/build-component.html">
+    <link rel="next" href="../reference/index.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -109,9 +111,9 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../howto/index.html">How-To Guides</a>
+    <a class="nav-link" href="index.html">How-To Guides</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <span class="nav-text">General</span>
@@ -155,22 +157,22 @@
     <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/structure.html">Repository Structure</a>
+    <a class="nav-link" href="../samples/explanation/structure.html">Repository Structure</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1.html">Use Case 1: Dashboard</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use Case 1: Dashboard</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-2.html">Use Case 2: Write from Web</a>
+    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use Case 2: Write from Web</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
   </li>
 </ul>
   </li>
@@ -213,99 +215,22 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Modelix Documentation</a></li>
-    <li><a href="rest-api-model-server.html">API via model-server</a></li>
+    <li><a href="index.html">How-To Guides</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/docs/global/modules/samples/pages/rest-api-model-server.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/docs/modules/ROOT/pages/howto/index.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">API via model-server</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>This project provides a custom REST API implemented in Quarkus that wraps a model-server instance.
-The REST API abstracts the generic model-server API for providing the dashboard example with usable data.
-The provided REST API conforms to the API spec in the <code>openapi.yaml</code>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_building"><a class="anchor" href="#_building"></a>Building</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can build this subproject individually from the parent folder via all gradle:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:build</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Before starting the REST API, a model-server instance needs to be running.
-The example from the MPS folder has to be deployed on this instance in a repository call <code>courses</code>.
-Once these preconditions are met, the REST API can be launched with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:run</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For simple testing you can <code>curl</code> the data provided by the API for example:</p>
-</div>
-<details>
-<summary class="title">🧾 Unfold for examples</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">$ curl -s -X GET "http://localhost:8090/rooms" -H  "accept: application/json" | jq
-{
-  "rooms": [
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347",
-          "name": "Einstein",
-          "maxPlaces": 42,
-          "hasRemoteEquipment": true
-      },
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349",
-          "name": "Schrödinger",
-          "maxPlaces": 420,
-          "hasRemoteEquipment": true
-      }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</details>
-<div class="paragraph">
-<p>Alternatively you can now start the <a href="dashboard.html" class="xref page">Dashboard</a> to consume this API.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introspecting_the_websocket_communication"><a class="anchor" href="#_introspecting_the_websocket_communication"></a>Introspecting the websocket communication</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you want to observe the updates sent on the web socket, you can use <a href="https://github.com/websockets/wscat">wscat</a> to get some insights when updates are sent.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">wscat -c ws://127.0.0.1:8090/updates</code></pre>
-</div>
-</div>
-</div>
-</div>
+<h1 class="page">How-To Guides</h1>
+
+<nav class="pagination">
+  <span class="prev"><a href="../tutorial/build-component.html">Build component using Gradle</a></span>
+  <span class="next"><a href="../reference/index.html">Reference</a></span>
+</nav>
 </article>
   </div>
 </main>

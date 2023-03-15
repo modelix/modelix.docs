@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>API via model-server :: Modelix Documentation</title>
+    <title>Development, Releases, and Roadmap :: Modelix Documentation</title>
+    <link rel="prev" href="../index.html">
+    <link rel="next" href="../tutorial/index.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -87,8 +89,8 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../index.html">Introduction</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../main/roadmap.html">Development, Releases, and Roadmap</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="roadmap.html">Development, Releases, and Roadmap</a>
   </li>
 </ul>
   </li>
@@ -155,22 +157,22 @@
     <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/structure.html">Repository Structure</a>
+    <a class="nav-link" href="../samples/explanation/structure.html">Repository Structure</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1.html">Use Case 1: Dashboard</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use Case 1: Dashboard</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-2.html">Use Case 2: Write from Web</a>
+    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use Case 2: Write from Web</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
   </li>
 </ul>
   </li>
@@ -213,99 +215,64 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Modelix Documentation</a></li>
-    <li><a href="rest-api-model-server.html">API via model-server</a></li>
+    <li><a href="../index.html">General</a></li>
+    <li><a href="roadmap.html">Development, Releases, and Roadmap</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/docs/global/modules/samples/pages/rest-api-model-server.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/docs/modules/ROOT/pages/main/roadmap.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">API via model-server</h1>
-<div id="preamble">
+<h1 class="page">Development, Releases, and Roadmap</h1>
+<div class="sect1">
+<h2 id="_development"><a class="anchor" href="#_development"></a>Development</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This project provides a custom REST API implemented in Quarkus that wraps a model-server instance.
-The REST API abstracts the generic model-server API for providing the dashboard example with usable data.
-The provided REST API conforms to the API spec in the <code>openapi.yaml</code>.</p>
+<p>The modelix project is developed open-source under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.
+All components and software of the platform as well as issue tracking and project management are done in repositories in our <a href="https://github.com/modelix">GitHub organisation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Currently, we use GitHub actions to build, test, and publish the components.
+We deploy all relevant artifacts to the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus server</a> as well as <a href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_building"><a class="anchor" href="#_building"></a>Building</h2>
+<h2 id="_release_cycle"><a class="anchor" href="#_release_cycle"></a>Release Cycle</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can build this subproject individually from the parent folder via all gradle:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:build</code></pre>
-</div>
+<p>With many components being in various development stages - from stable to early and conceptual - they are released individually for each repository.
+Generally, we follow the <a href="https://en.wikipedia.org/wiki/Software_versioning"><em>Semantic versioning</em></a> scheme for releases.
+However, anything based on JetBrains MPS (e.g. MPS plugins or extensions) are prefixed with the corresponding MPS major and minor version number followed by our own patch version number.
+For example, the <a href="https://github.com/modelix/modelix/packages/1077382"><code>org.modelix.mps-model-plugin</code></a> version <code>2021.2.103</code> is the <code>103rd</code> release which is compatible with MPS <code>2021.2.*</code>.</p>
 </div>
 <div class="paragraph">
-<p>Before starting the REST API, a model-server instance needs to be running.
-The example from the MPS folder has to be deployed on this instance in a repository call <code>courses</code>.
-Once these preconditions are met, the REST API can be launched with:</p>
+<p>To make it easier for developers, the modelix platform is currently released twice a year as a single "platform release" which references compatible component versions.
+We aim to provide a Spring release <code>R1</code> and an Autumn release <code>R2</code>.
+All development in-between is carried out as patches on the releases.
+This release cycle starts from 2023 with the first release on the MPS Community meetup in May: <code>2023.R1</code>.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:run</code></pre>
-</div>
+<div class="paragraph">
+<p>To gain an overview over existing components, please refer to the list of components <a href="../reference/components.html" class="xref page">here</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
+<h2 id="_roadmap"><a class="anchor" href="#_roadmap"></a>Roadmap</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For simple testing you can <code>curl</code> the data provided by the API for example:</p>
-</div>
-<details>
-<summary class="title">🧾 Unfold for examples</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">$ curl -s -X GET "http://localhost:8090/rooms" -H  "accept: application/json" | jq
-{
-  "rooms": [
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347",
-          "name": "Einstein",
-          "maxPlaces": 42,
-          "hasRemoteEquipment": true
-      },
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349",
-          "name": "Schrödinger",
-          "maxPlaces": 420,
-          "hasRemoteEquipment": true
-      }
-  ]
-}</code></pre>
+<p>We are currently in the process to further define our roadmap and core goals for each release.
+Once we have more information on this, we will publish it here.</p>
 </div>
 </div>
 </div>
-</details>
-<div class="paragraph">
-<p>Alternatively you can now start the <a href="dashboard.html" class="xref page">Dashboard</a> to consume this API.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introspecting_the_websocket_communication"><a class="anchor" href="#_introspecting_the_websocket_communication"></a>Introspecting the websocket communication</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you want to observe the updates sent on the web socket, you can use <a href="https://github.com/websockets/wscat">wscat</a> to get some insights when updates are sent.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">wscat -c ws://127.0.0.1:8090/updates</code></pre>
-</div>
-</div>
-</div>
-</div>
+<nav class="pagination">
+  <span class="prev"><a href="../index.html">General</a></span>
+  <span class="next"><a href="../tutorial/index.html">Tutorials</a></span>
+</nav>
 </article>
   </div>
 </main>

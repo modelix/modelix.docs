@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>API via model-server :: Modelix Documentation</title>
+    <title>Build component using Gradle :: Modelix Documentation</title>
+    <link rel="prev" href="index.html">
+    <link rel="next" href="../howto/index.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -98,10 +100,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../tutorial/index.html">Tutorials</a>
+    <a class="nav-link" href="index.html">Tutorials</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../tutorial/build-component.html">Build component using Gradle</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="build-component.html">Build component using Gradle</a>
   </li>
 </ul>
   </li>
@@ -155,22 +157,22 @@
     <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/structure.html">Repository Structure</a>
+    <a class="nav-link" href="../samples/explanation/structure.html">Repository Structure</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1.html">Use Case 1: Dashboard</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use Case 1: Dashboard</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-2.html">Use Case 2: Write from Web</a>
+    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use Case 2: Write from Web</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
+    <a class="nav-link" href="../samples/explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
   </li>
 </ul>
   </li>
@@ -213,99 +215,81 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Modelix Documentation</a></li>
-    <li><a href="rest-api-model-server.html">API via model-server</a></li>
+    <li><a href="index.html">Tutorials</a></li>
+    <li><a href="build-component.html">Build component using Gradle</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/edit/feature/improved-documentation/docs/global/modules/samples/pages/rest-api-model-server.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/docs/modules/ROOT/pages/tutorial/build-component.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">API via model-server</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>This project provides a custom REST API implemented in Quarkus that wraps a model-server instance.
-The REST API abstracts the generic model-server API for providing the dashboard example with usable data.
-The provided REST API conforms to the API spec in the <code>openapi.yaml</code>.</p>
-</div>
-</div>
-</div>
+<h1 class="page">Build component using Gradle</h1>
 <div class="sect1">
-<h2 id="_building"><a class="anchor" href="#_building"></a>Building</h2>
+<h2 id="_build_from_console"><a class="anchor" href="#_build_from_console"></a>Build from console</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can build this subproject individually from the parent folder via all gradle:</p>
+<p>To build this component via gradle, simply call the following in the top level folder:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:build</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Before starting the REST API, a model-server instance needs to be running.
-The example from the MPS folder has to be deployed on this instance in a repository call <code>courses</code>.
-Once these preconditions are met, the REST API can be launched with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:run</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew build # mac/linux
+
+gradlew.bat build # windows</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
+<h2 id="_modelix_artifact_publication"><a class="anchor" href="#_modelix_artifact_publication"></a>modelix Artifact Publication</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For simple testing you can <code>curl</code> the data provided by the API for example:</p>
-</div>
-<details>
-<summary class="title">🧾 Unfold for examples</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">$ curl -s -X GET "http://localhost:8090/rooms" -H  "accept: application/json" | jq
-{
-  "rooms": [
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347",
-          "name": "Einstein",
-          "maxPlaces": 42,
-          "hasRemoteEquipment": true
-      },
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349",
-          "name": "Schrödinger",
-          "maxPlaces": 420,
-          "hasRemoteEquipment": true
-      }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</details>
-<div class="paragraph">
-<p>Alternatively you can now start the <a href="dashboard.html" class="xref page">Dashboard</a> to consume this API.</p>
+<p>At the moment most modelix artifacts are stored on the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis nexus</a> with no access restriction.
+As a consequence, when you build modelix or use modelix components via gradle there is no repository access setup required.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introspecting_the_websocket_communication"><a class="anchor" href="#_introspecting_the_websocket_communication"></a>Introspecting the websocket communication</h2>
+<h2 id="_how_to_set_up_github_packages_authentication"><a class="anchor" href="#_how_to_set_up_github_packages_authentication"></a>How to set up GitHub packages authentication</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is optional when you want to obtain modelix artifacts from GitHub packages rather than the itemis nexus server.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>If you want to observe the updates sent on the web socket, you can use <a href="https://github.com/websockets/wscat">wscat</a> to get some insights when updates are sent.</p>
+<p>Most packages are also published to GitHub packages for which a GithHub account and credentials are required.</p>
+</div>
+<div class="paragraph">
+<p>To access GitHub packaged you need to specify your credentials.
+First of all you will need to generate a <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages">personal access token</a> with access to GitHub Packages.
+The project assumes that your username is available as the variable <code>gpr.user</code> and the token as <code>gpr.key</code>.
+The easiest way to configure the credentials is copy the example below, paste it into the <code>gradle.properties</code> file in the repository and replace the values with your credentials:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">wscat -c ws://127.0.0.1:8090/updates</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">gpr.user=&lt;your GitHub login&gt;
+gpr.key=&lt;your personal access token&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Gradle also supports <a href="https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties">other locations</a> for specifying these properties.</p>
 </div>
 </div>
 </div>
-</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Tutorials</a></span>
+  <span class="next"><a href="../howto/index.html">How-To Guides</a></span>
+</nav>
 </article>
   </div>
 </main>
