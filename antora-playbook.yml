@@ -6,32 +6,33 @@ site:
 content:
   sources:
 
+  #
   # GLOBAL REPOSITORIES
-
-  - url: https://github.com/modelix/modelix.doc
-  # - url: ./
+  #
+  # - url: https://github.com/modelix/modelix.doc
+  - url: ./
     branches:
     tags: v2@({0..9}).+({0..9})
     start_path: docs
 
 
-  - url: https://github.com/modelix/modelix-samples
-  # - url: ./../modelix-sample-feature
+  # - url: https://github.com/modelix/modelix-samples
+  - url: ./../modelix-sample-feature
     branches:
     tags: v2@({0..9}).+({0..9})
     start_path: docs/global
 
 
-
+  #
   # LOCAL  REPOSITORIES
-
-  - url: https://github.com/modelix/modelix-samples
-  # - url: ./../modelix-sample-feature
+  #
+  # - url: https://github.com/modelix/modelix-samples
+  - url: ./../modelix-sample-feature
     branches:
-    # tags: '*.*'
+    tags: '*.*'
     # tags: +({0..9}).+({0..9}).*
-    tags:
-      (+({0..9}).+({0..9})).+({0..9}): $1
+    # tags:
+    #   (+({0..9}).+({0..9})).+({0..9}): $1
     start_path: docs/local
 
 
@@ -53,5 +54,4 @@ asciidoc:
   attributes:
     page-pagination: true
     page-partial: true
-
 
