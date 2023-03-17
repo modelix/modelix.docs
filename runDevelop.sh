@@ -8,6 +8,7 @@ inotifywait -qmr -e modify --exclude '\.?#.*|build|.git' . \
   | while read -r event; do
       echo ""
       echo "$(date +'%F %T') $event"
+      rm -rf build
       antora --stacktrace antora-playbook.yml
     done
 
