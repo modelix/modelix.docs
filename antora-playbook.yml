@@ -9,16 +9,21 @@ content:
   #
   # GLOBAL REPOSITORIES
   #
-  - url: https://github.com/modelix/modelix.doc
-  # - url: ./
+  # - url: https://github.com/modelix/modelix.doc
+  - url: ./
     branches:
     tags: v2@({0..9}).+({0..9})
     start_path: docs
 
-
-  - url: https://github.com/modelix/modelix-samples
-  # - url: ./../modelix-sample-feature
+  # - url: https://github.com/modelix/modelix-samples
+  - url: ./../modelix-sample-feature
     branches:
+    tags: v2@({0..9}).+({0..9})
+    start_path: docs/global
+
+  - url: https://github.com/modelix/modelix.core
+  # - url: ./../modelix.core-main
+    branches: feature/improved-documentation
     tags: v2@({0..9}).+({0..9})
     start_path: docs/global
 
@@ -28,11 +33,17 @@ content:
   #
   - url: https://github.com/modelix/modelix-samples
   # - url: ./../modelix-sample-feature
-    branches:
+    branches: feature/improved-documentation
     tags: '*.*'
     # tags: +({0..9}).+({0..9}).*
     # tags:
     #   (+({0..9}).+({0..9})).+({0..9}): $1
+    start_path: docs/local
+
+  - url: https://github.com/modelix/modelix.core
+  # - url: ./../modelix.core-main
+    branches: feature/documentation-setup
+    tags: '0.0.*'
     start_path: docs/local
 
 

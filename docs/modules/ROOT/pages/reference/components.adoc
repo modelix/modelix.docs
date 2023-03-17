@@ -11,3 +11,5 @@ For detailed information on each component, please navigate to the _Components_ 
 include::modelix:samples:partial$short-description.adoc[]
 
 
+=== xref:modelix:core:index.adoc[Modelix core {page-component-latest-version}]
+include::modelix:core:partial$short-description.adoc[]
