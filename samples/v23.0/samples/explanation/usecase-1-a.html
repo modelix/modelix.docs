@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Repository Structure :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/explanation/structure.html">
-    <link rel="prev" href="../index.html">
-    <link rel="next" href="usecase-1.html">
+    <title>Untitled :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/explanation/usecase-1-a.html">
+    <link rel="prev" href="usecase-1.html">
+    <link rel="next" href="usecase-1-b.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
@@ -74,7 +74,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="samples" data-version="23.R0">
+<div class="nav-container" data-component="samples" data-version="v23.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -103,13 +103,13 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Explanation</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="structure.html">Repository Structure</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="usecase-1.html">Use Case 1: Dashboard</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -133,7 +133,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">modelix.samples</span>
-    <span class="version">23.R0</span>
+    <span class="version">v23.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -144,14 +144,22 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../../../../core/latest/core/index.html">modelix.core</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../core/latest/core/index.html">feature-documentation-setup</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../../latest/samples/index.html">modelix.samples</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../latest/samples/index.html">v23.0</a>
+          <a href="../../../latest/samples/index.html">feature-improved-documentation</a>
         </li>
         <li class="version is-current">
-          <a href="../index.html">23.R0</a>
+          <a href="../index.html">v23.0</a>
         </li>
         <li class="version">
           <a href="../../../0.0.1/samples/index.html">0.0.1</a>
@@ -172,107 +180,180 @@
     <li><a href="../index.html">modelix.samples</a></li>
     <li>Samples</li>
     <li>Explanation</li>
-    <li><a href="structure.html">Repository Structure</a></li>
+    <li><a href="usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">23.R0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">v23.0</button>
   <div class="version-menu">
-    <a class="version" href="../../../latest/samples/explanation/structure.html">v23.0</a>
-    <a class="version is-current" href="structure.html">23.R0</a>
-    <a class="version" href="../../../0.0.1/samples/explanation/structure.html">0.0.1</a>
+    <a class="version" href="../../../latest/samples/explanation/usecase-1-a.html">feature-improved-documentation</a>
+    <a class="version is-current" href="usecase-1-a.html">v23.0</a>
+    <a class="version" href="../../../0.0.1/samples/explanation/usecase-1-a.html">0.0.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/23.R0/docs/local/modules/samples/pages/explanation/structure.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/v23.0/docs/local/modules/samples/pages/explanation/usecase-1-a.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Repository Structure</h1>
+<div class="sect1">
+<h2 id="_uc_1a_implementaitons"><a class="anchor" href="#_uc_1a_implementaitons"></a>UC 1a implementaitons</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The repository is a single gradle project to make building everything at once easy.
-The examples are organized by the technology they use into the various sub-folders:</p>
+<p>The samples provide a total of three variation of this use case
+The system architecture changes correspondingly:</p>
 </div>
-<table class="tableblock frame-none grid-rows stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 60%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Components/Tech</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Folder</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../mps.html" class="xref page">MPS + <code>cloud-plugin</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MPS language definition that is used by all examples. The MPS language structure is used to generate a Java API consumed by all examples.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mps</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../mps.html#api-gen.adoc" class="xref page">MPS, <code>metamodel-generator</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generated Kotlin API from the MPS language.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mps/metamodel</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../openapi.html" class="xref page">OpenAPI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A hand-crafted OpenAPI specification that defines domain-specific REST endpoints which expose the model contents.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openapi</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../rest-api-json-bulk.html" class="xref page">MPS w/ <code>mps-json-bulk-access</code> + Ktor</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents via REST. Obtains model data from MPS using the <code>mps-json-bulk-access</code> plugin. (⚠️ deprecated!)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-json-bulk</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../rest-api-model-server.html" class="xref page"><code>model-server</code> + Quarkus</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents REST. Obtains model data from a running <code>model-server</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-model-server</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../rest-api-model-ql.html" class="xref page"><code>ligh-model-server</code>+ ModelQL + Ktor</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the OpenAPI that exposes the model contents REST. Obtains model data from a running <code>the light-model-server</code> MPS plugin.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rest-api-model-ql</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../dashboard.html" class="xref page">Angular via REST</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A single page app that realizes a read-only dashboard. Can connect to either of the OpenAPI implementations.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">✅</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>spa-dashboard-angular</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../../../modelix/latest/main/todo.html" class="xref page">❔ + websockets</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A web application that allows editing of MPS models and realtime collaboration.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">❌</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>collaboration-web-app</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../../../../modelix/latest/main/todo.html" class="xref page">docker / kubernetes</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">❌</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deployment</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/uc-1a-read-only-dashboard.svg" alt="uc 1a read only dashboard">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/uc-1c-read-only-dashboard.svg" alt="uc 1c read only dashboard">
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> using the more complex `rest-api-model-server` backend and the `model-server`.
+using the `rest-api-model-ql` backend and the `light-model-server` MPS plugin</pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Each component documentation with component specific content.</p>
+<p><code>rest-api-model-server</code> (legacy) + <code>model-server</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_start_uc_1a"><a class="anchor" href="#_how_to_start_uc_1a"></a>How to start UC 1a</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All gradle commands assume you are in the top level folder of this repository.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To start up the system as described in UC 1a, you first have to have built the entire project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once done, you need to start all components involved, these are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>MPS</strong>: Start <code>MPS 2021.2.6</code> without any global plugins and open the project in the <code>mps/project-mps-backend</code> folder.
+This MPS project stores the model content using MPS persistence.
+The gradle build process will have downloaded all plugins needed to <code>mps/project-mps-backend/build/dependencies</code> and declare this folder as a global library.
+This includes the <code>json-bulk-model-access</code> and the <code>light-model-client</code>.</p>
+</li>
+<li>
+<p><strong>API layer</strong>: The <code>rest-api-json-bulk</code> provides the models from the running MPS instance, simply run in a new terminal (it will be a blocking call):</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./gradlew rest-api-json-bulk:run</pre>
+</div>
+</div>
+<details>
+<summary class="title">🧾 You can expect output similar to this (unfold to see details)</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">&gt; Task :rest-api-json-bulk:run
+2022-12-07 10:12:38.874 [DefaultDispatcher-worker-11] INFO  ktor.application - Autoreload is disabled because the development mode is off.
+2022-12-07 10:12:39.009 [DefaultDispatcher-worker-11] INFO  ktor.application - Application started in 0.14 seconds.
+2022-12-07 10:12:39.131 [DefaultDispatcher-worker-1] INFO  ktor.application - Responding at http://0.0.0.0:8090
+&lt;===========--&gt; 91% EXECUTING [2m 20s]
+&gt; :rest-api-json-bulk:run</code></pre>
+</div>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>Dashboard</strong>: The dashboard itself is a node application which can be run via in a new terminal (it will be a blocking call):</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./gradlew spa-dashboard-angular:npmRun</pre>
+</div>
+</div>
+<details>
+<summary class="title">🧾 You can expect output similar to this (unfold to see details)</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">&gt; Task :spa-dashboard-angular:npmRun
+
+&gt; angular.io-example@0.0.0 ng
+&gt; ng serve
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   2.47 MB |
+polyfills.js          | polyfills     | 318.03 kB |
+styles.css, styles.js | styles        | 211.31 kB |
+main.js               | main          |  86.71 kB |
+runtime.js            | runtime       |   6.53 kB |
+
+| Initial Total |   3.08 MB
+
+Build at: 2022-12-07T09:18:02.345Z - Hash: 186b24edf20c1c4a - Time: 13776ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.
+✔ Browser application bundle generation complete.
+
+5 unchanged chunks
+
+Build at: 2022-12-07T09:18:02.740Z - Hash: 186b24edf20c1c4a - Time: 324ms
+
+✔ Compiled successfully.
+&lt;============-&gt; 95% EXECUTING [29s]
+&gt; :spa-dashboard-angular:npmRun</code></pre>
+</div>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p>Explore the dashboard at <a href="http://localhost:4200/" class="bare">http://localhost:4200/</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Changes to the model in MPS will not automatically synchronize to the dashboard, you will have to manually reload the model.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../index.html">Welcome</a></span>
-  <span class="next"><a href="usecase-1.html">Use Case 1: Dashboard</a></span>
+  <span class="prev"><a href="usecase-1.html">Use Case 1: Dashboard</a></span>
+  <span class="next"><a href="usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a></span>
 </nav>
 </article>
   </div>

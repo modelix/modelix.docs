@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Single page application: An Angular based dashboard :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/dashboard.html">
+    <title>System architecture and components in this repository :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/architecture.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -72,7 +72,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="samples" data-version="23.R0">
+<div class="nav-container" data-component="samples" data-version="v23.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -131,7 +131,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">modelix.samples</span>
-    <span class="version">23.R0</span>
+    <span class="version">v23.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -142,14 +142,22 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../../../core/latest/core/index.html">modelix.core</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/latest/core/index.html">feature-documentation-setup</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../latest/samples/index.html">modelix.samples</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../latest/samples/index.html">v23.0</a>
+          <a href="../../latest/samples/index.html">feature-improved-documentation</a>
         </li>
         <li class="version is-current">
-          <a href="index.html">23.R0</a>
+          <a href="index.html">v23.0</a>
         </li>
         <li class="version">
           <a href="../../0.0.1/samples/index.html">0.0.1</a>
@@ -168,81 +176,122 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">modelix.samples</a></li>
-    <li><a href="dashboard.html">Single page application: An Angular based dashboard</a></li>
+    <li><a href="architecture.html">System architecture and components in this repository</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">23.R0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">v23.0</button>
   <div class="version-menu">
-    <a class="version" href="../../latest/samples/dashboard.html">v23.0</a>
-    <a class="version is-current" href="dashboard.html">23.R0</a>
-    <a class="version" href="../../0.0.1/samples/dashboard.html">0.0.1</a>
+    <a class="version" href="../../latest/samples/architecture.html">feature-improved-documentation</a>
+    <a class="version is-current" href="architecture.html">v23.0</a>
+    <a class="version" href="../../0.0.1/samples/architecture.html">0.0.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/23.R0/docs/local/modules/samples/pages/dashboard.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/v23.0/docs/local/modules/samples/pages/architecture.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Single page application: An Angular based dashboard</h1>
+<h1 class="page">System architecture and components in this repository</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="_images/spa-sample-1.png" alt="spa sample 1">
-</div>
-<div class="title">Figure 1. The SPA Dashboard</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/spa-sample-2.png" alt="spa sample 2">
-</div>
-<div class="title">Figure 2. View on a single Lecture in the Dashboard</div>
-</div>
 <div class="paragraph">
-<p>This project provides a single page application which accesses an implementation of this projects <a href="openapi.html" class="xref page">OpenAPI</a>.</p>
-</div>
-<div class="paragraph">
-<p>The idea here is to illustrate a read only use case where a system/service outside of MPS wants to consume the content of models defined in MPS.
-This dashboard is a single-page app showing content obtained from the intermediate REST APIs.
-A user cannot edit that models from the browser.</p>
+<p>This project allows you to run different use cases.
+Depending on the chosen use case, only a subset of the components in this repository are used.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_building_running"><a class="anchor" href="#_building_running"></a>Building &amp; Running</h2>
+<h2 id="_full_system_architecture"><a class="anchor" href="#_full_system_architecture"></a>Full system architecture</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_1_build_spa_dashboard_angular"><a class="anchor" href="#_1_build_spa_dashboard_angular"></a>1. Build <code>spa-dashboard-angular</code></h3>
 <div class="paragraph">
-<p>You can build this subproject individually from the parent folder via via gradle:</p>
+<p>The full architecture includes components for multiple use cases.
+One does not need all components to realize individual use cases.</p>
 </div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:build</code></pre>
+<img src="_images/system-diagram-full.svg" alt="system diagram full">
 </div>
+</div>
+<div class="paragraph">
+<p>In the following a short overview is given on each component.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_mps_language"><a class="anchor" href="#_the_mps_language"></a>The MPS Language</h3>
+<div class="paragraph">
+<p>The meta-model (language) of the courses domain and a model (soulution) with sample data in <a href="https://www.jetbrains.com/mps/">JetBrains MPS</a> on which everything in this sample is based.</p>
+</div>
+<div class="paragraph">
+<p>▶️  For more details, see the <a href="mps.html#language" class="xref page">Language section in the MPS component documentation</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_start_an_openapi_implementation"><a class="anchor" href="#_2_start_an_openapi_implementation"></a>2. Start an OpenAPI implementation</h3>
+<h3 id="_generated_model_api_domain_api"><a class="anchor" href="#_generated_model_api_domain_api"></a>Generated model API (domain API</h3>
 <div class="paragraph">
-<p>To run this application you will need a component which provides an API implementation conforming to the OpenAPI spec.
-Thus, you need to start one of the available OpenAPI implementations in this project:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Either start the <a href="rest-api-json-bulk.html" class="xref page">rest-api-json-bulk</a> implementation,</p>
-</li>
-<li>
-<p>or alternatively you can start the <a href="#samples:rest-api-model-server">rest-api-model-server</a> implementation.</p>
-</li>
-</ul>
+<p>An API based on the meta-model generated with the <a href="../../../modelix/latest/main/todo.html" class="xref page">todo:metamodel-generator</a> component from modelix.</p>
 </div>
 <div class="paragraph">
-<p>Check the documentation of the corresponding project parts on how to start them.</p>
+<p>▶️ For more details, see the <a href="mps.html#generated-api" class="xref page">'Generated API' section in the MPS component documentation</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_domain_specific_openapi"><a class="anchor" href="#_domain_specific_openapi"></a>Domain-specific OpenAPI</h3>
+<div class="paragraph">
+<p>In this example project, an extra domain-specific API layer is added which is defined in the <a href="openapi.html" class="xref page">OpenAPI specification</a><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+This layer is meant educational as no noteworthy abstractions from the language itself happen in this definition.
+It intends to show how one introduces a clearly defined domain-specific abstraction decoupling the language engineering (meta-modeling) and the web development.</p>
+</div>
+<div class="paragraph">
+<p>We provide two backends (i.e. implementations of the API layer): The <a href="rest-api-json-bulk.html" class="xref page">API via json-bulk</a> and <a href="rest-api-model-server.html" class="xref page">API via model-server</a> components.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, see the <a href="openapi.html" class="xref page">OpenAPI component documentation</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openapi_implementation"><a class="anchor" href="#_openapi_implementation"></a>OpenAPI implementation</h3>
+<div class="paragraph">
+<p>This project provides two implementations of the <a href="openapi.html" class="xref page">openapi</a> domain abstraction.</p>
+</div>
+<div class="dlist ordered">
+<dl>
+<dt>MPS as a source</dt>
+<dd>
+<div class="paragraph">
+<p>⚠️ Deprecated!</p>
+</div>
+<div class="paragraph">
+<p>This backend provides access to the model by obtaining the model knowledge directly from a running MPS instance.
+It is implemented using ktor and connects to the <a href="https://github.com/modelix/mps-rest-model-access"><code>json-bulk-model-access</code></a> plugin running inside of MPS.
+This component can only provide <strong>read only access</strong> as the <code>json-bulk-model-access</code> is read only.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, see the <a href="rest-api-json-bulk.html" class="xref page">API via json-bulk</a> for details.</p>
+</div>
+</dd>
+<dt>model-server as a source</dt>
+<dd>
+<div class="paragraph">
+<p>This backend provides access to the model by connecting to a running <a href="../../../modelix/latest/main/todo.html" class="xref page">todo:model-server</a>.
+It is implemented using Quarkus and can provide <strong>read access</strong> to the underlying model.
+Additionally, a websocket for push notifications about ongoing model changes is provided.
+This is realized using websockets exposed by the <code>model-server</code>.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, also see the <a href="rest-api-model-server.html" class="xref page">API via model-server</a> component for details.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_single_page_application_spa_dashboard"><a class="anchor" href="#_single_page_application_spa_dashboard"></a>Single-page application (SPA) Dashboard</h3>
+<div class="paragraph">
+<p>The dashboard provides access to model knowledge through a browser.
+As it is conforming to the OpenAPI specification, the dashboard is able to obtain the model content from both backend implementations.
+However, the dashboard is consequently limited by the chosen backend.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -251,27 +300,33 @@ Thus, you need to start one of the available OpenAPI implementations in this pro
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Make sure you have the correct ports defined in the API URLs.
-This app expects <code>8090</code> by default.
+This components requires running any of the available OpenAPI implementations to obtain model knowledge from.
 </td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>▶️ For more details, also see the <a href="dashboard.html" class="xref page">Dashboard</a> for details.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_3_run_the_angular_app"><a class="anchor" href="#_3_run_the_angular_app"></a>3. Run the angular app</h3>
+<h3 id="_real_time_collaboration_web_application"><a class="anchor" href="#_real_time_collaboration_web_application"></a>Real-time' collaboration web application</h3>
 <div class="paragraph">
-<p>Next run this single page application via:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:npmRun</code></pre>
+<p>⚠️ TBD</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_deploying_to_docker_kubernetes"><a class="anchor" href="#_deploying_to_docker_kubernetes"></a>Deploying to Docker / Kubernetes</h3>
 <div class="paragraph">
-<p>You can then go to <a href="http://localhost:4200" class="bare">http://localhost:4200</a> to see a dashboard with the courses model content.</p>
+<p>⚠️ TBD</p>
 </div>
 </div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. See <a href="https://www.openapis.org/" class="bare">https://www.openapis.org/</a> for details on how OpenAPI works.
 </div>
 </div>
 </article>

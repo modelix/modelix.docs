@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>API via model-server :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/rest-api-model-server.html">
+    <title>Single page application: An Angular based dashboard :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/dashboard.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -72,7 +72,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="samples" data-version="23.R0">
+<div class="nav-container" data-component="samples" data-version="v23.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -131,7 +131,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">modelix.samples</span>
-    <span class="version">23.R0</span>
+    <span class="version">v23.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -142,14 +142,22 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../../../core/latest/core/index.html">modelix.core</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/latest/core/index.html">feature-documentation-setup</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../latest/samples/index.html">modelix.samples</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../latest/samples/index.html">v23.0</a>
+          <a href="../../latest/samples/index.html">feature-improved-documentation</a>
         </li>
         <li class="version is-current">
-          <a href="index.html">23.R0</a>
+          <a href="index.html">v23.0</a>
         </li>
         <li class="version">
           <a href="../../0.0.1/samples/index.html">0.0.1</a>
@@ -168,103 +176,108 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">modelix.samples</a></li>
-    <li><a href="rest-api-model-server.html">API via model-server</a></li>
+    <li><a href="dashboard.html">Single page application: An Angular based dashboard</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">23.R0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">v23.0</button>
   <div class="version-menu">
-    <a class="version" href="../../latest/samples/rest-api-model-server.html">v23.0</a>
-    <a class="version is-current" href="rest-api-model-server.html">23.R0</a>
-    <a class="version" href="../../0.0.1/samples/rest-api-model-server.html">0.0.1</a>
+    <a class="version" href="../../latest/samples/dashboard.html">feature-improved-documentation</a>
+    <a class="version is-current" href="dashboard.html">v23.0</a>
+    <a class="version" href="../../0.0.1/samples/dashboard.html">0.0.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/23.R0/docs/local/modules/samples/pages/rest-api-model-server.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/v23.0/docs/local/modules/samples/pages/dashboard.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">API via model-server</h1>
+<h1 class="page">Single page application: An Angular based dashboard</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/spa-sample-1.png" alt="spa sample 1">
+</div>
+<div class="title">Figure 1. The SPA Dashboard</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/spa-sample-2.png" alt="spa sample 2">
+</div>
+<div class="title">Figure 2. View on a single Lecture in the Dashboard</div>
+</div>
 <div class="paragraph">
-<p>This project provides a custom REST API implemented in Quarkus that wraps a model-server instance.
-The REST API abstracts the generic model-server API for providing the dashboard example with usable data.
-The provided REST API conforms to the API spec in the <code>openapi.yaml</code>.</p>
+<p>This project provides a single page application which accesses an implementation of this projects <a href="openapi.html" class="xref page">OpenAPI</a>.</p>
+</div>
+<div class="paragraph">
+<p>The idea here is to illustrate a read only use case where a system/service outside of MPS wants to consume the content of models defined in MPS.
+This dashboard is a single-page app showing content obtained from the intermediate REST APIs.
+A user cannot edit that models from the browser.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_building"><a class="anchor" href="#_building"></a>Building</h2>
+<h2 id="_building_running"><a class="anchor" href="#_building_running"></a>Building &amp; Running</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_build_spa_dashboard_angular"><a class="anchor" href="#_1_build_spa_dashboard_angular"></a>1. Build <code>spa-dashboard-angular</code></h3>
 <div class="paragraph">
-<p>You can build this subproject individually from the parent folder via all gradle:</p>
+<p>You can build this subproject individually from the parent folder via via gradle:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:build</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:build</code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_start_an_openapi_implementation"><a class="anchor" href="#_2_start_an_openapi_implementation"></a>2. Start an OpenAPI implementation</h3>
+<div class="paragraph">
+<p>To run this application you will need a component which provides an API implementation conforming to the OpenAPI spec.
+Thus, you need to start one of the available OpenAPI implementations in this project:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Either start the <a href="rest-api-json-bulk.html" class="xref page">rest-api-json-bulk</a> implementation,</p>
+</li>
+<li>
+<p>or alternatively you can start the <a href="#samples:rest-api-model-server">rest-api-model-server</a> implementation.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Before starting the REST API, a model-server instance needs to be running.
-The example from the MPS folder has to be deployed on this instance in a repository call <code>courses</code>.
-Once these preconditions are met, the REST API can be launched with:</p>
+<p>Check the documentation of the corresponding project parts on how to start them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Make sure you have the correct ports defined in the API URLs.
+This app expects <code>8090</code> by default.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_run_the_angular_app"><a class="anchor" href="#_3_run_the_angular_app"></a>3. Run the angular app</h3>
+<div class="paragraph">
+<p>Next run this single page application via:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-server:run</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">./gradlew spa-dashboard-angular:npmRun</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>For simple testing you can <code>curl</code> the data provided by the API for example:</p>
-</div>
-<details>
-<summary class="title">🧾 Unfold for examples</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">$ curl -s -X GET "http://localhost:8090/rooms" -H  "accept: application/json" | jq
-{
-  "rooms": [
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347",
-          "name": "Einstein",
-          "maxPlaces": 42,
-          "hasRemoteEquipment": true
-      },
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349",
-          "name": "Schrödinger",
-          "maxPlaces": 420,
-          "hasRemoteEquipment": true
-      }
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</details>
-<div class="paragraph">
-<p>Alternatively you can now start the <a href="dashboard.html" class="xref page">Dashboard</a> to consume this API.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introspecting_the_websocket_communication"><a class="anchor" href="#_introspecting_the_websocket_communication"></a>Introspecting the websocket communication</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you want to observe the updates sent on the web socket, you can use <a href="https://github.com/websockets/wscat">wscat</a> to get some insights when updates are sent.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">wscat -c ws://127.0.0.1:8090/updates</code></pre>
+<p>You can then go to <a href="http://localhost:4200" class="bare">http://localhost:4200</a> to see a dashboard with the courses model content.</p>
 </div>
 </div>
 </div>

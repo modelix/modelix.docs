@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>API via json-bulk :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/rest-api-json-bulk.html">
+    <title>API via modelQL :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/rest-api-model-ql.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -72,7 +72,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="samples" data-version="23.R0">
+<div class="nav-container" data-component="samples" data-version="v23.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -131,7 +131,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">modelix.samples</span>
-    <span class="version">23.R0</span>
+    <span class="version">v23.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -142,14 +142,22 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../../../core/latest/core/index.html">modelix.core</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/latest/core/index.html">feature-documentation-setup</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../latest/samples/index.html">modelix.samples</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../latest/samples/index.html">v23.0</a>
+          <a href="../../latest/samples/index.html">feature-improved-documentation</a>
         </li>
         <li class="version is-current">
-          <a href="index.html">23.R0</a>
+          <a href="index.html">v23.0</a>
         </li>
         <li class="version">
           <a href="../../0.0.1/samples/index.html">0.0.1</a>
@@ -168,30 +176,30 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">modelix.samples</a></li>
-    <li><a href="rest-api-json-bulk.html">API via json-bulk</a></li>
+    <li><a href="rest-api-model-ql.html">API via modelQL</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">23.R0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">v23.0</button>
   <div class="version-menu">
-    <a class="version" href="../../latest/samples/rest-api-json-bulk.html">v23.0</a>
-    <a class="version is-current" href="rest-api-json-bulk.html">23.R0</a>
-    <a class="version" href="../../0.0.1/samples/rest-api-json-bulk.html">0.0.1</a>
+    <a class="version" href="../../latest/samples/rest-api-model-ql.html">feature-improved-documentation</a>
+    <a class="version is-current" href="rest-api-model-ql.html">v23.0</a>
+    <a class="version" href="../../0.0.1/samples/rest-api-model-ql.html">0.0.1</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/23.R0/docs/local/modules/samples/pages/rest-api-json-bulk.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/v23.0/docs/local/modules/samples/pages/rest-api-model-ql.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">API via json-bulk</h1>
+<h1 class="page">API via modelQL</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This project provides a REST API that wraps the functionality of the <code>mps-json-bulk-model-access</code> plugin running inside an MPS instance.
-The provided REST api conforms to the API spec in the <code>openapi.yaml</code> file.</p>
+<p>This project provides a REST API that wraps the functionality of the <code>light-model-server</code> MPS plugin running inside an MPS instance.
+The provided REST API conforms to the API spec in the <code>openapi.yaml</code>.</p>
 </div>
 </div>
 </div>
@@ -203,12 +211,12 @@ The provided REST api conforms to the API spec in the <code>openapi.yaml</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-json-bulk:build</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-ql:build</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Before running the API provider you need to open the MPS project in the [mps](../mps) folder.
-This will automatically set up MPS with the <a href="https://github.com/modelix/mps-rest-model-access"><code>mps-json-bulk-access</code> plugin</a> and expose the models via an HTTP API.
+<p>Before running the API provider you need to open the <a href="mps.html" class="xref page">MPS project</a> in the <code>mps</code> folder.
+The initial gradle build will automatically have set up MPS with the <a href="https://github.com/modelix/modelix/tree/mps/2020.3/mps"><code>light-model-server</code> plugin</a> and expose the models via query language called ModelQL.
 This API is then accessed from this openAPI abstraction implementation to load the models.</p>
 </div>
 <div class="paragraph">
@@ -216,7 +224,7 @@ This API is then accessed from this openAPI abstraction implementation to load t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-json-bulk:run</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew rest-api-model-ql:run</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -246,94 +254,91 @@ This API is then accessed from this openAPI abstraction implementation to load t
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">$ curl -s -X GET "http://localhost:8090/rooms" -H  "accept: application/json" | jq
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">```console
+$ curl -s -X GET "http://localhost:8090/rooms" -H  "accept: application/json" | jq
 {
   "rooms": [
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347",
-          "name": "Einstein",
-          "maxPlaces": 42,
-          "hasRemoteEquipment": true
-      },
-      {
-          "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349",
-          "name": "Schrödinger",
-          "maxPlaces": 420,
-          "hasRemoteEquipment": true
-      }
+    {
+      "roomRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058347",
+      "name": "somehjtinghekjrekjrhe",
+      "maxPlaces": 32232121,
+      "hasRemoteEquipment": false
+    },
+    {
+      "roomRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058349",
+      "name": "Schrödinger",
+      "maxPlaces": 420,
+      "hasRemoteEquipment": true
+    }
   ]
 }
 
-$ curl -s -X GET "http://localhost:8090/rooms/r%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2(unused)%2F4128798754188058349" -H  "accept: application/json" | jq
+
+$ curl -s -X GET "http://localhost:8090/rooms/mps-node%253Ar%253Ace161c54-ea76-40a6-a31d-9d7cd01febe2%2528University.Schedule.sandbox%2529%252F4128798754188058349" -H  "accept: application/json" | jq
 {
-    "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349",
-    "name": "Schrödinger",
-    "maxPlaces": 420,
-    "hasRemoteEquipment": true
+   "roomRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058349",
+   "name": "Schrödinger",
+   "maxPlaces": 420,
+   "hasRemoteEquipment": true
 }
 
-$ curl -s -X GET "http://localhost:8090/rooms/r%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2(unused)%2F4128798754188058347" -H  "accept: application/json" | jq
+$ curl -s -X GET "http://localhost:8090/rooms/mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058347" -H  "accept: application/json" | jq
 {
-    "roomRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347",
-    "name": "Einstein",
-    "maxPlaces": 42,
-    "hasRemoteEquipment": true
+  "roomRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058347",
+  "name": "somehjtinghekjrekjrhe",
+  "maxPlaces": 32232121,
+  "hasRemoteEquipment": false
 }
 
 
 $ curl -s -X GET "http://localhost:8090/rooms/trash" -H  "accept: application/json" | jq
-{
-    "Can not load Room: No deserializer found for: trash"
-}
+"Can not load Room: null
 
 $ curl -s -X GET "http://localhost:8090/lectures" -H  "accept: application/json" | jq
+curl -s -X GET "http://localhost:8090/lectures" -H  "accept: application/json" | jq
 {
-    "lectures": [
-        {
-            "lectureRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058353",
-            "name": "Physics 101",
-            "description": "You learn about stuff",
-            "maxParticipants": 42,
-            "room": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347"
-        },
-        {
-            "lectureRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188060854",
-            "name": "New Students Welcome",
-            "description": "Hello everyone",
-            "maxParticipants": 69,
-            "room": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349"
-        }
-    ]
+  "lectures": [
+    {
+      "lectureRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058353",
+      "name": "Physics 101",
+      "description": "You learn about stuff",
+      "maxParticipants": 42,
+      "room": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058347"
+    },
+    {
+      "lectureRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F1305729863392535677",
+      "name": "Physics 102",
+      "description": "You learn about stuff",
+      "maxParticipants": 42,
+      "room": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058349"
+    },
+    {
+      "lectureRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188060854",
+      "name": "New Students Welcome",
+      "description": "Hello everyone",
+      "maxParticipants": 69,
+      "room": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058349"
+    }
+  ]
 }
 
-$ curl -s -X GET "http://localhost:8090/lectures/r%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2(unused)%2F4128798754188058353" -H  "accept: application/json" | jq
+$ curl -s -X GET "http://localhost:8090/lectures/mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058353" -H  "accept: application/json" | jq
 {
-    "lectureRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058353",
-    "name": "Physics 101",
-    "description": "You learn about stuff",
-    "maxParticipants": 42,
-    "room": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058347"
-}
-
-$ curl -s -X GET "http://localhost:8090/lectures/r%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2(unused)%2F4128798754188060854" -H  "accept: application/json" | jq
-{
-    "lectureRef": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188060854",
-    "name": "New Students Welcome",
-    "description": "Hello everyone",
-    "maxParticipants": 69,
-    "room": "r:ce161c54-ea76-40a6-a31d-9d7cd01febe2(unused)/4128798754188058349"
+  "lectureRef": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058353",
+  "name": "Physics 101",
+  "description": "You learn about stuff",
+  "maxParticipants": 42,
+  "room": "mps-node%3Ar%3Ace161c54-ea76-40a6-a31d-9d7cd01febe2%28University.Schedule.sandbox%29%2F4128798754188058347"
 }
 
 $ curl -s -X GET "http://localhost:8090/lectures/trash" -H  "accept: application/json" | jq
-{
-    "Can not load Room: No deserializer found for: trash"
-}</code></pre>
+"Can not load Lecture: null"</code></pre>
 </div>
 </div>
 </div>
 </details>
 <div class="paragraph">
-<p>Alternatively you can now start the <a href="dashboard.html" class="xref page">Dashboard</a> to consume this API endpoint.</p>
+<p>Alternatively you can now start the xref:dashboard.adoc] to consume this API endpoint.</p>
 </div>
 </div>
 </div>
