@@ -2,19 +2,18 @@
 
 This glossary is a lose collection of keywords used throughout the modelix documentation.
 
-[#model]
-Model::
-TODO
-
 [#MPS]
 MPS::
-TODO
+[quote,https://en.wikipedia.org/wiki/JetBrains_MPS]
+"JetBrains MPS (Meta Programming System) is a language workbench developed by JetBrains. MPS is a tool to design domain-specific languages (DSL). It uses projectional editing which allows users to overcome the limits of language parsers, and build DSL editors, such as ones with tables and diagrams"
+See https://www.jetbrains.com/mps/ for more details.
 
-[#node]
-Node::
-TODO
+// [#model]
+// Model::
+// TODO
+//
+// [#node]
+// Node::
+// TODO
 
-[#model-server]
-model-server::
-TODO
 
