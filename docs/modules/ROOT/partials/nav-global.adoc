@@ -21,7 +21,7 @@ include::modelix:core:partial$nav-tutorial.adoc[]
 
 // How-To Guides section
 * xref:howto/index.adoc[]
-** General
+// TODO ** xref:modelix:ROOT:howto/faq.adoc[FAQs]
 
 +
 --
@@ -36,8 +36,9 @@ include::modelix:core:partial$nav-howto.adoc[]
 
 // Reference section
 * xref:reference/index.adoc[]
-** General
-*** xref:modelix:ROOT:reference/components.adoc[]
+** xref:modelix:ROOT:reference/components.adoc[Component Overview]
+// TODO add when not a draft anymore
+//** xref:modelix:ROOT:reference/components-table.adoc[]
 
 +
 --

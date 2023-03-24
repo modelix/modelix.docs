@@ -8,6 +8,7 @@ All components and software of the platform as well as issue tracking and projec
 Currently, we use GitHub actions to build, test, and publish the components.
 We deploy all relevant artifacts to the https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix[itemis Nexus server] as well as https://github.com/orgs/modelix/packages?repo_name=modelix[GitHub Packages]
 
+Issues are managed in our issue tracker over at https://issues.modelix.org[^].
 
 == Release Cycle
 
@@ -27,5 +28,7 @@ To gain an overview over existing components, please refer to the list of compon
 == Roadmap
 
 We are currently in the process to further define our roadmap and core goals for each release.
-Once we have more information on this, we will publish it here.
+This roadmap will be closely aligned with the structure currently in the https://issues.modelix.org[issue tracker^].
+
+Once we have more dedicated information on this, we will publish it on our website and in this documentation.
 

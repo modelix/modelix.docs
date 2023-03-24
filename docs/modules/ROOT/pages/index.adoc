@@ -26,7 +26,7 @@ To gain an overview over components, head over to the xref:modelix:ROOT:referenc
 
 
 
-Follow the 'Next' button in the bottom right to find out more details on our current roadmap, or dive directly into xref:samples:index.adoc[Tutorials of our sample project] to get started!
+Follow the 'Next' button in the bottom right to find out more details on our current roadmap, or dive directly into xref:samples:explanation/index.adoc[Tutorials of our sample project] to get started!
 Otherwise, the xref:howto/index.adoc[How-To] section serves as an implicit FAQ which might give answers to some of your immediate questions.
 
 
@@ -69,5 +69,6 @@ Head over to the xref:modelix:ROOT:explanation/glossary.adoc[Glossary] if you ar
 
 == Contact
 
-To contact us join our https://jetbrains-mps.slack.com/archives/C01ADCD6VSM[#modelix Slack channel] which is part of the JetBrains MPS workspace or write us mailto:modelix@itemis.com[an Email with your questions and feedback 📫,role=email].
+To contact us join our https://jetbrains-mps.slack.com/archives/C01ADCD6VSM[#modelix Slack channel^] which is part of the JetBrains MPS workspace or write us mailto:modelix@itemis.com[an Email with your questions and feedback 📫,role=email].
+To report issues please use https://issues.modelix.org[our issue tracker^].
 

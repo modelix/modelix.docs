@@ -1,0 +1,46 @@
+= Components Table of modelix
+:navtitle: Components Table
+
+NOTE: This is a draft
+
+
+[frame=none,grid=rows,cols="4,4,1,1,1"]
+|===
+|Package | Name | Tech | Repository | Artifact |
+`org.modelix.metamodel.export`|`metamodel-export-mps`|`MPS`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.model.server.light`|`light-model-server`|`MPS`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix`|`mps-model-plugin`|`MPS`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.gitui`|`gitui`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.graphql.server`|`graphql-server`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.headlessmps`|`headless-mps`|`MPS`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.instancesmanager`|`instances-manager`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix`|`mps-rest-model-access`|`MPS`|   https://github.com/modelix/mps-json-bulk-model-access[🔗^]||
+`org.modelix.mps`|`api-gen`|`MPS`|   https://github.com/modelix/api-gen[🔗^]||
+`org.modelix.metamodel.generator`|`model-api`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.metamodel.generator`|`metamodel-generator`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.model.server.api`|`model-server-api`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.client.light`|`light-model-client`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.model.server`|`model-server`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.model.client`|`model-client`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.authorization`|`authorization`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.metamodel`|`metamodel-runtime`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.workspace.client`|`workspace-client`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.workspace.manager`|`workspace-manager`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.workspaces`|`workspaces`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.incremental`|`incremental`|`Kotlin`|   https://github.com/modelix/incremental[🔗^]||
+`org.modelix.mpsbuild`|`build-tools`|`Kotlin`|   https://github.com/modelix/mpsbuild[🔗^]||
+`org.modelix.metamodel.gradle`|`metamodel-gradle`|`Gradle`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.gradle.model`|`gradle-plugin`|`Gradle`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.mpsbuild`|`gradle-plugin`|`Gradle`|   https://github.com/modelix/mpsbuild[🔗^]||
+`org.modelix.mpsbuild`|`gradle-mpsbuild-plugin`|`Gradle`|   https://github.com/modelix/mpsbuild[🔗^]||
+`org.modelix.mpsbuild.org.modelix.mpsbuild.gradle`|`plugin`|`Gradle`|   https://github.com/modelix/mpsbuild[🔗^]||
+`-----`|`ts-model-api`|`Other`|   https://github.com/modelix/modelix.core[🔗^]||
+`org.modelix.keycloak`|`keycloak-extensions`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
+`-----`|`ui-client`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.uiproxy`|`ui-proxy`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.ui.server`|`ui-server`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
+`org.modelix.sample`|`modelix-samples`|`MultiProject`|   https://github.com/modelix/modelix-samples[🔗^]||
+
+
+|===
+
