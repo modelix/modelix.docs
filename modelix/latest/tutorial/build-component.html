@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Build component using Gradle :: Modelix Documentation</title>
+    <title>Build components using Gradle :: Modelix Documentation</title>
     <link rel="canonical" href="https://docs.modelix.org/modelix/latest/tutorial/build-component.html">
     <link rel="prev" href="index.html">
-    <link rel="next" href="../howto/index.html">
+    <link rel="next" href="../samples/tutorial/startup-usecases.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -34,11 +34,11 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
           <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
           <div class="navbar-dropdown">
             <div class="navbar-item"><strong>Core</strong></div>
             <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
-            <a class="navbar-item" href="https://github.com/modelix/modelix.core/issues">Issue Tracker</a>
             <hr class="navbar-divider">
             <div class="navbar-item"><strong>Samples</strong></div>
             <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
@@ -74,7 +74,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="modelix" data-version="v23.0">
+<div class="nav-container" data-component="modelix" data-version="modelix-23.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -104,7 +104,25 @@
     <a class="nav-link" href="index.html">Tutorials</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="build-component.html">Build component using Gradle</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="build-component.html">Build components using Gradle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
+  </li>
+</ul>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -116,9 +134,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../howto/index.html">How-To Guides</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <span class="nav-text">General</span>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../core/howto/usage-model-server.html">Start a <code>model-server</code></a>
   </li>
@@ -140,10 +155,40 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">General</span>
+    <a class="nav-link" href="../reference/components.html">Component Overview</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../reference/components.html">Components</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/architecture.html">System Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/model-server.html">Local model-server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../samples/reference/openapi.html">Intermediate OpenAPI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../samples/reference/rest-api-json-bulk.html">JSON bulk API</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../samples/reference/rest-api-model-ql.html">modelQL API</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../samples/reference/rest-api-model-server.html">model-server API</a>
+  </li>
+</ul>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -180,22 +225,31 @@
     <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../samples/explanation/structure.html">Repository Structure</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/index.html">Samples Introduction</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use Case 1: Dashboard</a>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/structure.html">Sample Structure</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../samples/explanation/usecase-1-a.html">samples:explanation/usecase-1-a.adoc</a>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use-Cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../samples/explanation/usecases.html">Use-cases Overview</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../samples/explanation/usecase-1-b.html">samples:explanation/usecase-1-b.adoc</a>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use-Case 1: Dashboard</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use Case 2: Write from Web</a>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../samples/explanation/usecase-3.html">samples:explanation/usecase-3.adoc</a>
+</ul>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -209,14 +263,17 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Modelix Documentation</span>
-    <span class="version">v23.0</span>
+    <span class="version">modelix-23.0</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../index.html">Modelix Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">v23.0</a>
+          <a href="../index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../main/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -224,10 +281,10 @@
       <a class="title" href="../../../core/latest/core/index.html">modelix.core</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../core/latest/core/index.html">feature-documentation-setup</a>
+          <a href="../../../core/latest/core/index.html">modelix-23.0</a>
         </li>
         <li class="version">
-          <a href="../../../core/v23.0/core/index.html">v23.0</a>
+          <a href="../../../core/main/core/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -235,10 +292,10 @@
       <a class="title" href="../../../samples/latest/samples/index.html">modelix.samples</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../samples/latest/samples/index.html">feature-improved-documentation</a>
+          <a href="../../../samples/latest/samples/index.html">modelix-23.0</a>
         </li>
         <li class="version">
-          <a href="../../../samples/v23.0/samples/index.html">v23.0</a>
+          <a href="../../../samples/main/samples/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -255,28 +312,42 @@
   <ul>
     <li><a href="../index.html">Modelix Documentation</a></li>
     <li><a href="index.html">Tutorials</a></li>
-    <li><a href="build-component.html">Build component using Gradle</a></li>
+    <li><a href="build-component.html">Build components using Gradle</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/blob/v23.0/docs/modules/ROOT/pages/tutorial/build-component.adoc">Edit this Page</a></div>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.0</button>
+  <div class="version-menu">
+    <a class="version is-current" href="build-component.html">modelix-23.0</a>
+    <a class="version" href="../../main/tutorial/build-component.html">main</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/blob/modelix-23.0/docs/modules/ROOT/pages/tutorial/build-component.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Build component using Gradle</h1>
+<h1 class="page">Build components using Gradle</h1>
 <div class="sect1">
 <h2 id="_build_from_console"><a class="anchor" href="#_build_from_console"></a>Build from console</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To build this component via gradle, simply call the following in the top level folder:</p>
+<p>The modelix project uses Gradle to build the individual components.
+Simply call the following in the top level folder of a repository:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew build # mac/linux
-
-gradlew.bat build # windows</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew build   # mac/linux</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or if you are on windows use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gradlew.bat build   # windows</code></pre>
 </div>
 </div>
 </div>
@@ -286,7 +357,7 @@ gradlew.bat build # windows</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>At the moment most modelix artifacts are stored on the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis nexus</a> with no access restriction.
-As a consequence, when you build modelix or use modelix components via gradle there is no repository access setup required.</p>
+As a consequence, when you build modelix or use modelix components via Gradle there is no repository access setup required.</p>
 </div>
 </div>
 </div>
@@ -327,7 +398,7 @@ gpr.key=&lt;your personal access token&gt;</code></pre>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">Tutorials</a></span>
-  <span class="next"><a href="../howto/index.html">How-To Guides</a></span>
+  <span class="next"><a href="../samples/tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a></span>
 </nav>
 </article>
   </div>

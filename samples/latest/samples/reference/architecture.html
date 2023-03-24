@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>System architecture and components in this repository :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/samples/latest/samples/reference/architecture.html">
+    <link rel="prev" href="../tutorial/start-usecase-1-b.html">
+    <link rel="next" href="meta-model-model-api.html">
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/link.css">
+
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Documentation</a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <input id="search-input" type="text" placeholder="Search the docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../../../../modelix/latest/index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="body">
+<div class="nav-container" data-component="samples" data-version="modelix-23.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">modelix.samples</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Welcome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text">How-To Guides</span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="architecture.html">System Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="model-server.html">Local model-server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="openapi.html">Intermediate OpenAPI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="rest-api-json-bulk.html">JSON bulk API</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="rest-api-model-ql.html">modelQL API</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="rest-api-model-server.html">model-server API</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Explanation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../index.html">Samples Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../explanation/structure.html">Sample Structure</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use-Cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../explanation/usecases.html">Use-cases Overview</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../explanation/usecase-1.html">Use-Case 1: Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">modelix.samples</span>
+    <span class="version">modelix-23.0</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../modelix/latest/index.html">Modelix Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../modelix/latest/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../../modelix/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../core/latest/core/index.html">modelix.core</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../core/latest/core/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../../core/main/core/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">modelix.samples</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../main/samples/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../../modelix/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">modelix.samples</a></li>
+    <li>Samples</li>
+    <li>Reference</li>
+    <li>Samples</li>
+    <li><a href="architecture.html">System Architecture</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.0</button>
+  <div class="version-menu">
+    <a class="version is-current" href="architecture.html">modelix-23.0</a>
+    <a class="version" href="../../../main/samples/reference/architecture.html">main</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/modelix-23.0/docs/local/modules/samples/pages/reference/architecture.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">System architecture and components in this repository</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This samples implementations allow to run different use-cases in different setups - thus showing the flexibility of the modelix platform.
+Depending on the chosen use-case, only a subset of the components in this repository are used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_full_system_architecture"><a class="anchor" href="#_full_system_architecture"></a>Full system architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The full architecture includes components used for multiple use-cases.
+One does not need all components to realize individual use-cases.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/system-diagram-full.svg" alt="system diagram full">
+</div>
+</div>
+<div class="paragraph">
+<p>In the following a short overview is given on each component.</p>
+</div>
+<div class="sect2">
+<h3 id="_the_mps_language"><a class="anchor" href="#_the_mps_language"></a>The MPS Language</h3>
+<div class="paragraph">
+<p>The meta-model (language) of the courses domain and a model (soulution) with sample data in <a href="https://www.jetbrains.com/mps/">JetBrains MPS</a> on which everything in this sample is based.</p>
+</div>
+<div class="paragraph">
+<p>▶️  For more details, see the <a href="meta-model-model-api.html" class="xref page">Language section in the MPS component documentation</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generated_model_api_domain_api"><a class="anchor" href="#_generated_model_api_domain_api"></a>Generated model API (domain API</h3>
+<div class="paragraph">
+<p>An API based on the meta-model generated with the <a href="meta-model-model-api.html" class="xref page">metamodel-generator</a> component from modelix.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, see the <a href="meta-model-model-api.html" class="xref page">'Generated API' section in the MPS component documentation</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_domain_specific_openapi"><a class="anchor" href="#_domain_specific_openapi"></a>Domain-specific OpenAPI</h3>
+<div class="paragraph">
+<p>In this example project, an extra domain-specific API layer is added which is defined in the <a href="openapi.html" class="xref page">OpenAPI specification</a><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+This layer is meant educational as no noteworthy abstractions from the language itself happen in this definition.
+It intends to show how one introduces a clearly defined domain-specific abstraction decoupling the language engineering (meta-modeling) and the web development.</p>
+</div>
+<div class="paragraph">
+<p>We provide two backends (i.e. implementations of the API layer): The <a href="rest-api-json-bulk.html" class="xref page">API via json-bulk</a> and <a href="rest-api-model-server.html" class="xref page">API via model-server</a> components.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, see the <a href="openapi.html" class="xref page">OpenAPI component documentation</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openapi_implementation"><a class="anchor" href="#_openapi_implementation"></a>OpenAPI implementation</h3>
+<div class="paragraph">
+<p>This project provides two implementations of the <a href="openapi.html" class="xref page">openapi</a> domain abstraction.</p>
+</div>
+<div class="dlist ordered">
+<dl>
+<dt>MPS as a source</dt>
+<dd>
+<div class="paragraph">
+<p>⚠️ Deprecated!</p>
+</div>
+<div class="paragraph">
+<p>This backend provides access to the model by obtaining the model knowledge directly from a running MPS instance.
+It is implemented using ktor and connects to the <a href="https://github.com/modelix/mps-rest-model-access"><code>json-bulk-model-access</code></a> plugin running inside of MPS.
+This component can only provide <strong>read only access</strong> as the <code>json-bulk-model-access</code> is read only.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, see the <a href="rest-api-json-bulk.html" class="xref page">API via json-bulk</a> for details.</p>
+</div>
+</dd>
+<dt>model-server as a source</dt>
+<dd>
+<div class="paragraph">
+<p>This backend provides access to the model by connecting to a running <a href="model-server.html" class="xref page"><code>model-server</code></a>.
+It is implemented using Quarkus and can provide <strong>read access</strong> to the underlying model.
+Additionally, a websocket for push notifications about ongoing model changes is provided.
+This is realized using websockets exposed by the <code>model-server</code>.</p>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, also see the <a href="rest-api-model-server.html" class="xref page">API via model-server</a> component for details.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_single_page_application_spa_dashboard"><a class="anchor" href="#_single_page_application_spa_dashboard"></a>Single-page application (SPA) Dashboard</h3>
+<div class="paragraph">
+<p>The dashboard provides access to model knowledge through a browser.
+As it is conforming to the OpenAPI specification, the dashboard is able to obtain the model content from both backend implementations.
+However, the dashboard is consequently limited by the chosen backend.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This components requires running any of the available OpenAPI implementations to obtain model knowledge from.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>▶️ For more details, also see the <a href="dashboard.html" class="xref page">Dashboard</a> for details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_real_time_collaboration_web_application"><a class="anchor" href="#_real_time_collaboration_web_application"></a>Real-time' collaboration web application</h3>
+<div class="paragraph">
+<p>⚠️ TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deploying_to_docker_kubernetes"><a class="anchor" href="#_deploying_to_docker_kubernetes"></a>Deploying to Docker / Kubernetes</h3>
+<div class="paragraph">
+<p>⚠️ TBD</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. See <a href="https://www.openapis.org/" class="bare">https://www.openapis.org/</a> for details on how OpenAPI works.
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a></span>
+  <span class="next"><a href="meta-model-model-api.html">Meta-model &amp; Generated Model API</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+<p>Copyright © 2021-present by the <a href="https://modelix.org">modelix open source project</a> and the individual contributors. All Rights Reserved.</p>
+  <p>Except where otherwise noted, docs.modelix.org, modelix, and the modelix framework, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.</p>
+  <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
+  <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
+</footer>
+
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>

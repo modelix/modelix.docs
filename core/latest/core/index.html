@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Welcome to modelix.core! :: Modelix Documentation</title>
     <link rel="canonical" href="https://docs.modelix.org/core/latest/core/index.html">
-    <link rel="next" href="tutorial/index.html">
+    <link rel="next" href="howto/usage-model-server.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -33,11 +33,11 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
           <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
           <div class="navbar-dropdown">
             <div class="navbar-item"><strong>Core</strong></div>
             <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
-            <a class="navbar-item" href="https://github.com/modelix/modelix.core/issues">Issue Tracker</a>
             <hr class="navbar-divider">
             <div class="navbar-item"><strong>Samples</strong></div>
             <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
@@ -73,7 +73,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="core" data-version="feature-documentation-setup">
+<div class="nav-container" data-component="core" data-version="modelix-23.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -91,19 +91,16 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Tutorials</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tutorial/index.html">modelix.core Tutorials</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">How-To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="howto/index.html">modelix.core How-To</a>
+    <a class="nav-link" href="howto/usage-model-server.html">Start a <code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howto/usage-metamodel-generator.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
   </li>
 </ul>
   </li>
@@ -112,16 +109,16 @@
     <span class="nav-text">Reference</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="reference/index.html">modelix.core Reference</a>
+    <a class="nav-link" href="reference/component-model-server.html"><code>model-server</code></a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Explanation</span>
-<ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="explanation/index.html">modelix.core Explanation</a>
+    <a class="nav-link" href="reference/component-metamodel-generator.html"><code>metamodel.generator</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reference/component-metamodel-generator-gradle.html"><code>metamodel.gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reference/component-light-model-client.html"><code>light-model-client</code></a>
   </li>
 </ul>
   </li>
@@ -135,14 +132,17 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">modelix.core</span>
-    <span class="version">feature-documentation-setup</span>
+    <span class="version">modelix-23.0</span>
   </div>
   <ul class="components">
     <li class="component">
       <a class="title" href="../../../modelix/latest/index.html">Modelix Documentation</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../modelix/latest/index.html">v23.0</a>
+          <a href="../../../modelix/latest/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../modelix/main/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -150,10 +150,10 @@
       <a class="title" href="index.html">modelix.core</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">feature-documentation-setup</a>
+          <a href="index.html">modelix-23.0</a>
         </li>
         <li class="version">
-          <a href="../../v23.0/core/index.html">v23.0</a>
+          <a href="../../main/core/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -161,10 +161,10 @@
       <a class="title" href="../../../samples/latest/samples/index.html">modelix.samples</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../samples/latest/samples/index.html">feature-improved-documentation</a>
+          <a href="../../../samples/latest/samples/index.html">modelix-23.0</a>
         </li>
         <li class="version">
-          <a href="../../../samples/v23.0/samples/index.html">v23.0</a>
+          <a href="../../../samples/main/samples/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -185,13 +185,13 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">feature-documentation-setup</button>
+  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.0</button>
   <div class="version-menu">
-    <a class="version is-current" href="index.html">feature-documentation-setup</a>
-    <a class="version" href="../../v23.0/core/index.html">v23.0</a>
+    <a class="version is-current" href="index.html">modelix-23.0</a>
+    <a class="version" href="../../main/core/index.html">main</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/feature/documentation-setup/docs/local/modules/core/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/blob/modelix-23.0/docs/local/modules/core/pages/index.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -203,10 +203,27 @@
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>TODO</p>
+<p>The <code>modelix.core</code> repository contains the core components of the modelix platform.
+These components include among others the</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="reference/component-model-server.html" class="xref page"><code>model-server</code></a>,</p>
+</li>
+<li>
+<p><a href="reference/component-metamodel-generator.html" class="xref page"><code>metamodel-generator</code></a>,</p>
+</li>
+<li>
+<p><a href="reference/component-metamodel-generator-gradle.html" class="xref page"><code>metamodel-generator-gradle</code></a>, and</p>
+</li>
+<li>
+<p><a href="reference/component-light-model-client.html" class="xref page"><code>light-model-client</code></a>.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>TODO modelix.core self description</p>
+<p>All components in this repository are have no dependencies to JetBrains MPS.</p>
 </div>
 </div>
 </div>
@@ -214,17 +231,24 @@
 <h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting Started</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_build_component_using_gradle"><a class="anchor" href="#_build_component_using_gradle"></a>Build component using Gradle</h3>
+<h3 id="_build_components_using_gradle"><a class="anchor" href="#_build_components_using_gradle"></a>Build components using Gradle</h3>
 <div class="sect3">
 <h4 id="_build_from_console"><a class="anchor" href="#_build_from_console"></a>Build from console</h4>
 <div class="paragraph">
-<p>To build this component via gradle, simply call the following in the top level folder:</p>
+<p>The modelix project uses Gradle to build the individual components.
+Simply call the following in the top level folder of a repository:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew build # mac/linux
-
-gradlew.bat build # windows</code></pre>
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew build   # mac/linux</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or if you are on windows use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gradlew.bat build   # windows</code></pre>
 </div>
 </div>
 </div>
@@ -232,7 +256,7 @@ gradlew.bat build # windows</code></pre>
 <h4 id="_modelix_artifact_publication"><a class="anchor" href="#_modelix_artifact_publication"></a>modelix Artifact Publication</h4>
 <div class="paragraph">
 <p>At the moment most modelix artifacts are stored on the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis nexus</a> with no access restriction.
-As a consequence, when you build modelix or use modelix components via gradle there is no repository access setup required.</p>
+As a consequence, when you build modelix or use modelix components via Gradle there is no repository access setup required.</p>
 </div>
 </div>
 <div class="sect3">
@@ -272,7 +296,7 @@ gpr.key=&lt;your personal access token&gt;</code></pre>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="tutorial/index.html">modelix.core Tutorials</a></span>
+  <span class="next"><a href="howto/usage-model-server.html">Start a <code>model-server</code></a></span>
 </nav>
 </article>
   </div>
