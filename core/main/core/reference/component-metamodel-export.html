@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Model API Generator :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/core/latest/core/reference/component-metamodel-generator.html">
-    <link rel="prev" href="component-model-server.html">
-    <link rel="next" href="component-metamodel-generator-gradle.html">
+    <title>MPS solution for metamodel-export :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/core/main/core/reference/component-metamodel-export.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
@@ -98,7 +96,7 @@
     <a class="nav-link" href="../howto/usage-model-server.html">Start a <code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../howto/usage-metamodel-generator.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+    <a class="nav-link" href="#core:howto/usage-metamodel-generator.adoc">core:howto/usage-metamodel-generator.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
@@ -112,11 +110,11 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="component-model-server.html"><code>model-server</code></a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="component-metamodel-generator.html"><code>metamodel.generator</code></a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#core:reference/component-metamodel-generator.adoc">core:reference/component-metamodel-generator.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="component-metamodel-generator-gradle.html"><code>metamodel.gradle</code></a>
+    <a class="nav-link" href="#core:reference/component-metamodel-generator-gradle.adoc">core:reference/component-metamodel-generator-gradle.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="component-light-model-client.html"><code>light-model-client</code></a>
@@ -181,79 +179,25 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">modelix.core</a></li>
-    <li>Core</li>
-    <li>Reference</li>
-    <li><a href="component-metamodel-generator.html"><code>metamodel.generator</code></a></li>
+    <li><a href="component-metamodel-export.html">MPS solution for metamodel-export</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">main</button>
   <div class="version-menu">
-    <a class="version" href="../../../latest/core/reference/component-metamodel-generator.html">modelix-23.0</a>
-    <a class="version is-current" href="component-metamodel-generator.html">main</a>
+    <a class="version is-missing" href="../../../latest/core/index.html">modelix-23.0</a>
+    <a class="version is-current" href="component-metamodel-export.html">main</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/main/docs/local/modules/core/pages/reference/component-metamodel-generator.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/main/docs/local/modules/core/pages/reference/component-metamodel-export.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Model API Generator</h1>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="🔗 Quick Links"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p><a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix%2Fmetamodel-generator%2Fmaven-metadata.xml" target="_blank" rel="noopener">Nexus</a> | <a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">Repository</a> | <a href="https://github.com/modelix/modelix.core/blob/main/metamodel-generator/build.gradle.kts" target="_blank" rel="noopener">Buildfile</a></p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>metamodel.generator</code> is a kotlin components which generates a domain-specific model API.
-Currently, the generator supports either Kotlin and TypeScipt as target languages.
-As a source for the generated API, the <code>metamodel.generator</code> consumes a given meta-model in YAML format.</p>
-</div>
-<div class="paragraph">
-<p>An example input of the consumed JSON format is as follows</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: org.modelix.entities
-concepts:
-- name: Entity
-  properties:
-  - name: name
-  children:
-  - name: properties
-    type: Property
-    multiple: true
-    optional: true
-- name: Property
-  children:
-  - name: type
-    type: Type
-    optional: false
-- name: Type
-- name: EntityType
-  extends:
-  - Type
-  references:
-  - name: entity
-    type: Entity
-    optional: false</code></pre>
-</div>
-</div>
-<nav class="pagination">
-  <span class="prev"><a href="component-model-server.html"><code>model-server</code></a></span>
-  <span class="next"><a href="component-metamodel-generator-gradle.html"><code>metamodel.gradle</code></a></span>
-</nav>
+<h1 class="page">MPS solution for metamodel-export</h1>
+
 </article>
   </div>
 </main>

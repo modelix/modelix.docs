@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How-To apply the Meta-Model Generator using the Gradle Plugin :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/core/latest/core/howto/usage-metamodel-generator.html">
-    <link rel="prev" href="usage-model-server.html">
-    <link rel="next" href="usage-light-model-client.html">
+    <title>How-To apply the Model API Generator using the Gradle Plugin :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/core/main/core/howto/usage-model-api-gen-gradle.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
@@ -97,8 +95,8 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="usage-model-server.html">Start a <code>model-server</code></a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="usage-metamodel-generator.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#core:howto/usage-metamodel-generator.adoc">core:howto/usage-metamodel-generator.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="usage-light-model-client.html">Use the <code>light-model-client</code></a>
@@ -113,10 +111,10 @@
     <a class="nav-link" href="../reference/component-model-server.html"><code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../reference/component-metamodel-generator.html"><code>metamodel.generator</code></a>
+    <a class="nav-link" href="#core:reference/component-metamodel-generator.adoc">core:reference/component-metamodel-generator.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../reference/component-metamodel-generator-gradle.html"><code>metamodel.gradle</code></a>
+    <a class="nav-link" href="#core:reference/component-metamodel-generator-gradle.adoc">core:reference/component-metamodel-generator-gradle.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../reference/component-light-model-client.html"><code>light-model-client</code></a>
@@ -181,26 +179,24 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">modelix.core</a></li>
-    <li>Core</li>
-    <li>How-To Guides</li>
-    <li><a href="usage-metamodel-generator.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a></li>
+    <li><a href="usage-model-api-gen-gradle.html">How-To apply the Model API Generator using the Gradle Plugin</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">main</button>
   <div class="version-menu">
-    <a class="version" href="../../../latest/core/howto/usage-metamodel-generator.html">modelix-23.0</a>
-    <a class="version is-current" href="usage-metamodel-generator.html">main</a>
+    <a class="version is-missing" href="../../../latest/core/index.html">modelix-23.0</a>
+    <a class="version is-current" href="usage-model-api-gen-gradle.html">main</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/main/docs/local/modules/core/pages/howto/usage-metamodel-generator.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/main/docs/local/modules/core/pages/howto/usage-model-api-gen-gradle.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How-To apply the Meta-Model Generator using the Gradle Plugin</h1>
+<h1 class="page">How-To apply the Model API Generator using the Gradle Plugin</h1>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -216,7 +212,7 @@ If you are interested in a more practical usage of what is presented here, check
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>To apply the <a href="../reference/component-metamodel-generator-gradle.html" class="xref page">Gradle Helper for the Model API Generator</a> to an existing JetBrains MPS language, it is necessary to build the project via Gradle.</p>
+<p>To apply <a href="../reference/component-model-api-gen-gradle.html" class="xref page">model-api-gen</a> to an existing JetBrains MPS language, it is necessary to build the project via Gradle.</p>
 <div class="paragraph">
 <p>This How-To assumes a folder structure as follows</p>
 </div>
@@ -276,7 +272,7 @@ The versions listed here are not the latest versions, refer to the repositories 
     val modelixCoreVersion: String by settings
     plugins {
         // the gradle plugin that provides easy access to the meta-model generator
-        id("org.modelix.metamodel.gradle") version modelixCoreVersion
+        id("org.modelix.model-api-gen.gradle") version modelixCoreVersion
 
         [...]
     }
@@ -368,7 +364,7 @@ metamodel {
 </div>
 </li>
 <li>
-<p>The <code>org.modelix.metamodel.gradle</code> Gradle helper provides an additional target which will integrate into your build, so a simple re-build of your Gradle project should be sufficient. Alternatively, you can directly trigger the API generation via</p>
+<p>The <code>org.modelix.model-api-gen.gradle</code> Gradle helper provides an additional target which will integrate into your build, so a simple re-build of your Gradle project should be sufficient. Alternatively, you can directly trigger the API generation via</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew mps:metamodel:build</code></pre>
@@ -380,10 +376,6 @@ metamodel {
 </li>
 </ol>
 </div>
-<nav class="pagination">
-  <span class="prev"><a href="usage-model-server.html">Start a <code>model-server</code></a></span>
-  <span class="next"><a href="usage-light-model-client.html">Use the <code>light-model-client</code></a></span>
-</nav>
 </article>
   </div>
 </main>
