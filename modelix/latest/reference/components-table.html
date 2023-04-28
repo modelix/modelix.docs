@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Table of modelix Components :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/modelix/latest/reference/components-table.html">
+    <link rel="prev" href="repositories-components.html">
+    <link rel="next" href="../platform/reference/index.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/link.css">
+
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Documentation</a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <input id="search-input" type="text" placeholder="Search the docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="body">
+<div class="nav-container" data-component="modelix" data-version="modelix-23.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Modelix Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">General</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../main/roadmap.html">Development, Releases, and Roadmap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorial/build-component.html">Build components using Gradle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/tutorial/index.html">modelix.platform Tutorials</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../howto/index.html">How-To Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/howto/index.html">modelix.platform How-To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-model-server.html">Start a <code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/architecture.html">System Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/model-server.html">Local model-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../samples/reference/openapi.html">Intermediate OpenAPI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/rest-api-model-ql.html">modelQL API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/rest-api-model-server.html">model-server API</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repositories-components.html">List of Repositories</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="components-table.html">Table of Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/reference/index.html">modelix.platform Reference</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-model-server.html"><code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-model-api-gen.html"><code>model-api-gen</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-light-model-client.html"><code>light-model-client</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../explanation/index.html">Explanation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/index.html">Samples Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/explanation/structure.html">Sample Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use-Cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/usecases.html">Use-cases Overview</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use-Case 1: Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/explanation/index.html">modelix.platform Explanation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/goals.html">Modelix Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modelix Documentation</span>
+    <span class="version">modelix-23.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Modelix Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../core/latest/core/index.html">modelix.core</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/latest/core/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../core/main/core/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../platform/latest/platform/index.html">modelix.platform</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../platform/latest/platform/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../platform/main/platform/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../samples/latest/samples/index.html">modelix.samples</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../samples/latest/samples/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../samples/main/samples/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Modelix Documentation</a></li>
+    <li><a href="index.html">Reference</a></li>
+    <li><a href="components-table.html">Table of Components</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.0</button>
+  <div class="version-menu">
+    <a class="version is-current" href="components-table.html">modelix-23.0</a>
+    <a class="version" href="../../main/reference/components-table.html">main</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/blob/modelix-23.0/docs/modules/ROOT/pages/reference/components-table.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Table of modelix Components</h1>
+<table class="tableblock frame-none grid-rows stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3335%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Package</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tech</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Docs</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nexus</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GHP</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repo</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1834768" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-api/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metamodel-export</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/core/reference/component-metamodel-export.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/metamodel-export/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1787430" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-api-gen</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/core/reference/component-model-api-gen.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1834770" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-api-gen/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-api-gen-runtime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen-runtime/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1834778" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-api-gen-runtime/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-api-gen-gradle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/core/reference/component-model-api-gen-gradle.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen-gradle/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1834773" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-api-gen-gradle/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>---</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.model-api-gen.gradle.plugin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/core/reference/component-model-api-gen-gradle.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen/org.modelix.model-api-gen.gradle.plugin/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1834772" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-api-gen-gradle/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>incremental</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/incremental/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/incremental/packages/1787359" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/incremental" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-server-lib</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server-lib/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1834873" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-server-lib/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-server-api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server-api/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix/packages/1787297" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-server-api/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-server</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/core/reference/component-model-server.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix/packages/1077342" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-server/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-server-with-dependencies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server-with-dependencies/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix/packages/1834864" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-server/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-client/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix/packages/1077378" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/model-client/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>light-model-client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/core/reference/component-light-model-client.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/light-model-client/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1787427" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://api.modelix.org/2.3.0/light-model-client/index.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-download-gradle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-download-gradle/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>---</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps.model-download</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-download-gradle/org.modelix.model-download-gradle.gradle.plugin/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>model-server-sync-plugin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/model-server-sync-plugin/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>build-tools-lib</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-tools-lib/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.mps-build-tools/packages/1831228" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.mps-build-tools" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>build-tools-gradle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-tools-gradle/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.mps-build-tools/packages/1831230" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.mps-build-tools" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>---</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps.build-tools</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-tools/org.modelix.mps.build-tools.gradle.plugin/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.mps-build-tools/packages/1831227" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.mps-build-tools" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>build-solution</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-solution/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>headless-runner</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/headless-runner/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/authorization/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/packages/1787419" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix.mps</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>web-editors-plugin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/web-editors-plugin/" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ts-model-api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TS</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core/pkgs/npm/ts-model-api" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspace-client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspace-manager</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaces</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances-manager</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gitui</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kotlin</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>keycloak-extensions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ui-client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ui-proxy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ui-server</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>modelix-samples</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MultiProject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.modelix.org/modelix/latest/samples/reference/architecture.html" target="_blank" rel="noopener">🔗</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.samples" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.modelix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>platform</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gradle</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modelix/modelix.platform" target="_blank" rel="noopener">🔗</a></p></td>
+</tr>
+</tbody>
+</table>
+<nav class="pagination">
+  <span class="prev"><a href="repositories-components.html">List of Repositories</a></span>
+  <span class="next"><a href="../platform/reference/index.html">modelix.platform Reference</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+<p>Copyright © 2021-present by the <a href="https://modelix.org">modelix open source project</a> and the individual contributors. All Rights Reserved.</p>
+  <p>Except where otherwise noted, docs.modelix.org, modelix, and the modelix framework, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.</p>
+  <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
+  <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
+</footer>
+
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
