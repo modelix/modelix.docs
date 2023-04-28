@@ -50,8 +50,8 @@ include::modelix:core:partial$nav-howto.adoc[]
 include::samples:partial$nav-reference.adoc[]
 --
 
-** xref:reference/components.adoc[Repository Overview]
-** xref:reference/components-table.adoc[Component Overview]
+** xref:reference/repositories-components.adoc[]
+** xref:reference/components-table.adoc[]
 
 +
 --

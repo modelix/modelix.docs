@@ -22,7 +22,7 @@ We are native to the web and the cloud, inspired by http://voelter.de/data/pub/A
 
 On the path to this final idea, we currently develop multiple interoperable components that implement parts of our vision.
 Consequently, some parts are very stable and already in productive use while others are in a more experimental and explorative state.
-To gain an overview over components, head over to the xref:modelix:ROOT:reference/components.adoc[] reference.
+To gain an overview over components, head over to the xref:modelix:ROOT:reference/repositories-components.adoc[] reference.
 
 
 

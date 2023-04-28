@@ -1,5 +1,5 @@
-= Components Table of modelix
-:navtitle: Components Table
+= Table of modelix Components
+:navtitle: Table of Components
 
 
 [frame=none,grid=rows,cols="3,3,1,1,1,1,1,1"]
