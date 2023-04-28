@@ -26,7 +26,7 @@ To gain an overview over components, head over to the xref:modelix:ROOT:referenc
 
 
 
-Follow the 'Next' button in the bottom right to find out more details on our current roadmap, or dive directly into xref:samples:explanation/index.adoc[Tutorials of our sample project] to get started!
+Follow the 'Next' button in the bottom right to find out more details on our current roadmap, or dive directly into xref:samples:reference/architecture.adoc[our sample project] to get started!
 Otherwise, the xref:howto/index.adoc[How-To] section serves as an implicit FAQ which might give answers to some of your immediate questions.
 
 

@@ -15,6 +15,10 @@ include::modelix:samples:partial$nav-tutorial.adoc[]
 
 +
 --
+include::modelix:platform:partial$nav-tutorial.adoc[]
+--
++
+--
 include::modelix:core:partial$nav-tutorial.adoc[]
 --
 
@@ -30,21 +34,29 @@ include::modelix:samples:partial$nav-howto.adoc[]
 
 +
 --
+include::modelix:platform:partial$nav-howto.adoc[]
+--
++
+--
 include::modelix:core:partial$nav-howto.adoc[]
 --
 
 
 // Reference section
 * xref:reference/index.adoc[]
-** xref:modelix:ROOT:reference/components.adoc[Component Overview]
-// TODO add when not a draft anymore
-//** xref:modelix:ROOT:reference/components-table.adoc[]
 
 +
 --
 include::modelix:samples:partial$nav-reference.adoc[]
 --
+** xref:modelix:ROOT:reference/components.adoc[Component Overview]
+// TODO add when not a draft anymore
+xref:modelix:ROOT:reference/components-table.adoc[]
 
++
+--
+include::modelix:platform:partial$nav-reference.adoc[]
+--
 +
 --
 include::modelix:core:partial$nav-reference.adoc[]
@@ -62,6 +74,10 @@ include::modelix:core:partial$nav-reference.adoc[]
 include::modelix:samples:partial$nav-explanation.adoc[]
 --
 
++
+--
+include::modelix:platform:partial$nav-explanation.adoc[]
+--
 +
 --
 include::modelix:core:partial$nav-explanation.adoc[]
