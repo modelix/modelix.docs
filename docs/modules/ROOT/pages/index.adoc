@@ -65,7 +65,7 @@ If you find any bugs or errors in our documentation please add pull requests or 
 == Glossary
 
 In this documentation we use various acronyms and domain-specific wording.
-Head over to the xref:modelix:ROOT:explanation/glossary.adoc[Glossary] if you are unsure about what exactly we mean when talking about a model, meta-model, MPS, or others.
+Head over to the xref:explanation/glossary.adoc[Glossary] if you are unsure about what exactly we mean when talking about a model, meta-model, MPS, or others.
 
 == Contact
 

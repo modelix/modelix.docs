@@ -65,9 +65,6 @@ include::modelix:core:partial$nav-reference.adoc[]
 
 // Explanation section
 * xref:ROOT:explanation/index.adoc[]
-** xref:ROOT:explanation/architecture.adoc[]
-** xref:ROOT:explanation/goals.adoc[]
-** xref:ROOT:explanation/glossary.adoc[]
 
 +
 --
@@ -78,7 +75,13 @@ include::modelix:samples:partial$nav-explanation.adoc[]
 --
 include::modelix:platform:partial$nav-explanation.adoc[]
 --
+
 +
 --
 include::modelix:core:partial$nav-explanation.adoc[]
 --
+** xref:ROOT:explanation/architecture.adoc[]
+** xref:ROOT:explanation/goals.adoc[]
+** xref:ROOT:explanation/glossary.adoc[]
+
+
