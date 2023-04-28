@@ -47,11 +47,11 @@ include::modelix:core:partial$nav-howto.adoc[]
 
 +
 --
-include::modelix:samples:partial$nav-reference.adoc[]
+include::samples:partial$nav-reference.adoc[]
 --
-** xref:modelix:ROOT:reference/components.adoc[Component Overview]
-// TODO add when not a draft anymore
-xref:modelix:ROOT:reference/components-table.adoc[]
+
+** xref:reference/components.adoc[Repository Overview]
+** xref:reference/components-table.adoc[Component Overview]
 
 +
 --

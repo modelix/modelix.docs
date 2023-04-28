@@ -1,46 +1,56 @@
 = Components Table of modelix
 :navtitle: Components Table
 
-NOTE: This is a draft
 
-
-[frame=none,grid=rows,cols="4,4,1,1,1"]
+[frame=none,grid=rows,cols="3,3,1,1,1,1,1,1"]
 |===
-|Package | Name | Tech | Repository | Artifact |
-`org.modelix.metamodel.export`|`metamodel-export-mps`|`MPS`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.model.server.light`|`light-model-server`|`MPS`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix`|`mps-model-plugin`|`MPS`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.gitui`|`gitui`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.graphql.server`|`graphql-server`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.headlessmps`|`headless-mps`|`MPS`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.instancesmanager`|`instances-manager`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix`|`mps-rest-model-access`|`MPS`|   https://github.com/modelix/mps-json-bulk-model-access[🔗^]||
-`org.modelix.mps`|`api-gen`|`MPS`|   https://github.com/modelix/api-gen[🔗^]||
-`org.modelix.metamodel.generator`|`model-api`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.metamodel.generator`|`metamodel-generator`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.model.server.api`|`model-server-api`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.client.light`|`light-model-client`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.model.server`|`model-server`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.model.client`|`model-client`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.authorization`|`authorization`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.metamodel`|`metamodel-runtime`|`Kotlin`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.workspace.client`|`workspace-client`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.workspace.manager`|`workspace-manager`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.workspaces`|`workspaces`|`Kotlin`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.incremental`|`incremental`|`Kotlin`|   https://github.com/modelix/incremental[🔗^]||
-`org.modelix.mpsbuild`|`build-tools`|`Kotlin`|   https://github.com/modelix/mpsbuild[🔗^]||
-`org.modelix.metamodel.gradle`|`metamodel-gradle`|`Gradle`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.gradle.model`|`gradle-plugin`|`Gradle`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.mpsbuild`|`gradle-plugin`|`Gradle`|   https://github.com/modelix/mpsbuild[🔗^]||
-`org.modelix.mpsbuild`|`gradle-mpsbuild-plugin`|`Gradle`|   https://github.com/modelix/mpsbuild[🔗^]||
-`org.modelix.mpsbuild.org.modelix.mpsbuild.gradle`|`plugin`|`Gradle`|   https://github.com/modelix/mpsbuild[🔗^]||
-`-----`|`ts-model-api`|`Other`|   https://github.com/modelix/modelix.core[🔗^]||
-`org.modelix.keycloak`|`keycloak-extensions`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
-`-----`|`ui-client`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.uiproxy`|`ui-proxy`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.ui.server`|`ui-server`|`Other`|   https://github.com/modelix/modelix/[🔗^]||
-`org.modelix.sample`|`modelix-samples`|`MultiProject`|   https://github.com/modelix/modelix-samples[🔗^]||
+|*Package* | *Name* | *Tech* | *Docs* | *Nexus* | *GHP* | *API* | *Repo* |
 
+`org.modelix` | `model-api` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api/[🔗^] | https://github.com/modelix/modelix.core/packages/1834768[🔗^] | https://api.modelix.org/2.3.0/model-api/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `metamodel-export` | MPS | https://docs.modelix.org/modelix/latest/core/reference/component-metamodel-export.html[🔗^] | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/metamodel-export/[🔗^] | https://github.com/modelix/modelix.core/packages/1787430[🔗^] |  | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `model-api-gen` | Kotlin | https://docs.modelix.org/modelix/latest/core/reference/component-model-api-gen.html[🔗^] | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen/[🔗^] | https://github.com/modelix/modelix.core/packages/1834770[🔗^] | https://api.modelix.org/2.3.0/model-api-gen/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `model-api-gen-runtime` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen-runtime/[🔗^] | https://github.com/modelix/modelix.core/packages/1834778[🔗^] | https://api.modelix.org/2.3.0/model-api-gen-runtime/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `model-api-gen-gradle` | Gradle | https://docs.modelix.org/modelix/latest/core/reference/component-model-api-gen-gradle.html[🔗^] | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen-gradle/[🔗^] | https://github.com/modelix/modelix.core/packages/1834773[🔗^] | https://api.modelix.org/2.3.0/model-api-gen-gradle/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`---` | `org.modelix.model-api-gen.gradle.plugin` | Gradle | https://docs.modelix.org/modelix/latest/core/reference/component-model-api-gen-gradle.html[🔗^] | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-api-gen/org.modelix.model-api-gen.gradle.plugin/[🔗^] | https://github.com/modelix/modelix.core/packages/1834772[🔗^] | https://api.modelix.org/2.3.0/model-api-gen-gradle/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `incremental` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/incremental/[🔗^] | https://github.com/modelix/incremental/packages/1787359[🔗^] |  | https://github.com/modelix/incremental[🔗^] |
+`org.modelix` | `model-server-lib` | MPS |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server-lib/[🔗^] | https://github.com/modelix/modelix.core/packages/1834873[🔗^] | https://api.modelix.org/2.3.0/model-server-lib/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `model-server-api` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server-api/[🔗^] | https://github.com/modelix/modelix/packages/1787297[🔗^] | https://api.modelix.org/2.3.0/model-server-api/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `model-server` | Kotlin | https://docs.modelix.org/modelix/latest/core/reference/component-model-server.html[🔗^] | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server[🔗^] | https://github.com/modelix/modelix/packages/1077342[🔗^] | https://api.modelix.org/2.3.0/model-server/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `model-server-with-dependencies` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-server-with-dependencies/[🔗^] | https://github.com/modelix/modelix/packages/1834864[🔗^] | https://api.modelix.org/2.3.0/model-server/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `model-client` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-client/[🔗^] | https://github.com/modelix/modelix/packages/1077378[🔗^] | https://api.modelix.org/2.3.0/model-client/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix` | `light-model-client` | Kotlin | https://docs.modelix.org/modelix/latest/core/reference/component-light-model-client.html[🔗^] | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/light-model-client/[🔗^] | https://github.com/modelix/modelix.core/packages/1787427[🔗^] | https://api.modelix.org/2.3.0/light-model-client/index.html[🔗^] | https://github.com/modelix/modelix.core[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `model-download-gradle` | Gradle |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-download-gradle/[🔗^] |  |  | https://github.com/modelix/modelix[🔗^] |
+`---` | `org.modelix.mps.model-download` | Gradle |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-download-gradle/org.modelix.model-download-gradle.gradle.plugin/[🔗^] |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix.mps` | `model-server-sync-plugin` | MPS |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/model-server-sync-plugin/[🔗^] |  |  | https://github.com/modelix/modelix[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix.mps` | `build-tools-lib` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-tools-lib/[🔗^] | https://github.com/modelix/modelix.mps-build-tools/packages/1831228[🔗^] |  | https://github.com/modelix/modelix.mps-build-tools[🔗^] |
+`org.modelix.mps` | `build-tools-gradle` | Gradle |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-tools-gradle/[🔗^] | https://github.com/modelix/modelix.mps-build-tools/packages/1831230[🔗^] |  | https://github.com/modelix/modelix.mps-build-tools[🔗^] |
+`---` | `org.modelix.mps.build-tools` | Gradle |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-tools/org.modelix.mps.build-tools.gradle.plugin/[🔗^] | https://github.com/modelix/modelix.mps-build-tools/packages/1831227[🔗^] |  | https://github.com/modelix/modelix.mps-build-tools[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix.mps` | `build-solution` | MPS |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/build-solution/[🔗^] |  |  | https://github.com/modelix/modelix[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix.mps` | `headless-runner` | MPS |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/headless-runner/[🔗^] |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `authorization` | Kotlin |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/authorization/[🔗^] | https://github.com/modelix/modelix.core/packages/1787419[🔗^] |  | https://github.com/modelix/modelix.core[🔗^] |
+`org.modelix.mps` | `web-editors-plugin` | MPS |  | https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/web-editors-plugin/[🔗^] |  |  | https://github.com/modelix/modelix[🔗^] |
+ | `ts-model-api` | TS |  |  | https://github.com/modelix/modelix.core/pkgs/npm/ts-model-api[🔗^] |  | https://github.com/modelix/modelix.core[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `workspace-client` | Kotlin |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `workspace-manager` | Kotlin |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `workspaces` | Kotlin |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `instances-manager` | Kotlin |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `gitui` | Kotlin |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `keycloak-extensions` | Other |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `ui-client` | Other |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `ui-proxy` | Other |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+`org.modelix` | `ui-server` | Other |  |  |  |  | https://github.com/modelix/modelix[🔗^] |
+ |  |  |  |  |  |  |  |
+`org.modelix` | `modelix-samples` | MultiProject | https://docs.modelix.org/modelix/latest/samples/reference/architecture.html[🔗^] |  |  |  | https://github.com/modelix/modelix.samples[🔗^] |
+`org.modelix` | `platform` | Gradle |  |  |  |  | https://github.com/modelix/modelix.platform[🔗^] |
 
-|===
 
