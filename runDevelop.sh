@@ -2,7 +2,7 @@
 # Watch for modifications and rebuild the dev docs automatically.
 # Depends on inotify-tools
 
-antora antora-playbook.yml
+antora antora-playbook-develop.yml
 
 if [ $# -eq 0 ];then
     inotifywait -qmr -e modify --exclude '\.?#.*|build|.git' . \
@@ -10,7 +10,7 @@ if [ $# -eq 0 ];then
             echo ""
             echo "$(date +'%F %T') $event"
             rm -rf build
-            antora --stacktrace antora-playbook.yml
+            antora --stacktrace antora-playbook-develop.yml
         done
 else
     while true;do
@@ -22,6 +22,6 @@ else
         echo ""
         echo "$(date +'%F %T') $event"
         rm -rf build
-        antora --stacktrace antora-playbook.yml
+        antora --stacktrace antora-playbook-develop.yml
     done
 fi

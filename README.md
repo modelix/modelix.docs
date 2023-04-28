@@ -14,7 +14,8 @@ Afterwards you can run the generator manually via:
 antora --stacktrace antora-playbook.yml
 ```
 
-Alternatively use the included bash script to automatically re-run generation if there are changes in the documentation:
+To make use of the development friendly environment, make sure relative paths to your repositories are correct in `antora-playbook-develop.yml`.
+Then, use the included bash script to automatically re-run generation of the documentation:
 
 ```
 ./runDevelop.sh
