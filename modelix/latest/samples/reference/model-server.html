@@ -74,7 +74,7 @@
 </header>
 
 <div class="body">
-<div class="nav-container" data-component="modelix" data-version="modelix-23.0">
+<div class="nav-container" data-component="modelix" data-version="main">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -124,6 +124,9 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/tutorial/index.html">modelix.platform Tutorials</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -135,10 +138,13 @@
     <a class="nav-link" href="../../howto/index.html">How-To Guides</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/howto/index.html">modelix.platform How-To</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../core/howto/usage-model-server.html">Start a <code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/usage-metamodel-generator.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+    <a class="nav-link" href="../../core/howto/usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../core/howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
@@ -155,51 +161,51 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../reference/components.html">Component Overview</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Samples</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="architecture.html">System Architecture</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="dashboard.html">Dashboard</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="model-server.html">Local model-server</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="openapi.html">Intermediate OpenAPI</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="rest-api-json-bulk.html">JSON bulk API</a>
-  </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="rest-api-model-ql.html">modelQL API</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="rest-api-model-server.html">model-server API</a>
   </li>
 </ul>
   </li>
 </ul>
   </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../reference/components.html">Component Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/reference/index.html">modelix.platform Reference</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../core/reference/component-model-server.html"><code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/reference/component-metamodel-generator.html"><code>metamodel.generator</code></a>
+    <a class="nav-link" href="../../core/reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/reference/component-metamodel-generator-gradle.html"><code>metamodel.gradle</code></a>
+    <a class="nav-link" href="../../core/reference/component-model-api-gen.html"><code>model-api-gen</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../core/reference/component-light-model-client.html"><code>light-model-client</code></a>
@@ -253,6 +259,9 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/explanation/index.html">modelix.platform Explanation</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -263,17 +272,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Modelix Documentation</span>
-    <span class="version">modelix-23.0</span>
+    <span class="version">main</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../../index.html">Modelix Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../index.html">modelix-23.0</a>
-        </li>
-        <li class="version">
-          <a href="../../../main/index.html">main</a>
+          <a href="../../index.html">main</a>
         </li>
       </ul>
     </li>
@@ -285,6 +291,17 @@
         </li>
         <li class="version">
           <a href="../../../../core/main/core/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../platform/latest/platform/index.html">modelix.platform</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../platform/latest/platform/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../../platform/main/platform/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -312,19 +329,11 @@
   <ul>
     <li><a href="../../index.html">Modelix Documentation</a></li>
     <li><a href="../../reference/index.html">Reference</a></li>
-    <li><a href="../../reference/components.html">Component Overview</a></li>
     <li>Samples</li>
     <li><a href="model-server.html">Local model-server</a></li>
   </ul>
 </nav>
-<div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.0</button>
-  <div class="version-menu">
-    <a class="version is-current" href="model-server.html">modelix-23.0</a>
-    <a class="version" href="../../../main/samples/reference/model-server.html">main</a>
-  </div>
-</div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix-samples/blob/modelix-23.0/docs/global/modules/samples/pages/reference/model-server.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.samples/edit/main/docs/global/modules/samples/pages/reference/model-server.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -333,7 +342,7 @@
 <article class="doc">
 <h1 class="page"><code>model-server</code> start helper</h1>
 <div class="paragraph">
-<p>This 'component' is not a real component but rather a start helper - the <a href="#modelix:core:refernce/component-model-server.adoc" class="xref unresolved"><code>model-server</code></a> is started using the Gradle application plugin.</p>
+<p>This 'component' is not a real component but rather a start helper - the <a href="../../core/reference/component-model-server.html" class="xref page"><code>model-server</code></a> is started using the Gradle application plugin.</p>
 </div>
 <div class="paragraph">
 <p>To start the <code>model-server</code>, simply call the following in the repository root:</p>

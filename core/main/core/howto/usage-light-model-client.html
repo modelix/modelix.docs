@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>How-To use the light-model-client :: Modelix Documentation</title>
     <link rel="canonical" href="https://docs.modelix.org/core/latest/core/howto/usage-light-model-client.html">
-    <link rel="prev" href="#core:howto/usage-metamodel-generator.adoc">
+    <link rel="prev" href="usage-model-api-gen-gradle.html">
     <link rel="next" href="../reference/component-model-server.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../../_/css/site.css">
@@ -98,7 +98,7 @@
     <a class="nav-link" href="usage-model-server.html">Start a <code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#core:howto/usage-metamodel-generator.adoc">core:howto/usage-metamodel-generator.adoc</a>
+    <a class="nav-link" href="usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="usage-light-model-client.html">Use the <code>light-model-client</code></a>
@@ -113,7 +113,7 @@
     <a class="nav-link" href="../reference/component-model-server.html"><code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../reference/component-metamodel-export.html">MPS solution for metamodel-export</a>
+    <a class="nav-link" href="../reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../reference/component-model-api-gen.html"><code>model-api-gen</code></a>
@@ -143,10 +143,7 @@
       <a class="title" href="../../../../modelix/latest/index.html">Modelix Documentation</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../../modelix/latest/index.html">modelix-23.0</a>
-        </li>
-        <li class="version">
-          <a href="../../../../modelix/main/index.html">main</a>
+          <a href="../../../../modelix/latest/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -158,6 +155,17 @@
         </li>
         <li class="version is-current">
           <a href="../index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../platform/latest/platform/index.html">modelix.platform</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../platform/latest/platform/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../../platform/main/platform/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -280,7 +288,7 @@ If you try to access a node that is not included in your <strong>model query</st
 You can also filter a list of nodes like this: <code>node.getChildren("modules").filterLoaded()</code>, to iterate only over the nodes that are included in your query.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="#core:howto/usage-metamodel-generator.adoc">core:howto/usage-metamodel-generator.adoc</a></span>
+  <span class="prev"><a href="usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a></span>
   <span class="next"><a href="../reference/component-model-server.html"><code>model-server</code></a></span>
 </nav>
 </article>
