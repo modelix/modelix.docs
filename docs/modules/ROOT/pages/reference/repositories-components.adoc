@@ -1,0 +1,43 @@
+= Components of modelix
+:navtitle: List of Repositories
+
+The modelix platform is composed of multiple individual components which can be combined together to form a system bringing models to the web.
+Components are distributed across the following repositories:
+
+- https://github.com/modelix/modelix.platform
+- https://github.com/modelix/modelix.core
+- https://github.com/modelix/modelix.mps-build-tools
+- https://github.com/modelix/modelix
+- https://github.com/modelix/incremental
+- https://github.com/modelix/modelix.docs
+- https://github.com/modelix/modelix.samples
+
+This page serves as an overview over all existing repositories, their components, and a short description.
+For more dense information about component, please navigate to the xref:reference/components-table.adoc[].
+
+
+== List of currently available components in modelix
+
+=== xref:modelix:platform:index.adoc[Modelix platform ({page-component-latest-version})]
+include::modelix:platform:partial$short-description.adoc[]
+
+=== xref:modelix:core:index.adoc[Modelix core ({page-component-latest-version})]
+include::modelix:core:partial$short-description.adoc[]
+
+
+// TODO
+// === xref:modelix:modelix:index.adoc[Modelix modelix ({page-component-latest-version})]
+//include::modelix:modelix:partial$short-description.adoc[]
+
+// TODO
+// === xref:modelix:mps-build-tools:index.adoc[Modelix mps-build-tools ({page-component-latest-version})]
+//include::modelix:mps-build-tools:partial$short-description.adoc[]
+
+// TODO
+// === xref:modelix:incremental:index.adoc[Modelix incremental ({page-component-latest-version})]
+//include::modelix:incremental:partial$short-description.adoc[]
+
+=== xref:modelix:samples:index.adoc[Modelix samples ({page-component-latest-version})]
+include::modelix:samples:partial$short-description.adoc[]
+
+
