@@ -15,10 +15,6 @@ include::modelix:samples:partial$nav-tutorial.adoc[]
 
 +
 --
-include::modelix:platform:partial$nav-tutorial.adoc[]
---
-+
---
 include::modelix:core:partial$nav-tutorial.adoc[]
 --
 
@@ -53,10 +49,6 @@ include::samples:partial$nav-reference.adoc[]
 ** xref:reference/repositories-components.adoc[]
 ** xref:reference/components-table.adoc[]
 
-+
---
-include::modelix:platform:partial$nav-reference.adoc[]
---
 +
 --
 include::modelix:core:partial$nav-reference.adoc[]
