@@ -23,12 +23,93 @@ We aim to provide a Spring release `R1` and an Autumn release `R2`.
 All development in-between is carried out as patches on the releases.
 This release cycle starts from 2023 with the first release on the MPS Community meetup in May: `2023.R1`.
 
-To gain an overview over existing components, please refer to the list of components xref:modelix:ROOT:reference/repositories-components.adoc[here]
+To gain an overview over existing components, please refer to the list of components xref:modelix:ROOT:reference/repositories-components.adoc[here].
 
 == Roadmap
 
-We are currently in the process to further define our roadmap and core goals for each release.
-This roadmap will be closely aligned with the structure currently in the https://issues.modelix.org[issue tracker^].
+=== Key priorities overview
 
-Once we have more dedicated information on this, we will publish it on our website and in this documentation.
+The aim of this roadmap is to provide you with an overview of our plans. 
+We have compiled a catalog of our significant areas, which are our top priorities we focus on delivering. 
+In the following we shortly list these key priorities. Below you can find more detailed explanations for each of these.
+
+* Model APIs: A unified low-level API to navigate and modify models. It is untyped to any existing meta-model.
+
+* Domain-Specific Model API generator: A complete rewrite of our initial API generator which overcomes multiple previous shortcomings. It provides type information and directly integrates with the model API.
+
+* Versioning / Releases / Roadmap: Automated semantic versioning with unifying modelix platform releases twice a year. Development is planned over at https://issues.modelix.org[issues.modelix.org].
+
+* Documentation: Docs-as-code approach which is built to https://docs.modelix.org[docs.modelix.org] with every platform release.
+
+* Git integration: A tighter integration for git based model storage to bridge legacy storage solutions.
+
+* MPS in the Cloud: Run MPS in the cloud as a way to transition to the web.
+
+* Language Evolution: A way to handle new language versions and metamodel changes.
+
+* Graphical Editors: We plan to provide the data synchronization and the generation of a TypeScript model API to enable graphical editors on the wev.
+
+* LIonWeb: Integration with other web components out there - modelix support and involvement in the LIonWeb (Language interfaces on the web) initiative.
+
+=== Component Renaming (23.1)
+Several modelix artifacts had potentially confusing names. We streamlined everything and renamed to convey functionality more clearly. Check out https://modelix.org/blog/2023/04/12/modelix-artifact-re-grouping-and-re-naming/[our blog post] for details. Also check the new table of modelix component overview https://docs.modelix.org/modelix/latest/reference/components-table.html[here].
+
+=== Model APIs (23.1)
+Modelix uses a low level meta-model agnostic API across all components. 
+The model-api provides this abstraction. This API is the shared basis and used across all modelix components. It is a Kotlin multi-platform implementation with artifacts for JVM and JS. An untyped access to model content is possible when only using the model-api.
+
+In case you want to use typed access, the model-api-gen provides a generator which generates a typed model API from your existing domain-specific meta-model. This generated API specializes the untyped model-api and provides domain grounded model access.
+
+=== Domain-Specific Model API Generator (23.1)
+Up to now, the model API generator api-gen was used to generate a domain-specific Java model API from a MPS structure. These classes can then be used in web applications to obtain typed model content from the model-server. The api-gen was implemented as a MPS generator and consequently bound to and limited by the MPS ecosystem. 
+
+To overcome the many shortcomings we observed (runtime & resource usage, tool lock-in, maintainability, few target languages). We re-implement the generator (now `model-api-gen``) in Kotlin, which has several benefits. Most notably, there is now an additional option to generate a domain-specific TypeScript API. 
+
+One extra feature we add is MPS meta-model independence: In a new intermediate step, we export the MPS structure to a JSON representation re-using the JSON language of the existing MPS extensions. This intermediate artifact is then used by the api-gen v2 to generate the APIs. The MPS structure to JSON generator is available for all MPS versions so that previous maintenance of the api-gen v1 for multiple MPS versions is not necessary any more.
+
+To ease the use of the new model-api-gen, we provide a Gradle plugin to help setting up the domain-specific API generation: model-api-gen-gradle.
+
+=== Versioning / Releases / Roadmap (23.1)
+With many modelix components being in various development stages - from stable to early and conceptual - they are released individually. Generally, modelix follows the Semantic Versioning scheme for releases and groups different components by repository (e.g. core components are in modelix.core, while documentation resides in modelix.docs).
+
+However, anything based on JetBrains MPS (e.g. MPS plugins or extensions) is prefixed with the corresponding MPS major and minor version number followed by our own patch version number. For example, the org.modelix.mps-model-plugin version 2021.2.103 is the 103rd release which is compatible with MPS 2021.2.
+
+To make it easier for developers, the modelix platform will be released twice a year as a single modelix platform release which aggregates all compatible component versions. We aim to provide a Spring release (modelix-2X.1) and an Autumn release (modelix-2X.2). All development in-between is carried out as patches on the releases. This release cycle starts from 2023 with the first release on the MPS Community meetup in May: modelix-23.1. For the different MPS versions there are sub-platforms that also bundle the corresponding MPS plugins of the modelix platform. The artifacts which hold the Gradle platform thus will be
+
+* `org.modelix.platform``
+* `org.modelix.platform-mps-2021-2`
+* `org.modelix.platform-mps-2020-3`
+* `org.modelix.platform-mps-2021-1`
+* `org.modelix.platform-mps-2021-3`
+
+Additionally, we want to communicate our plans for the modelix platform more clearly. As a result we prepared a roadmap outlining our planned steps. 
+
+Further, on https://issues.modelix.org[issues.modelix.org] we also give more insights in our development efforts.
+
+=== Documentation (23.1)
+To further reduce the barrier of entry to modelix with modelix-23.1 we deploy new documentation following the docs-as-code approach. You can access the new documentation over at https://docs.modelix.org[docs.modelix.org] which is available for each modelix platform release. We follow the Diataxis documentation framework to separate and communicate more clearly in the categories of Tutorials, How To Guides, Explanation, and (technical) Reference. Additionally https://api.modelix.org/[api.modelix.org] provides a generated technical API reference which we grow incrementally.
+
+=== Git Integration (estimated 23.2)
+Generally, we recommend using the model-server as the storage backend for models in the cloud. However, in some environments and use cases, this philosophy can only partially be archived. In rare cases we observe a hybrid setup where a) model knowledge is stored in files as MPS projects in combination with git while b) deploying web and cloud centric applications using the model-server.
+In a first iteration, we want to provide the possibility for read and write of MPS models from and to git repositories in the modelix platform. This could eventually also include the usage of the model-server for real-time collaboration in these hybrid setups. However, this is a topic which requires further investigation.
+
+=== MPS in the Cloud (estimated 23.2)
+For many MPS based projects, a good first step for transitioning to the web is running MPS in the cloud. modelix already has elaborate prototypes for these use-cases by using Kubernetes and Projector to provide MPS “Workspaces” in the cloud. 
+
+One central piece for this are the modelix build-tools. This component allows the generation of MPS languages without any existing build script.
+
+We want to refine our efforts regarding MPS in the cloud and make them more accessible. 
+
+=== Language Evolution (estimated 24.1)
+When using MPS, model migrations are made easy using the migration aspect. However, once stepping outside of MPS, migrations become more difficult. Model migration needs to be carried out across platforms, teams and (web) applications when a new language version is deployed. 
+
+We want to support a generated APIs that can work with multiple versions at the same time with which we also can support meta-model versions checks for compatibility. We have some ideas we need to further refine and explore in the following releases.
+
+=== Graphical Editors in the Web (estimated 24.2)
+The experience from MPS shows that the requirements for a graphical editor are too diverse to support all of them with a single framework. There are many different frameworks available in the web world where you can choose the one that fits your use case.
+We plan to only provide the data synchronization and the generation of a TypeScript model API, but not the integration of any diagram framework itself.
+
+=== LIonWeb
+Modelix focuses on a good integration with MPS. If you are interested in the integration of other modeling technologies then check out the LIonWeb project (short for Language Interfaces on the web). They specify more general interfaces and use the modelix `model-server` for data storage and exchange in their current prototypes. The modelix team co-authored and is involved with the LIonWeb initiative.
+
 
