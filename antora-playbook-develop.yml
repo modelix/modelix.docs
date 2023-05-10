@@ -22,7 +22,7 @@ content:
     start_path: docs/global
 
   # - url: https://github.com/modelix/modelix.core
-  - url: ./../modelix.core-main
+  - url: ./../modelix.core-feature
     branches: HEAD
     tags: modelix-2@({0..9}).+({0..9})
     start_path: docs/global
@@ -44,9 +44,9 @@ content:
     start_path: docs/local
 
   # - url: https://github.com/modelix/modelix.core
-  - url: ./../modelix.core-main
+  - url: ./../modelix.core-feature
     branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+      #tags: modelix-2@({0..9}).+({0..9})
     start_path: docs/local
 
   # - url: https://github.com/modelix/modelix.platform
