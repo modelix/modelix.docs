@@ -27,10 +27,15 @@ To gain an overview over existing components, please refer to the list of compon
 
 == Roadmap
 
+The following image shows a dense overview of our current roadmap.
+
+image::2023_05_roadmap.png[]
+
+
 === Key priorities overview
 
-The aim of this roadmap is to provide you with an overview of our plans. 
-We have compiled a catalog of our significant areas, which are our top priorities we focus on delivering. 
+The aim of this roadmap is to provide you with a more detailed overview of our plans.
+We have compiled a catalog of our significant areas, which are our top priorities we focus on delivering.
 In the following we shortly list these key priorities. Below you can find more detailed explanations for each of these.
 
 * Model APIs: A unified low-level API to navigate and modify models. It is untyped to any existing meta-model.
@@ -51,19 +56,20 @@ In the following we shortly list these key priorities. Below you can find more d
 
 * LIonWeb: Integration with other web components out there - modelix support and involvement in the LIonWeb (Language interfaces on the web) initiative.
 
+
 === Component Renaming (23.1)
 Several modelix artifacts had potentially confusing names. We streamlined everything and renamed to convey functionality more clearly. Check out https://modelix.org/blog/2023/04/12/modelix-artifact-re-grouping-and-re-naming/[our blog post] for details. Also check the new table of modelix component overview https://docs.modelix.org/modelix/latest/reference/components-table.html[here].
 
 === Model APIs (23.1)
-Modelix uses a low level meta-model agnostic API across all components. 
+Modelix uses a low level meta-model agnostic API across all components.
 The model-api provides this abstraction. This API is the shared basis and used across all modelix components. It is a Kotlin multi-platform implementation with artifacts for JVM and JS. An untyped access to model content is possible when only using the model-api.
 
 In case you want to use typed access, the model-api-gen provides a generator which generates a typed model API from your existing domain-specific meta-model. This generated API specializes the untyped model-api and provides domain grounded model access.
 
 === Domain-Specific Model API Generator (23.1)
-Up to now, the model API generator api-gen was used to generate a domain-specific Java model API from a MPS structure. These classes can then be used in web applications to obtain typed model content from the model-server. The api-gen was implemented as a MPS generator and consequently bound to and limited by the MPS ecosystem. 
+Up to now, the model API generator api-gen was used to generate a domain-specific Java model API from a MPS structure. These classes can then be used in web applications to obtain typed model content from the model-server. The api-gen was implemented as a MPS generator and consequently bound to and limited by the MPS ecosystem.
 
-To overcome the many shortcomings we observed (runtime & resource usage, tool lock-in, maintainability, few target languages). We re-implement the generator (now `model-api-gen``) in Kotlin, which has several benefits. Most notably, there is now an additional option to generate a domain-specific TypeScript API. 
+To overcome the many shortcomings we observed (runtime & resource usage, tool lock-in, maintainability, few target languages). We re-implement the generator (now `model-api-gen``) in Kotlin, which has several benefits. Most notably, there is now an additional option to generate a domain-specific TypeScript API.
 
 One extra feature we add is MPS meta-model independence: In a new intermediate step, we export the MPS structure to a JSON representation re-using the JSON language of the existing MPS extensions. This intermediate artifact is then used by the api-gen v2 to generate the APIs. The MPS structure to JSON generator is available for all MPS versions so that previous maintenance of the api-gen v1 for multiple MPS versions is not necessary any more.
 
@@ -82,7 +88,7 @@ To make it easier for developers, the modelix platform will be released twice a 
 * `org.modelix.platform-mps-2021-1`
 * `org.modelix.platform-mps-2021-3`
 
-Additionally, we want to communicate our plans for the modelix platform more clearly. As a result we prepared a roadmap outlining our planned steps. 
+Additionally, we want to communicate our plans for the modelix platform more clearly. As a result we prepared a roadmap outlining our planned steps.
 
 Further, on https://issues.modelix.org[issues.modelix.org] we also give more insights in our development efforts.
 
@@ -94,14 +100,14 @@ Generally, we recommend using the model-server as the storage backend for models
 In a first iteration, we want to provide the possibility for read and write of MPS models from and to git repositories in the modelix platform. This could eventually also include the usage of the model-server for real-time collaboration in these hybrid setups. However, this is a topic which requires further investigation.
 
 === MPS in the Cloud (estimated 23.2)
-For many MPS based projects, a good first step for transitioning to the web is running MPS in the cloud. modelix already has elaborate prototypes for these use-cases by using Kubernetes and Projector to provide MPS “Workspaces” in the cloud. 
+For many MPS based projects, a good first step for transitioning to the web is running MPS in the cloud. modelix already has elaborate prototypes for these use-cases by using Kubernetes and Projector to provide MPS “Workspaces” in the cloud.
 
 One central piece for this are the modelix build-tools. This component allows the generation of MPS languages without any existing build script.
 
-We want to refine our efforts regarding MPS in the cloud and make them more accessible. 
+We want to refine our efforts regarding MPS in the cloud and make them more accessible.
 
 === Language Evolution (estimated 24.1)
-When using MPS, model migrations are made easy using the migration aspect. However, once stepping outside of MPS, migrations become more difficult. Model migration needs to be carried out across platforms, teams and (web) applications when a new language version is deployed. 
+When using MPS, model migrations are made easy using the migration aspect. However, once stepping outside of MPS, migrations become more difficult. Model migration needs to be carried out across platforms, teams and (web) applications when a new language version is deployed.
 
 We want to support a generated APIs that can work with multiple versions at the same time with which we also can support meta-model versions checks for compatibility. We have some ideas we need to further refine and explore in the following releases.
 
