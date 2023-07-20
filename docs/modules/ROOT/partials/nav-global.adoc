@@ -2,6 +2,7 @@
 * xref:index.adoc[General]
 ** xref:index.adoc[]
 ** xref:main/roadmap.adoc[]
+** xref:main/contribute.adoc[]
 
 
 // Tutorials section

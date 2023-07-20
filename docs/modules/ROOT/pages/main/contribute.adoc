@@ -1,0 +1,64 @@
+= Contribution Guide
+
+This guide aims to make it easier for you to start contributing to the modelix project.
+
+
+== Tools
+
+The following tools are used to develop modelix.
+You may want to install these on your machine before getting started.
+
+=== Essentials
+
+- https://www.jetbrains.com/idea/[IntelliJ IDEA]
+- Java 11 (e.g. https://adoptium.net/de/temurin/releases/?version=11[Temurin])
+- https://ant.apache.org/[ant]
+- https://git-scm.com/[git]
+- https://www.jetbrains.com/de-de/mps/download/previous.html[MPS] (recommended version 2021.2.6)
+
+=== Deployment
+
+- https://www.docker.com/[docker]
+- https://kubernetes.io/[kubernetes]
+- https://helm.sh/[helm]
+
+=== Other
+
+- https://www.python.org/[python]
+- https://www.npmjs.com/[npm]
+- https://pre-commit.com/[pre-commit]
+
+== Platforms
+
+=== Repositories
+
+The modelix repositories are located on GitHub.
+In order to contribute you need to configure https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication[two-factor authentication] and https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification[commit verification].
+
+=== Issue Tracking
+
+We use a YouTrack instance hosted on https://issues.modelix.org[issues.modelix.org] to keep track of modelix issues.
+If you want to create a new issue, you can do so in the corresponding GitHub repository, and it will be automatically imported into YouTrack.
+
+== Semantic Versioning and Conventional Commits
+
+We use https://semver.org/[Semantic Versioning] in `modelix.core` (a further rollout to the other modelix repositories is planned for the future).
+Therefore, commit messages follow https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits].
+To install the hooks enforcing the convention, you need to run `npm install` and `pre-commit install` in your local repository.
+
+== Naming Conventions
+
+=== Branch Names
+
+Branch names should always be prefixed.
+The prefix is determined by the type of changes that your branch provides like `fix/`, `feature/`, `docs/`.
+Alternatively you can use `issue/` followed by the issue id as your branch name, e.g. `issue/MODELIX-123`.
+
+=== Pull Requests
+
+If a corresponding issue exists for your pull request, then the issue id must be part of the title.
+
+TIP: You can use the "Copy ID and summary to clipboard" button in YouTrack, and use the clipboard content as the title for the pull request.
+
+
+
