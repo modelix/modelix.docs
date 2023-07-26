@@ -1,4 +1,5 @@
 = Modelix Overview
+:navtitle: Overview
 
 The goal of this quick overview is for you to understand, what modelix is, what it is not and how it might be utilized.
 
