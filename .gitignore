@@ -3,6 +3,7 @@
 .idea/artifacts
 /build
 /*/build
+node_modules/
 
 # modules are configured by gradle
 .idea/modules
