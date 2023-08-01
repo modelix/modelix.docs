@@ -1,2 +1,16 @@
-/build/
+.gradle
+/artifacts
+.idea/artifacts
+/build
+/*/build
 node_modules/
+
+# modules are configured by gradle
+.idea/modules
+.DS_Store
+.idea/uiDesigner.xml
+
+.gitattributes
+
+**/.ideaconfig
+**/.mpsconfig
