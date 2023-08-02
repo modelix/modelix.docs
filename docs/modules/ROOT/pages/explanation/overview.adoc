@@ -1,0 +1,59 @@
+= Modelix Overview
+:navtitle: Overview
+
+The goal of this quick overview is for you to understand, what modelix is, what it is not and how it might be utilized.
+
+== What is Modelix?
+
+Modelix is a platform to bring models to the web.
+It consists of multiple components, which can be combined in different ways to support a variety of use cases.
+
+It is important to note, that modelix is neither a language workbench in the traditional sense nor a one-size-fits-all solution.
+The modelix project aims to provide you with building blocks, which empower you to construct your own application with ease.
+
+== Essential components
+
+The following table gives an overview over essential components, which you are very likely to encounter when using modelix.
+For a full list of components check out the xref:reference/components-table.adoc[components table].
+
+|===
+|Component | Short description
+
+|`model-api`
+|Untyped API, which allows to interact with models.
+
+|`model-server`
+|Server, which persistently stores models.
+
+|`model-client`
+|Client, which implements the `model-api` and connects to a `model-server`.
+
+|`model-api-gen(-gradle)`
+|Component, which generates a typed, domain specific API based on a metamodel definition.
+The generated API wraps the untyped `model-api`.
+|===
+
+== Basic example using essential components
+As a basic example, you might want to create a web app, which manipulates domain-specific models.
+In this case we assume a metamodel for such models exists as part of an MPS project.
+
+image::example-essential-components.svg[]
+
+The image above shows how the essential components work together to form the backend for a web application.
+In this case the metamodel definition is generated from the structure aspect of a language in MPS.
+For a different use case it could also be from another (custom) source.
+
+The web application can then use the domain-specific API to manipulate and store models in the model-server.
+
+Of course, this example only scratches the surface of what is possible with modelix.
+
+== Modelix workspaces
+
+Apart from the individual components, modelix can also provide a system called `workspaces`.
+It consists of multiple docker images, which run in a kubernetes cluster.
+Among other features, this system enables users to use projectional editors inside their browser by running MPS instances in the cloud.
+
+== What's next
+
+Modelix is always evolving.
+If you want to learn more about what is coming, check out the xref:main/roadmap.adoc[roadmap].
