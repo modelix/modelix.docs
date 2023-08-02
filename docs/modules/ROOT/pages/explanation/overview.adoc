@@ -34,19 +34,24 @@ The generated API wraps the untyped `model-api`.
 |===
 
 == Basic example using essential components
+As a basic example, you might want to create a web app, which manipulates domain-specific models.
+In this case we assume a metamodel for such models exists as part of an MPS project.
+
 image::example-essential-components.svg[]
 
-The image above shows a basic example of how the essential components work together to form the backend for a web application.
+The image above shows how the essential components work together to form the backend for a web application.
 In this case the metamodel definition is generated from the structure aspect of a language in MPS.
-But it could also come from other sources (symbolized by the question mark).
+For a different use case it could also be from another (custom) source.
 
-Of course, this only scratches the surface of what is possible with modelix.
+The web application can then use the domain-specific API to manipulate and store models in the model-server.
+
+Of course, this example only scratches the surface of what is possible with modelix.
 
 == Modelix workspaces
 
 Apart from the individual components, modelix can also provide a system called `workspaces`.
 It consists of multiple docker images, which run in a kubernetes cluster.
-Among other features, this system enables users to use projectional editors inside of their browser by running MPS instances in the cloud.
+Among other features, this system enables users to use projectional editors inside their browser by running MPS instances in the cloud.
 
 == What's next
 
