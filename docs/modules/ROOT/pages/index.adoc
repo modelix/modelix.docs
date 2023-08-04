@@ -2,7 +2,7 @@
 :favicon: ./satic/favicon.png
 :navtitle: Introduction
 
-image:logo-with-small-text-dark.svg[]
+image:logo-with-small-text-light.svg[]
 
 :tip-caption: 🔭 Vision
 [TIP]
