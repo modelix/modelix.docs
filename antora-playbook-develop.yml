@@ -16,13 +16,13 @@ content:
     start_path: docs
 
   # - url: https://github.com/modelix/modelix.samples
-  - url: ./../modelix.samples
+  - url: ./../modelix.samples-main
     branches: HEAD
     tags: modelix-2@({0..9}).+({0..9})
     start_path: docs/global
 
   # - url: https://github.com/modelix/modelix.core
-  - url: ./../modelix.core-feature
+  - url: ./../modelix.core-main
     branches: HEAD
     tags: modelix-2@({0..9}).+({0..9})
     start_path: docs/global
@@ -38,26 +38,26 @@ content:
   # LOCAL  REPOSITORIES
   #
   # - url: https://github.com/modelix/modelix.samples
-  - url: ./../modelix.samples
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
-    start_path: docs/local
-
-  # - url: https://github.com/modelix/modelix.core
-  - url: ./../modelix.core-feature
-    branches: HEAD
-      #tags: modelix-2@({0..9}).+({0..9})
-    start_path: docs/local
-
-  # - url: https://github.com/modelix/modelix.platform
-  - url: ./../modelix.platform
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
-    start_path: docs/local
+#  - url: ./../modelix.samples-main
+#    branches: HEAD
+#    tags: modelix-2@({0..9}).+({0..9})
+#    start_path: docs/local
+#
+#  # - url: https://github.com/modelix/modelix.core
+#  - url: ./../modelix.core-main
+#    branches: HEAD
+#    tags: modelix-2@({0..9}).+({0..9})
+#    start_path: docs/local
+#
+#  # - url: https://github.com/modelix/modelix.platform
+#  - url: ./../modelix.platform
+#    branches: HEAD
+#    tags: modelix-2@({0..9}).+({0..9})
+#    start_path: docs/local
 
 
 urls:
-  latest_version_segment: latest
+  latest_version_segment: main
   latest_version_segment_strategy: redirect:to
 
 ui:

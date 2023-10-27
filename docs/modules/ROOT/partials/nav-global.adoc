@@ -11,9 +11,8 @@
 
 +
 --
-include::modelix:samples:partial$nav-tutorial.adoc[]
+include::modelix:platform:partial$nav-tutorial.adoc[]
 --
-
 +
 --
 include::modelix:core:partial$nav-tutorial.adoc[]
@@ -23,11 +22,6 @@ include::modelix:core:partial$nav-tutorial.adoc[]
 // How-To Guides section
 * xref:howto/index.adoc[]
 // TODO ** xref:modelix:ROOT:howto/faq.adoc[FAQs]
-
-+
---
-include::modelix:samples:partial$nav-howto.adoc[]
---
 
 +
 --
@@ -42,14 +36,13 @@ include::modelix:core:partial$nav-howto.adoc[]
 // Reference section
 * xref:reference/index.adoc[]
 
-+
---
-include::samples:partial$nav-reference.adoc[]
---
 
 ** xref:reference/repositories-components.adoc[]
 ** xref:reference/components-table.adoc[]
-
++
+--
+include::modelix:platform:partial$nav-reference.adoc[]
+--
 +
 --
 include::modelix:core:partial$nav-reference.adoc[]
@@ -59,10 +52,6 @@ include::modelix:core:partial$nav-reference.adoc[]
 // Explanation section
 * xref:ROOT:explanation/index.adoc[]
 
-+
---
-include::modelix:samples:partial$nav-explanation.adoc[]
---
 
 +
 --
@@ -78,4 +67,5 @@ include::modelix:core:partial$nav-explanation.adoc[]
 ** xref:ROOT:explanation/goals.adoc[]
 ** xref:ROOT:explanation/glossary.adoc[]
 
-
+// Have a dedicated samples top-level item
+include::samples:partial$nav-local.adoc[]

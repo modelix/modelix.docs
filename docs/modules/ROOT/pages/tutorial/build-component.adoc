@@ -18,6 +18,12 @@ gradlew.bat build   # windows
 --
 
 
+== IntelliJ Idea
+
+Wherever possible we use the latest https://www.jetbrains.com/idea/[IntelliJ IDEA] IDE to manage projects in our repositories.
+Consequently, opening any repository with IntelliJ will also allow you to build and eventually xref:main/contribute.adoc[contribute].
+
+
 == modelix Artifact Publication
 
 At the moment most modelix artifacts are stored on the https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix[itemis nexus] with no access restriction.
@@ -35,10 +41,11 @@ First of all you will need to generate a https://docs.github.com/en/packages/wor
 The project assumes that your username is available as the variable `gpr.user` and the token as `gpr.key`.
 The easiest way to configure the credentials is copy the example below, paste it into the `gradle.properties` file in the repository and replace the values with your credentials:
 
-```
+[source]
+----
 gpr.user=<your GitHub login>
 gpr.key=<your personal access token>
-```
+----
 
 Gradle also supports https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties[other locations] for specifying these properties.
 

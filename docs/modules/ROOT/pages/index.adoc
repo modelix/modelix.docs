@@ -36,7 +36,6 @@ Otherwise, the xref:howto/index.adoc[How-To] section serves as an implicit FAQ w
 This is the full modelix documentation for modelix version *{page-component-display-version}*.
 You can choose different versions at the bottom left of this page.
 This documentation brings together the documentation from all individual modelix components.
-If you are only intersted in one specific component, you can select it in the menu at the bottom left.
 
 
 === Structure Framework
@@ -46,9 +45,12 @@ As a result, we separate the documentation in the following four mayor categorie
 
 1. xref:tutorial/index.adoc[Tutorials (learning-oriented)]
 +
-Lessons that take the reader by the hand through a series of steps to complete a project of some kind. **New users start here.**
+Lessons that take the reader by the hand through a series of steps to complete a project of some kind.
+**New users usually start here.**
 2. xref:howto/index.adoc[]
 3. xref:reference/index.adoc[]
++
+There is also a dedicated API page where you can find component specific API documentaion over at https://api.docs.modelix.org.
 4. xref:explanation/index.adoc[]
 
 

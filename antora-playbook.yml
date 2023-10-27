@@ -35,24 +35,24 @@ content:
   # LOCAL  REPOSITORIES
   # Provides individual per repository documentation
   #
-  - url: https://github.com/modelix/modelix.samples
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
-    start_path: docs/local
-
-  - url: https://github.com/modelix/modelix.core
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
-    start_path: docs/local
-
-  - url: https://github.com/modelix/modelix.platform
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
-    start_path: docs/local
+#  - url: https://github.com/modelix/modelix.samples
+#    branches: HEAD
+#    tags: modelix-2@({0..9}).+({0..9})
+#    start_path: docs/local
+#
+#  - url: https://github.com/modelix/modelix.core
+#    branches: HEAD
+#    tags: modelix-2@({0..9}).+({0..9})
+#    start_path: docs/local
+#
+#  - url: https://github.com/modelix/modelix.platform
+#    branches: HEAD
+#    tags: modelix-2@({0..9}).+({0..9})
+#    start_path: docs/local
 
 
 urls:
-  latest_version_segment: latest
+  latest_version_segment: main
   latest_version_segment_strategy: redirect:to
 
 ui:
