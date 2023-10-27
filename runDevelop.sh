@@ -5,7 +5,7 @@
 antora antora-playbook-develop.yml
 
 if [ $# -eq 0 ];then
-    inotifywait -qmr -e modify --exclude '\.?#.*|build|.git' . \
+    inotifywait -qmr -e modify --exclude '\.?#.*|build|.git|.ideaconfig|.idea|.*~|runDevelop.sh' . \
         | while read -r event; do
             echo ""
             echo "$(date +'%F %T') $event"
