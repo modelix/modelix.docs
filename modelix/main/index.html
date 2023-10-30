@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Welcome to modelix! :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/modelix/latest/index.html">
+    <link rel="canonical" href="https://docs.modelix.org/modelix/main/index.html">
     <link rel="next" href="main/roadmap.html">
-    <meta name="generator" content="Antora 3.1.3">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../_/css/site.css">
     <link rel="stylesheet" href="../../_/css/link.css">
 
-    <script>var uiRootPath = '../../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -22,7 +21,7 @@
         <a href="https://docs.modelix.org">Documentation</a>
       </div>
       <div class="navbar-item search hide-for-print">
-        <input id="search-input" type="text" placeholder="Search the docs">
+        <input id="search-input" type="text" placeholder="Search the docs" autofocus>
       </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
@@ -60,7 +59,7 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="../latest/index.html">Community</a>
+          <a class="navbar-link" href="index.html">Community</a>
           <div class="navbar-dropdown is-right">
             <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
             <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
@@ -90,7 +89,10 @@
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="main/roadmap.html">Development, Releases, and Roadmap</a>
+    <a class="nav-link" href="main/roadmap.html">Roadmap</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="main/contribute.html">Contribution Guide</a>
   </li>
 </ul>
   </li>
@@ -103,25 +105,7 @@
     <a class="nav-link" href="tutorial/index.html">Tutorials</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../latest/tutorial/build-component.html">Build components using Gradle</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Samples</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
-  </li>
-</ul>
-  </li>
-</ul>
+    <a class="nav-link" href="tutorial/build-component.html">Build components using Gradle</a>
   </li>
 </ul>
   </li>
@@ -156,55 +140,28 @@
     <a class="nav-link" href="reference/index.html">Reference</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Samples</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="samples/reference/architecture.html">System Architecture</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="samples/reference/meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="samples/reference/dashboard.html">Dashboard</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="samples/reference/model-server.html">Local model-server</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="samples/reference/openapi.html">Intermediate OpenAPI</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/reference/rest-api-model-ql.html">modelQL API</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/reference/rest-api-model-server.html">model-server API</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="reference/repositories-components.html">List of Repositories</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="reference/components-table.html">Table of Components</a>
-  </li>
-  <li class="nav-item" data-depth="2">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="core/reference/component-model-server.html"><code>model-server</code></a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="core/reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="core/reference/component-model-api-gen.html"><code>model-api-gen</code></a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="core/reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="core/reference/component-light-model-client.html"><code>light-model-client</code></a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -217,34 +174,10 @@
     <a class="nav-link" href="explanation/index.html">Explanation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Samples</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="samples/index.html">Samples Introduction</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="samples/explanation/structure.html">Sample Structure</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Use-Cases</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/explanation/usecases.html">Use-cases Overview</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/explanation/usecase-1.html">Use-Case 1: Dashboard</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="samples/explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
-  </li>
-</ul>
-  </li>
-</ul>
+    <a class="nav-link" href="platform/explanation/index.html">Gradle Platform</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="platform/explanation/index.html">Gradle Platform</a>
+    <a class="nav-link" href="explanation/overview.html">Overview</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="explanation/architecture.html">Architecture</a>
@@ -254,6 +187,112 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="explanation/glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="samples/index.html">Welcome</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <span class="nav-text">How-To Guides</span>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/reference/architecture.html">System Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/reference/meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/reference/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/reference/model-server.html">Local model-server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="samples/reference/openapi.html">Intermediate OpenAPI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="samples/reference/rest-api-model-ql.html">modelQL API</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="samples/reference/rest-api-model-server.html">model-server API</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Explanation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/index.html">Samples Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="samples/explanation/structure.html">Sample Structure</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use-Cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="samples/explanation/usecases.html">Use-cases Overview</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="samples/explanation/usecase-1.html">Use-Case 1: Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="samples/explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -269,58 +308,16 @@
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../latest/index.html">Modelix Documentation</a>
+      <a class="title" href="index.html">Modelix Documentation</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../latest/index.html">modelix-23.1</a>
+          <a href="index.html">modelix-23.1</a>
         </li>
         <li class="version">
           <a href="../modelix-23.0/index.html">modelix-23.0</a>
         </li>
         <li class="version is-current">
           <a href="index.html">main</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../core/latest/core/index.html">modelix.core</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../core/latest/core/index.html">modelix-23.1</a>
-        </li>
-        <li class="version">
-          <a href="../../core/modelix-23.0/core/index.html">modelix-23.0</a>
-        </li>
-        <li class="version">
-          <a href="../../core/main/core/index.html">main</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../platform/latest/platform/index.html">modelix.platform</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../platform/latest/platform/index.html">modelix-23.1</a>
-        </li>
-        <li class="version">
-          <a href="../../platform/modelix-23.0/platform/index.html">modelix-23.0</a>
-        </li>
-        <li class="version">
-          <a href="../../platform/main/platform/index.html">main</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../samples/latest/samples/index.html">modelix.samples</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../samples/latest/samples/index.html">modelix-23.1</a>
-        </li>
-        <li class="version">
-          <a href="../../samples/modelix-23.0/samples/index.html">modelix-23.0</a>
-        </li>
-        <li class="version">
-          <a href="../../samples/main/samples/index.html">main</a>
         </li>
       </ul>
     </li>
@@ -332,7 +329,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../latest/index.html" class="home-link"></a>
+  <a href="index.html" class="home-link is-current"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Modelix Documentation</a></li>
@@ -342,13 +339,13 @@
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">main</button>
   <div class="version-menu">
-    <a class="version" href="../latest/index.html">modelix-23.1</a>
+    <a class="version" href="index.html">modelix-23.1</a>
     <a class="version" href="../modelix-23.0/index.html">modelix-23.0</a>
     <a class="version is-current" href="index.html">main</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
-  </div>
+<div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/edit/main/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
@@ -358,7 +355,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="image"><img src="_images/logo-with-small-text-dark.svg" alt="logo with small text dark"></span></p>
+<p><span class="image"><img src="_images/logo-with-small-text-light.svg" alt="logo with small text light"></span></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -410,8 +407,7 @@ Otherwise, the <a href="howto/index.html" class="xref page">How-To</a> section s
 <div class="paragraph">
 <p>This is the full modelix documentation for modelix version <strong>main</strong>.
 You can choose different versions at the bottom left of this page.
-This documentation brings together the documentation from all individual modelix components.
-If you are only intersted in one specific component, you can select it in the menu at the bottom left.</p>
+This documentation brings together the documentation from all individual modelix components.</p>
 </div>
 <div class="sect2">
 <h3 id="_structure_framework"><a class="anchor" href="#_structure_framework"></a>Structure Framework</h3>
@@ -424,7 +420,8 @@ As a result, we separate the documentation in the following four mayor categorie
 <li>
 <p><a href="tutorial/index.html" class="xref page">Tutorials (learning-oriented)</a></p>
 <div class="paragraph">
-<p>Lessons that take the reader by the hand through a series of steps to complete a project of some kind. <strong>New users start here.</strong></p>
+<p>Lessons that take the reader by the hand through a series of steps to complete a project of some kind.
+<strong>New users usually start here.</strong></p>
 </div>
 </li>
 <li>
@@ -432,6 +429,9 @@ As a result, we separate the documentation in the following four mayor categorie
 </li>
 <li>
 <p><a href="reference/index.html" class="xref page">Reference</a></p>
+<div class="paragraph">
+<p>There is also a dedicated API page where you can find component specific API documentaion over at <a href="https://api.docs.modelix.org" class="bare">https://api.docs.modelix.org</a>.</p>
+</div>
 </li>
 <li>
 <p><a href="explanation/index.html" class="xref page">Explanation</a></p>
@@ -478,7 +478,7 @@ To report issues please use <a href="https://issues.modelix.org" target="_blank"
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="main/roadmap.html">Development, Releases, and Roadmap</a></span>
+  <span class="next"><a href="main/roadmap.html">Roadmap</a></span>
 </nav>
 </article>
   </div>
@@ -490,6 +490,12 @@ To report issues please use <a href="https://issues.modelix.org" target="_blank"
   <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
   <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
 </footer>
+<script>
+window.addEventListener('load', function focusSearchInput () {
+  window.removeEventListener('load', focusSearchInput)
+  document.querySelector('#search-input').focus()
+})
+</script>
 
 <script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
