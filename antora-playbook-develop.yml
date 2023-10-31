@@ -57,8 +57,7 @@ content:
 
 
 urls:
-  latest_version_segment: main
-  latest_version_segment_strategy: redirect:to
+  latest_prerelease_version_segment: main
 
 ui:
   bundle:

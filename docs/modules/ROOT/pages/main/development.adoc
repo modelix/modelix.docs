@@ -23,4 +23,4 @@ We aim to provide a Spring release `R1` and an Autumn release `R2`.
 All development in-between is carried out as patches on the releases.
 This release cycle starts from 2023 with the first release on the MPS Community meetup in May: `2023.R1`.
 
-To gain an overview over existing components, please refer to the list of components xref:modelix:ROOT:reference/repositories-components.adoc[here].
+To gain an overview over existing components, please refer to the list of components xref:reference/repositories-components.adoc[here].
