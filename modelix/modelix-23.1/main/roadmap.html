@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Development, Releases, and Roadmap :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/modelix/modelix-23.1/main/roadmap.html">
+    <link rel="prev" href="../index.html">
+    <link rel="next" href="../tutorial/index.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/link.css">
+
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Documentation</a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <input id="search-input" type="text" placeholder="Search the docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="body">
+<div class="nav-container" data-component="modelix" data-version="modelix-23.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Modelix Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">General</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="roadmap.html">Development, Releases, and Roadmap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorial/build-component.html">Build components using Gradle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/startup-usecases.html">samples:tutorial/startup-usecases.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../howto/index.html">How-To Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/howto/usage-platform.html">Use platform to streamline dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-model-server.html">Start a <code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/architecture.html">System Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/reference/model-server.html">Local model-server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../samples/reference/openapi.html">Intermediate OpenAPI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/rest-api-model-ql.html">modelQL API</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/reference/rest-api-model-server.html">model-server API</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/repositories-components.html">List of Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/components-table.html">Table of Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-model-server.html"><code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-model-api-gen.html"><code>model-api-gen</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/reference/component-light-model-client.html"><code>light-model-client</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../explanation/index.html">Explanation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/index.html">Samples Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../samples/explanation/structure.html">Sample Structure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use-Cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/usecases.html">Use-cases Overview</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/usecase-1.html">Use-Case 1: Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../samples/explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/explanation/index.html">Gradle Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/goals.html">Modelix Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modelix Documentation</span>
+    <span class="version">modelix-23.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Modelix Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">modelix-23.1</a>
+        </li>
+        <li class="version">
+          <a href="../../modelix-23.0/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Modelix Documentation</a></li>
+    <li><a href="../index.html">General</a></li>
+    <li><a href="roadmap.html">Development, Releases, and Roadmap</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.1</button>
+  <div class="version-menu">
+    <a class="version is-current" href="roadmap.html">modelix-23.1</a>
+    <a class="version" href="../../modelix-23.0/main/roadmap.html">modelix-23.0</a>
+    <a class="version" href="../../main/main/roadmap.html">main</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/modelix/modelix.doc/blob/modelix-23.1/docs/modules/ROOT/pages/main/roadmap.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Development, Releases, and Roadmap</h1>
+<div class="sect1">
+<h2 id="_development"><a class="anchor" href="#_development"></a>Development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The modelix project is developed open-source under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.
+All components and software of the platform as well as issue tracking and project management are done in repositories in our <a href="https://github.com/modelix">GitHub organisation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Currently, we use GitHub actions to build, test, and publish the components.
+We deploy all relevant artifacts to the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus server</a> as well as <a href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a></p>
+</div>
+<div class="paragraph">
+<p>Issues are managed in our issue tracker over at <a href="https://issues.modelix.org" class="bare" target="_blank" rel="noopener">https://issues.modelix.org</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_cycle"><a class="anchor" href="#_release_cycle"></a>Release Cycle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With many components being in various development stages - from stable to early and conceptual - they are released individually for each repository.
+Generally, we follow the <a href="https://en.wikipedia.org/wiki/Software_versioning"><em>Semantic versioning</em></a> scheme for releases.
+However, anything based on JetBrains MPS (e.g. MPS plugins or extensions) are prefixed with the corresponding MPS major and minor version number followed by our own patch version number.
+For example, the <a href="https://github.com/modelix/modelix/packages/1077382"><code>org.modelix.mps-model-plugin</code></a> version <code>2021.2.103</code> is the <code>103rd</code> release which is compatible with MPS <code>2021.2.*</code>.</p>
+</div>
+<div class="paragraph">
+<p>To make it easier for developers, the modelix platform is currently released twice a year as a single "platform release" which references compatible component versions.
+We aim to provide a Spring release <code>R1</code> and an Autumn release <code>R2</code>.
+All development in-between is carried out as patches on the releases.
+This release cycle starts from 2023 with the first release on the MPS Community meetup in May: <code>2023.R1</code>.</p>
+</div>
+<div class="paragraph">
+<p>To gain an overview over existing components, please refer to the list of components <a href="../reference/repositories-components.html" class="xref page">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_roadmap"><a class="anchor" href="#_roadmap"></a>Roadmap</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following image shows a dense overview of our current roadmap.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/2023_05_roadmap.png" alt="2023 05 roadmap">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_priorities_overview"><a class="anchor" href="#_key_priorities_overview"></a>Key priorities overview</h3>
+<div class="paragraph">
+<p>The aim of this roadmap is to provide you with a more detailed overview of our plans.
+We have compiled a catalog of our significant areas, which are our top priorities we focus on delivering.
+In the following we shortly list these key priorities. Below you can find more detailed explanations for each of these.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Model APIs: A unified low-level API to navigate and modify models. It is untyped to any existing meta-model.</p>
+</li>
+<li>
+<p>Domain-Specific Model API generator: A complete rewrite of our initial API generator which overcomes multiple previous shortcomings. It provides type information and directly integrates with the model API.</p>
+</li>
+<li>
+<p>Versioning / Releases / Roadmap: Automated semantic versioning with unifying modelix platform releases twice a year. Development is planned over at <a href="https://issues.modelix.org">issues.modelix.org</a>.</p>
+</li>
+<li>
+<p>Documentation: Docs-as-code approach which is built to <a href="https://docs.modelix.org">docs.modelix.org</a> with every platform release.</p>
+</li>
+<li>
+<p>Git integration: A tighter integration for git based model storage to bridge legacy storage solutions.</p>
+</li>
+<li>
+<p>MPS in the Cloud: Run MPS in the cloud as a way to transition to the web.</p>
+</li>
+<li>
+<p>Language Evolution: A way to handle new language versions and metamodel changes.</p>
+</li>
+<li>
+<p>Graphical Editors: We plan to provide the data synchronization and the generation of a TypeScript model API to enable graphical editors on the wev.</p>
+</li>
+<li>
+<p>LIonWeb: Integration with other web components out there - modelix support and involvement in the LIonWeb (Language interfaces on the web) initiative.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_renaming_23_1"><a class="anchor" href="#_component_renaming_23_1"></a>Component Renaming (23.1)</h3>
+<div class="paragraph">
+<p>Several modelix artifacts had potentially confusing names. We streamlined everything and renamed to convey functionality more clearly. Check out <a href="https://modelix.org/blog/2023/04/12/modelix-artifact-re-grouping-and-re-naming/">our blog post</a> for details. Also check the new table of modelix component overview <a href="https://docs.modelix.org/modelix/latest/reference/components-table.html">here</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_model_apis_23_1"><a class="anchor" href="#_model_apis_23_1"></a>Model APIs (23.1)</h3>
+<div class="paragraph">
+<p>Modelix uses a low level meta-model agnostic API across all components.
+The model-api provides this abstraction. This API is the shared basis and used across all modelix components. It is a Kotlin multi-platform implementation with artifacts for JVM and JS. An untyped access to model content is possible when only using the model-api.</p>
+</div>
+<div class="paragraph">
+<p>In case you want to use typed access, the model-api-gen provides a generator which generates a typed model API from your existing domain-specific meta-model. This generated API specializes the untyped model-api and provides domain grounded model access.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_domain_specific_model_api_generator_23_1"><a class="anchor" href="#_domain_specific_model_api_generator_23_1"></a>Domain-Specific Model API Generator (23.1)</h3>
+<div class="paragraph">
+<p>Up to now, the model API generator api-gen was used to generate a domain-specific Java model API from a MPS structure. These classes can then be used in web applications to obtain typed model content from the model-server. The api-gen was implemented as a MPS generator and consequently bound to and limited by the MPS ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>To overcome the many shortcomings we observed (runtime &amp; resource usage, tool lock-in, maintainability, few target languages). We re-implement the generator (now <code>model-api-gen`</code>) in Kotlin, which has several benefits. Most notably, there is now an additional option to generate a domain-specific TypeScript API.</p>
+</div>
+<div class="paragraph">
+<p>One extra feature we add is MPS meta-model independence: In a new intermediate step, we export the MPS structure to a JSON representation re-using the JSON language of the existing MPS extensions. This intermediate artifact is then used by the api-gen v2 to generate the APIs. The MPS structure to JSON generator is available for all MPS versions so that previous maintenance of the api-gen v1 for multiple MPS versions is not necessary any more.</p>
+</div>
+<div class="paragraph">
+<p>To ease the use of the new model-api-gen, we provide a Gradle plugin to help setting up the domain-specific API generation: model-api-gen-gradle.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_versioning_releases_roadmap_23_1"><a class="anchor" href="#_versioning_releases_roadmap_23_1"></a>Versioning / Releases / Roadmap (23.1)</h3>
+<div class="paragraph">
+<p>With many modelix components being in various development stages - from stable to early and conceptual - they are released individually. Generally, modelix follows the Semantic Versioning scheme for releases and groups different components by repository (e.g. core components are in modelix.core, while documentation resides in modelix.docs).</p>
+</div>
+<div class="paragraph">
+<p>However, anything based on JetBrains MPS (e.g. MPS plugins or extensions) is prefixed with the corresponding MPS major and minor version number followed by our own patch version number. For example, the org.modelix.mps-model-plugin version 2021.2.103 is the 103rd release which is compatible with MPS 2021.2.</p>
+</div>
+<div class="paragraph">
+<p>To make it easier for developers, the modelix platform will be released twice a year as a single modelix platform release which aggregates all compatible component versions. We aim to provide a Spring release (modelix-2X.1) and an Autumn release (modelix-2X.2). All development in-between is carried out as patches on the releases. This release cycle starts from 2023 with the first release on the MPS Community meetup in May: modelix-23.1. For the different MPS versions there are sub-platforms that also bundle the corresponding MPS plugins of the modelix platform. The artifacts which hold the Gradle platform thus will be</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>org.modelix.platform`</code></p>
+</li>
+<li>
+<p><code>org.modelix.platform-mps-2021-2</code></p>
+</li>
+<li>
+<p><code>org.modelix.platform-mps-2020-3</code></p>
+</li>
+<li>
+<p><code>org.modelix.platform-mps-2021-1</code></p>
+</li>
+<li>
+<p><code>org.modelix.platform-mps-2021-3</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, we want to communicate our plans for the modelix platform more clearly. As a result we prepared a roadmap outlining our planned steps.</p>
+</div>
+<div class="paragraph">
+<p>Further, on <a href="https://issues.modelix.org">issues.modelix.org</a> we also give more insights in our development efforts.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_documentation_23_1"><a class="anchor" href="#_documentation_23_1"></a>Documentation (23.1)</h3>
+<div class="paragraph">
+<p>To further reduce the barrier of entry to modelix with modelix-23.1 we deploy new documentation following the docs-as-code approach. You can access the new documentation over at <a href="https://docs.modelix.org">docs.modelix.org</a> which is available for each modelix platform release. We follow the Diataxis documentation framework to separate and communicate more clearly in the categories of Tutorials, How To Guides, Explanation, and (technical) Reference. Additionally <a href="https://api.modelix.org/">api.modelix.org</a> provides a generated technical API reference which we grow incrementally.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_integration_estimated_23_2"><a class="anchor" href="#_git_integration_estimated_23_2"></a>Git Integration (estimated 23.2)</h3>
+<div class="paragraph">
+<p>Generally, we recommend using the model-server as the storage backend for models in the cloud. However, in some environments and use cases, this philosophy can only partially be archived. In rare cases we observe a hybrid setup where a) model knowledge is stored in files as MPS projects in combination with git while b) deploying web and cloud centric applications using the model-server.
+In a first iteration, we want to provide the possibility for read and write of MPS models from and to git repositories in the modelix platform. This could eventually also include the usage of the model-server for real-time collaboration in these hybrid setups. However, this is a topic which requires further investigation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mps_in_the_cloud_estimated_23_2"><a class="anchor" href="#_mps_in_the_cloud_estimated_23_2"></a>MPS in the Cloud (estimated 23.2)</h3>
+<div class="paragraph">
+<p>For many MPS based projects, a good first step for transitioning to the web is running MPS in the cloud. modelix already has elaborate prototypes for these use-cases by using Kubernetes and Projector to provide MPS “Workspaces” in the cloud.</p>
+</div>
+<div class="paragraph">
+<p>One central piece for this are the modelix build-tools. This component allows the generation of MPS languages without any existing build script.</p>
+</div>
+<div class="paragraph">
+<p>We want to refine our efforts regarding MPS in the cloud and make them more accessible.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_language_evolution_estimated_24_1"><a class="anchor" href="#_language_evolution_estimated_24_1"></a>Language Evolution (estimated 24.1)</h3>
+<div class="paragraph">
+<p>When using MPS, model migrations are made easy using the migration aspect. However, once stepping outside of MPS, migrations become more difficult. Model migration needs to be carried out across platforms, teams and (web) applications when a new language version is deployed.</p>
+</div>
+<div class="paragraph">
+<p>We want to support a generated APIs that can work with multiple versions at the same time with which we also can support meta-model versions checks for compatibility. We have some ideas we need to further refine and explore in the following releases.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_graphical_editors_in_the_web_estimated_24_2"><a class="anchor" href="#_graphical_editors_in_the_web_estimated_24_2"></a>Graphical Editors in the Web (estimated 24.2)</h3>
+<div class="paragraph">
+<p>The experience from MPS shows that the requirements for a graphical editor are too diverse to support all of them with a single framework. There are many different frameworks available in the web world where you can choose the one that fits your use case.
+We plan to only provide the data synchronization and the generation of a TypeScript model API, but not the integration of any diagram framework itself.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lionweb"><a class="anchor" href="#_lionweb"></a>LIonWeb</h3>
+<div class="paragraph">
+<p>Modelix focuses on a good integration with MPS. If you are interested in the integration of other modeling technologies then check out the LIonWeb project (short for Language Interfaces on the web). They specify more general interfaces and use the modelix <code>model-server</code> for data storage and exchange in their current prototypes. The modelix team co-authored and is involved with the LIonWeb initiative.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../index.html">General</a></span>
+  <span class="next"><a href="../tutorial/index.html">Tutorials</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+<p>Copyright © 2021-present by the <a href="https://modelix.org">modelix open source project</a> and the individual contributors. All Rights Reserved.</p>
+  <p>Except where otherwise noted, docs.modelix.org, modelix, and the modelix framework, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.</p>
+  <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
+  <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
+</footer>
+
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
