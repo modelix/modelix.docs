@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gradle Plugin for synchronizing models between model-api endpoints :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/modelix/modelix-23.2/core/reference/component-bulk-model-sync-gradle.html">
+    <link rel="prev" href="component-model-api-gen-gradle.html">
+    <link rel="next" href="component-light-model-client.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/link.css">
+
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Documentation</a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <input id="search-input" type="text" placeholder="Search the docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../../index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="body">
+<div class="nav-container" data-component="modelix" data-version="modelix-23.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Modelix Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../index.html">General</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../main/roadmap.html">Roadmap</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../main/contribute.html">Contribution Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../main/development.html">Development and Releases</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorial/build-component.html">Build components using Gradle</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../howto/index.html">How-To Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/howto/usage-platform.html">Use platform to streamline dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../howto/usage-model-server.html">Start a <code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../howto/usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../howto/testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../howto/modelql.html">ModelQL</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../reference/index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../reference/repositories-components.html">List of Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../reference/components-table.html">Table of Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-model-api.html"><code>model-api</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-model-server.html"><code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-model-api-gen.html"><code>model-api-gen</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-light-model-client.html"><code>light-model-client</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-mps-model-server-plugin.html">mps-model-server-plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="component-vue-model-api.html"><code>vue-model-api</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../explanation/index.html">Explanation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/explanation/index.html">Gradle Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/goals.html">Modelix Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modelix Documentation</span>
+    <span class="version">modelix-23.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Modelix Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">modelix-23.2</a>
+        </li>
+        <li class="version">
+          <a href="../../../modelix-23.1/index.html">modelix-23.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../modelix-23.0/index.html">modelix-23.0</a>
+        </li>
+        <li class="version">
+          <a href="../../../main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Modelix Documentation</a></li>
+    <li><a href="../../reference/index.html">Reference</a></li>
+    <li><a href="../../reference/components-table.html">Table of Components</a></li>
+    <li><a href="component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">modelix-23.2</button>
+  <div class="version-menu">
+    <a class="version is-current" href="component-bulk-model-sync-gradle.html">modelix-23.2</a>
+    <a class="version is-missing" href="../../../modelix-23.1/index.html">modelix-23.1</a>
+    <a class="version is-missing" href="../../../modelix-23.0/index.html">modelix-23.0</a>
+    <a class="version" href="../../../main/core/reference/component-bulk-model-sync-gradle.html">main</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/blob/modelix-23.2/docs/global/modules/core/pages/reference/component-bulk-model-sync-gradle.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Gradle Plugin for synchronizing models between model-api endpoints</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="🔗 Quick Links"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="https://api.modelix.org/3.12.0/bulk-model-sync-gradle/index.html" target="_blank" rel="noopener">API doc</a> | <a href="https://github.com/modelix/modelix.core" target="_blank" rel="noopener">Repository</a> | Artifacts: <a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/bulk-model-sync-gradle/" target="_blank" rel="noopener">Nexus</a> <a href="https://github.com/modelix/modelix.core/packages/1946684" target="_blank" rel="noopener">GitHub Packages</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>bulk-model-sync</code> Gradle plugin synchronizes models between <code>model-api</code> endpoints.
+A common example would be synchronizing a local MPS project to a <code>model-server</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/bulk-model-sync-gradle.overview.png" alt="Bulk Synchronization between MPS and model-server">
+</div>
+<div class="title">Figure 1. Bulk Synchronization between MPS and model-server</div>
+</div>
+<div class="paragraph">
+<p>The plugin allows the definition of sync directions inside of a <code>modelSync</code> block by specifying source and target endpoint.
+Based on these directions, Gradle tasks will be generated, which can be run to trigger the corresponding synchronization.</p>
+</div>
+<div class="paragraph">
+<p>Internally, the node data will be bulk exported from the source endpoint and stored as JSON files.
+After that, these JSON files serve as a specification to incrementally update the target model via the target <code>model-api</code> endpoint.
+This means that only a minimal amount of write operations is used to update the target model.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_settings"><a class="anchor" href="#_configuration_settings"></a>Configuration settings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_modelsync_configuration"><a class="anchor" href="#_modelsync_configuration"></a>modelSync configuration</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">method</th>
+<th class="tableblock halign-left valign-top">parameter type</th>
+<th class="tableblock halign-left valign-top">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dependsOn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds the given task as a dependency of this task.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>direction</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String, Action&lt;SyncDirection&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a new sync direction with the given name.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_syncdirection_configuration"><a class="anchor" href="#_syncdirection_configuration"></a>SyncDirection configuration</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">method</th>
+<th class="tableblock halign-left valign-top">parameter type</th>
+<th class="tableblock halign-left valign-top">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fromLocal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Action&lt;LocalSource&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a local source (MPS).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>toModelServer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Action&lt;ServerTarget&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a model-server target.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fromModelServer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Action&lt;ServerSource&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a model-server source.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>toLocal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Action&lt;LocalTarget&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines a local target (MPS).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>registerLanguage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ILanguage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registers the given language and all of its concepts for the synchronisation process.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeModule</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes the module specified by the given fully qualified name in the synchronisation process.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>includeModulesByPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes all modules, whose fully qualified name starts with the given prefix, in the synchronisation process.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_localsource_target_configuration"><a class="anchor" href="#_localsource_target_configuration"></a>LocalSource/-Target configuration</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">setting</th>
+<th class="tableblock halign-left valign-top">type</th>
+<th class="tableblock halign-left valign-top">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsHome</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Location of the MPS to be used for the sync.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsHeapSize</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPS heap size specified as a String, e.g. "2g" for 2GB (default: "2g")</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>repositoryDir</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory in which the modules are stored.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsDebugPort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set, the headless MPS will suspend on startup and wait for a remote debugger on the specified port.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_serversource_target_configuration"><a class="anchor" href="#_serversource_target_configuration"></a>ServerSource/-Target configuration</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">setting</th>
+<th class="tableblock halign-left valign-top">type</th>
+<th class="tableblock halign-left valign-top">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL of the model-server API endpoint.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>repositoryId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Id of the target/source model-server repository.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>branchName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the target/source model-server branch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revision</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source model-server revision. Can be used instead of <code>repositoryId</code> and <code>branchName</code>. Only available in ServerSource.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">modelSync {
+    dependsOn(someOtherTask)
+    direction("pushToMyServer") {
+        registerLanguage(L_MyGeneratedLanguage)
+        includeModule("MySolution")
+        fromLocal {
+            mpsHome = project.layout.buildDirectory.dir("mps").get().asFile
+            mpsHeapSize = "4g"
+            repositoryDir = projectDir.resolve("my-repo")
+        }
+        toModelServer {
+            url = "http://0.0.0.0:28101/v2"
+            repositoryId = "my-repo"
+            branchName = "dev"
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generated Gradle task to perform synchronization: <code>runSyncPushToMyServer</code>.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a></span>
+  <span class="next"><a href="component-light-model-client.html"><code>light-model-client</code></a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+<p>Copyright © 2021-present by the <a href="https://modelix.org">modelix open source project</a> and the individual contributors. All Rights Reserved.</p>
+  <p>Except where otherwise noted, docs.modelix.org, modelix, and the modelix framework, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.</p>
+  <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
+  <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
+</footer>
+
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>
