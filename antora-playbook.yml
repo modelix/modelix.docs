@@ -65,6 +65,7 @@ antora:
   - require: '@antora/lunr-extension'
 
 asciidoc:
+  sourcemap: true
   attributes:
     page-pagination: true
     page-partial: true
