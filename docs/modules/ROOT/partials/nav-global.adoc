@@ -6,35 +6,35 @@
 
 // Tutorials section
 * xref:tutorial/index.adoc[]
-** xref:modelix:ROOT:tutorial/build-component.adoc[]
+** xref:tutorial/build-component.adoc[]
 
 +
 --
-include::modelix:samples:partial$nav-tutorial.adoc[]
+include::samples:partial$nav-tutorial.adoc[]
 --
 
 +
 --
-include::modelix:core:partial$nav-tutorial.adoc[]
+include::core:partial$nav-tutorial.adoc[]
 --
 
 
 // How-To Guides section
 * xref:howto/index.adoc[]
-// TODO ** xref:modelix:ROOT:howto/faq.adoc[FAQs]
+// TODO ** xref:howto/faq.adoc[FAQs]
 
 +
 --
-include::modelix:samples:partial$nav-howto.adoc[]
+include::samples:partial$nav-howto.adoc[]
 --
 
 +
 --
-include::modelix:platform:partial$nav-howto.adoc[]
+include::platform:partial$nav-howto.adoc[]
 --
 +
 --
-include::modelix:core:partial$nav-howto.adoc[]
+include::core:partial$nav-howto.adoc[]
 --
 
 
@@ -51,29 +51,29 @@ include::samples:partial$nav-reference.adoc[]
 
 +
 --
-include::modelix:core:partial$nav-reference.adoc[]
+include::core:partial$nav-reference.adoc[]
 --
 
 
 // Explanation section
-* xref:ROOT:explanation/index.adoc[]
+* xref:explanation/index.adoc[]
 
 +
 --
-include::modelix:samples:partial$nav-explanation.adoc[]
---
-
-+
---
-include::modelix:platform:partial$nav-explanation.adoc[]
+include::samples:partial$nav-explanation.adoc[]
 --
 
 +
 --
-include::modelix:core:partial$nav-explanation.adoc[]
+include::platform:partial$nav-explanation.adoc[]
 --
-** xref:ROOT:explanation/architecture.adoc[]
-** xref:ROOT:explanation/goals.adoc[]
-** xref:ROOT:explanation/glossary.adoc[]
+
++
+--
+include::core:partial$nav-explanation.adoc[]
+--
+** xref:explanation/architecture.adoc[]
+** xref:explanation/goals.adoc[]
+** xref:explanation/glossary.adoc[]
 
 
