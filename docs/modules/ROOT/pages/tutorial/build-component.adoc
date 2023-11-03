@@ -21,7 +21,9 @@ gradlew.bat build   # windows
 == IntelliJ Idea
 
 Wherever possible we use the latest https://www.jetbrains.com/idea/[IntelliJ IDEA] IDE to manage projects in our repositories.
-Consequently, opening any repository with IntelliJ will also allow you to build and eventually xref:main/contribute.adoc[contribute].
+Consequently, opening any repository with IntelliJ will also allow you to build and eventually xref:ROOT:main/contribute.adoc[contribute].
+// This file is included in /modelix.samples/docs/local/modules/samples/partials/short-description.adoc
+// Therefore, we specify the module ROOT, so that the including works correctly.
 
 
 == modelix Artifact Publication
