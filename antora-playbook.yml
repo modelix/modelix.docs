@@ -4,6 +4,7 @@ site:
   start_page: modelix::index.adoc
 
 content:
+  branches: [ HEAD, 'docs/release/*' ]
   sources:
 
   #
@@ -11,23 +12,23 @@ content:
   # These are tied to the single 'Modelix Documentation'
   #
   - url: https://github.com/modelix/modelix.doc
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs
 
   - url: https://github.com/modelix/modelix.samples
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs/global
 
   - url: https://github.com/modelix/modelix.core
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs/global
 
   - url: https://github.com/modelix/modelix.platform
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs/global
 
 
@@ -36,18 +37,18 @@ content:
   # Provides individual per repository documentation
   #
 #  - url: https://github.com/modelix/modelix.samples
-#    branches: HEAD
-#    tags: modelix-2@({0..9}).+({0..9})
+#    version:
+#      'docs/release/(*)': '$1'
 #    start_path: docs/local
 #
 #  - url: https://github.com/modelix/modelix.core
-#    branches: HEAD
-#    tags: modelix-2@({0..9}).+({0..9})
+#    version:
+#      'docs/release/(*)': '$1'
 #    start_path: docs/local
 #
 #  - url: https://github.com/modelix/modelix.platform
-#    branches: HEAD
-#    tags: modelix-2@({0..9}).+({0..9})
+#    version:
+#      'docs/release/(*)': '$1'
 #    start_path: docs/local
 
 
