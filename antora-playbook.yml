@@ -70,4 +70,6 @@ asciidoc:
     page-pagination: true
     page-partial: true
 
-
+runtime:
+  log:
+    failure_level: error
