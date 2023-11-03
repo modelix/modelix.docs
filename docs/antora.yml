@@ -1,7 +1,5 @@
 name: modelix
 title: Modelix Documentation
-version:
-  (v2@({0..9}).+({0..9})): $1
 nav:
 - modules/ROOT/partials/nav-global.adoc
 
