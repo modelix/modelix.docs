@@ -24,3 +24,17 @@ All development in-between is carried out as patches on the releases.
 This release cycle starts from 2023 with the first release on the MPS Community meetup in May: `2023.R1`.
 
 To gain an overview over existing components, please refer to the list of components xref:reference/repositories-components.adoc[here].
+
+[#experimental_features]
+== Experimental features
+
+Sometimes we want to implement a feature or expose an API that is experimental.
+
+When doing so, we mark the APIs as experimental.
+In TypeScript, we use the https://tsdoc.org/pages/tags/experimental/[documentation tag `@experimental`].
+For Kotlin, we use the annotation `@UnstableModelixFeature` for an https://kotlinlang.org/docs/opt-in-requirements.html[opt-in requirement]
+
+When marking something as experimental, we document the reason for it being experimental and our plans for stabilizing the feature.
+
+An example in our Kotlin code can be found https://github.com/modelix/modelix.core/blob/e14d15f/model-client/src/jsMain/kotlin/org/modelix/model/client2/ClientJS.kt[here].
+An example in TypeScript can be found https://github.com/modelix/modelix.core/blob/main/vue-model-api/src/useRootNode.ts[here].
