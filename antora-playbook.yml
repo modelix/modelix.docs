@@ -11,7 +11,13 @@ content:
   # GLOBAL REPOSITORIES
   # These are tied to the single 'Modelix Documentation'
   #
+  - url: ./
+    branches: HEAD # For CI builds want to use the current branch as `main` version
+    version: 'main'
+    start_path: docs
+
   - url: https://github.com/modelix/modelix.doc
+    branches: ['docs/release/*']
     version:
       'docs/release/(*)': '$1'
     start_path: docs
