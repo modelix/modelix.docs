@@ -21,7 +21,8 @@ gradlew.bat build   # windows
 == IntelliJ Idea
 
 Wherever possible we use the latest https://www.jetbrains.com/idea/[IntelliJ IDEA] IDE to manage projects in our repositories.
-Consequently, opening any repository with IntelliJ will also allow you to build and eventually xref:main/contribute.adoc[contribute].
+Consequently, opening any repository with IntelliJ will also allow you to build and eventually xref:{page-component-latest-version}@modelix:ROOT:main/contribute.adoc[contribute].
+// Explicitly link to the latest contribution page
 
 
 == modelix Artifact Publication

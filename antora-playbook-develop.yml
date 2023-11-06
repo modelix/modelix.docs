@@ -4,6 +4,7 @@ site:
   start_page: modelix::index.adoc
 
 content:
+  branches: [ HEAD, 'docs/release/*' ]
   sources:
 
   #
@@ -11,26 +12,26 @@ content:
   #
   # - url: https://github.com/modelix/modelix.doc
   - url: ./
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs
 
   # - url: https://github.com/modelix/modelix.samples
   - url: ./../modelix.samples-main
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs/global
 
   # - url: https://github.com/modelix/modelix.core
   - url: ./../modelix.core-main
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs/global
 
   # - url: https://github.com/modelix/modelix.platform
   - url: ./../modelix.platform
-    branches: HEAD
-    tags: modelix-2@({0..9}).+({0..9})
+    version:
+      'docs/release/(*)': '$1'
     start_path: docs/global
 
 
@@ -39,20 +40,20 @@ content:
   #
   # - url: https://github.com/modelix/modelix.samples
 #  - url: ./../modelix.samples-main
-#    branches: HEAD
-#    tags: modelix-2@({0..9}).+({0..9})
+#    version:
+#      'docs/release/(*)': '$1'
 #    start_path: docs/local
 #
 #  # - url: https://github.com/modelix/modelix.core
 #  - url: ./../modelix.core-main
-#    branches: HEAD
-#    tags: modelix-2@({0..9}).+({0..9})
+#    version:
+#      'docs/release/(*)': '$1'
 #    start_path: docs/local
 #
 #  # - url: https://github.com/modelix/modelix.platform
 #  - url: ./../modelix.platform
-#    branches: HEAD
-#    tags: modelix-2@({0..9}).+({0..9})
+#    version:
+#      'docs/release/(*)': '$1'
 #    start_path: docs/local
 
 
@@ -70,8 +71,11 @@ antora:
   - require: '@antora/lunr-extension'
 
 asciidoc:
+  sourcemap: true
   attributes:
     page-pagination: true
     page-partial: true
 
-
+runtime:
+  log:
+    failure_level: error
