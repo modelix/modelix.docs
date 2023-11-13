@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to the modelix samples! :: Modelix Documentation</title>
+    <title>Introduction :: Modelix Documentation</title>
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/samples/index.html">
     <link rel="prev" href="../explanation/glossary.html">
-    <link rel="next" href="tutorial/start-usecase-1-a.html">
+    <link rel="next" href="overview.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -225,77 +225,26 @@
     <span class="nav-text">Samples</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="index.html">Welcome</a>
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="metamodel.html">Metamodel</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Tutorials</span>
+    <span class="nav-text">Use cases</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a>
+    <a class="nav-link" href="use_case_1.html">1. Model server and MPS</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tutorial/start-usecase-1-b.html">Run Use-Case 1a Implementation</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <span class="nav-text">How-To Guides</span>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Reference</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="reference/architecture.html">System Architecture</a>
+    <a class="nav-link" href="use_case_2.html">2. Model server and web frontend</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="reference/meta-model-model-api.html">Meta-model &amp; Generated Model API</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="reference/dashboard.html">Dashboard</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="reference/model-server.html">Local model-server</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="reference/openapi.html">Intermediate OpenAPI</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="reference/rest-api-model-ql.html">modelQL API</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="reference/rest-api-model-server.html">model-server API</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Explanation</span>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="index.html">Samples Introduction</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="explanation/structure.html">Sample Structure</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Use-Cases</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="explanation/usecases.html">Use-cases Overview</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="explanation/usecase-1.html">Use-Case 1: Dashboard</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="explanation/usecase-2.html">Use-Case 2: Manual Schedule Creation</a>
-  </li>
-</ul>
+    <a class="nav-link" href="use_case_3.html">3. Model server and web backend</a>
   </li>
 </ul>
   </li>
@@ -342,7 +291,7 @@
   <ul>
     <li><a href="../index.html">Modelix Documentation</a></li>
     <li>Samples</li>
-    <li><a href="index.html">Welcome</a></li>
+    <li><a href="index.html">Introduction</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -361,31 +310,14 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Welcome to the modelix samples!</h1>
+<h1 class="page">Introduction</h1>
 <div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-The examples are currently work in progress and are develop alongside the modelix platform development.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The modelix <a href="https://github.com/modelix/modelix.samples" target="_blank" rel="noopener">samples repository</a> contains a couple of examples that show various aspects of the modelix platform.
 The primary focus of the samples is to show how you can apply modelix to bring languages and models defined in MPS into the web.
-On the basis of (meta-)models defined in MPS, external access is provided using JVM (Java/Kotlin) and web frameworks/tools.
-Everything shown in the samples is intended to enable you to come up with your own use-cases and architectures based on what is provided here.</p>
+On the basis of (meta-)models defined in MPS, external access is provided using the JVM (Java/Kotlin) and web frameworks/tools.
+Everything shown in the samples is intended to enable you to come up with your own use cases and architectures based on what is provided here.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -394,62 +326,55 @@ Everything shown in the samples is intended to enable you to come up with your o
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Not all features of modelix are shown here so this is not a complete demo of everything modelix can do.
+Not all features of modelix are shown here, so this is not a complete demo of everything modelix can do.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 <p>None of the examples try to reuse editors defined in MPS.
-If your goal is to reuse MPS editors as is then modelix itself ships with a <a href="https://lp.jetbrains.com/projector/">Projector</a> integration to achieve this.</p>
+If your goal is to reuse MPS editors as is, then modelix itself ships with a <a href="https://lp.jetbrains.com/projector/">Projector</a> integration to achieve this.</p>
 </div>
 <div class="paragraph">
 <p>While all the examples use the same language defined in MPS they are not meant as one complete example but rather as individual parts.
-The purpose of the examples is to give inspiration of what is possible with modelix and make you think and envision your own use-cases.</p>
+The purpose of the examples is to give inspiration for what is possible with modelix and make you think about and envision your own use cases.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting Started</h2>
+<h2 id="_technical_prerequisites"><a class="anchor" href="#_technical_prerequisites"></a>Technical prerequisites</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_build_components_using_gradle"><a class="anchor" href="#_build_components_using_gradle"></a>Build components using Gradle</h3>
-<div class="sect3">
-<h4 id="_build_from_console"><a class="anchor" href="#_build_from_console"></a>Build from console</h4>
 <div class="paragraph">
-<p>The modelix project uses Gradle to build the individual components.
-Simply call the following in the top level folder of a repository:</p>
+<p>To work with the samples, you need the following software installed.:</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">./gradlew build   # mac/linux</code></pre>
-</div>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MPS <code>2021.2.6</code></p>
+</li>
+<li>
+<p>Java 11</p>
+</li>
+<li>
+<p>Docker and <a href="https://docs.docker.com/compose/">Docker Compose</a></p>
 <div class="paragraph">
-<p>or if you are on windows use:</p>
+<p>Alternatives like <a href="https://podman.io/">Podman</a> might work, but have not been tested.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">gradlew.bat build   # windows</code></pre>
-</div>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_intellij_idea"><a class="anchor" href="#_intellij_idea"></a>IntelliJ Idea</h4>
-<div class="paragraph">
-<p>Wherever possible we use the latest <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> IDE to manage projects in our repositories.
-Consequently, opening any repository with IntelliJ will also allow you to build and eventually <a href="../main/contribute.html" class="xref page">contribute</a>.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_modelix_artifact_publication"><a class="anchor" href="#_modelix_artifact_publication"></a>modelix Artifact Publication</h4>
-<div class="paragraph">
-<p>At the moment most modelix artifacts are stored on the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis nexus</a> with no access restriction.
-As a consequence, when you build modelix or use modelix components via Gradle there is no repository access setup required.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_how_to_set_up_github_packages_authentication"><a class="anchor" href="#_how_to_set_up_github_packages_authentication"></a>How to set up GitHub packages authentication</h4>
+<div class="sect1">
+<h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting started</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Clone <a href="https://github.com/modelix/modelix.samples">samples repository</a></p>
+</li>
+<li>
+<p>Start building all components with <code>./gradlew build</code> inside the repository</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -457,74 +382,45 @@ As a consequence, when you build modelix or use modelix components via Gradle th
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This is optional when you want to obtain modelix artifacts from GitHub packages rather than the itemis nexus server.
+Building everything in the beginning is not strictly necessary, but it enables you to let the build run, while you explore the documentation further.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Most packages are also published to GitHub packages for which a GithHub account and credentials are required.</p>
-</div>
-<div class="paragraph">
-<p>To access GitHub packaged you need to specify your credentials.
-First of all you will need to generate a <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#authenticating-to-github-packages">personal access token</a> with access to GitHub Packages.
-The project assumes that your username is available as the variable <code>gpr.user</code> and the token as <code>gpr.key</code>.
-The easiest way to configure the credentials is copy the example below, paste it into the <code>gradle.properties</code> file in the repository and replace the values with your credentials:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">gpr.user=&lt;your GitHub login&gt;
-gpr.key=&lt;your personal access token&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Gradle also supports <a href="https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties">other locations</a> for specifying these properties.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_entry_points"><a class="anchor" href="#_entry_points"></a>Entry Points</h3>
-<div class="paragraph">
-<p>Once the initial build has completes you can dive in with the following:</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Read explanations in the <a href="explanation/courses-domain.html" class="xref page">Courses Domain: MPS Language and Model</a></p>
 </li>
 <li>
-<p>Read the use-cases these samples cover in the <a href="explanation/usecases.html" class="xref page">Use Cases of the Sample project</a></p>
-</li>
-<li>
-<p>Understand the repository in the <a href="explanation/structure.html" class="xref page">Sample Repository Structure</a></p>
-</li>
-<li>
-<p>Inspect and edit the project with the code editor of your choice.</p>
+<p>Explore the documentation</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The top folder in the repository provides <code>IntelliJ</code> configurations,</p>
+<p>Start with the <a href="overview.html" class="xref page">overview</a></p>
 </li>
 <li>
-<p>the <code>mps</code> folder is a sub-project can be opened using <code>MPS 2021.2.6</code>, and</p>
+<p>Or go directly to one of the samples</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="use_case_1.html" class="xref page">Use case 1: Model server and MPS</a></p>
 </li>
 <li>
-<p>the <code>spa-dashboard-angular</code> folder is a <code>WebStorm</code> project.</p>
+<p><a href="use_case_2.html" class="xref page">Use case 2: Model server and web frontend</a></p>
+</li>
+<li>
+<p><a href="use_case_3.html" class="xref page">Use case 3: Model server and web backend</a></p>
 </li>
 </ul>
 </div>
 </li>
-<li>
-<p>Start sample components which realize use case <a href="tutorial/startup-usecases.html" class="xref page">samples:tutorial/startup-usecases.adoc</a></p>
-</li>
-</ol>
+</ul>
 </div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../explanation/glossary.html">Glossary</a></span>
-  <span class="next"><a href="tutorial/start-usecase-1-a.html">Run Use-Case 1 Implementation</a></span>
+  <span class="next"><a href="overview.html">Overview</a></span>
 </nav>
 </article>
   </div>

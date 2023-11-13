@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Use case 3: Model server and web backend :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/modelix/main/samples/use_case_3.html">
+    <link rel="prev" href="use_case_2.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/link.css">
+
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Documentation</a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <input id="search-input" type="text" placeholder="Search the docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="body">
+<div class="nav-container" data-component="modelix" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all"></button>
+    <h3 class="title"><a href="../index.html">Modelix Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">General</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../main/roadmap.html">Roadmap</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../main/contribute.html">Contribution Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../main/development.html">Development and Releases</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/build-component.html">Build components using Gradle</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../howto/index.html">How-To Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/howto/usage-platform.html">Use platform to streamline dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-model-server.html">Start a <code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/howto/modelql.html">ModelQL</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/repositories-components.html">List of Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/components-table.html">Table of Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-model-api.html"><code>model-api</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-model-server.html"><code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-model-api-gen.html"><code>model-api-gen</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-light-model-client.html"><code>light-model-client</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-mps-model-server-plugin.html">mps-model-server-plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../core/reference/component-vue-model-api.html"><code>vue-model-api</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../explanation/index.html">Explanation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../platform/explanation/index.html">Gradle Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/explanation/modelql.html">ModelQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/goals.html">Modelix Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="metamodel.html">Metamodel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="use_case_1.html">1. Model server and MPS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="use_case_2.html">2. Model server and web frontend</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="use_case_3.html">3. Model server and web backend</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modelix Documentation</span>
+    <span class="version">main</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Modelix Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">main</a>
+        </li>
+        <li class="version">
+          <a href="../../23.2/index.html">23.2</a>
+        </li>
+        <li class="version">
+          <a href="../../23.1/index.html">23.1</a>
+        </li>
+        <li class="version">
+          <a href="../../23.0/index.html">23.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Modelix Documentation</a></li>
+    <li>Samples</li>
+    <li>Use cases</li>
+    <li><a href="use_case_3.html">3. Model server and web backend</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">main</button>
+  <div class="version-menu">
+    <a class="version is-current" href="use_case_3.html">main</a>
+    <a class="version" href="../../23.2/samples/use_case_3.html">23.2</a>
+    <a class="version is-missing" href="../../23.1/index.html">23.1</a>
+    <a class="version is-missing" href="../../23.0/index.html">23.0</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/modelix/modelix.samples/edit/main/docs/global/modules/samples/pages/use_case_3.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Use case 3: Model server and web backend</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This use case realizes the synchronization of model data between a web application and MPS through a model server.</p>
+</div>
+<div class="paragraph">
+<p>This use case consists of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a <strong>model server</strong> that holds model data</p>
+</li>
+<li>
+<p>a <strong>web backend</strong> that can read and write data to the model server</p>
+</li>
+<li>
+<p>a <strong>web frontend</strong> that displays data from and interacts with the <strong>web backend</strong></p>
+</li>
+<li>
+<p>an optionally <strong>running MPS</strong> that syncs its data with the <strong>model server</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To see how a web frontend can directly connect to a model server, take a look at <a href="overview.html#use_case_2" class="xref page">use case 2</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A backend is needed if you need to control what data a client might read and write.
+It is also useful to translate data from modelix data structures into a data structure that is suitable for your web applications.</p>
+</div>
+<div class="paragraph">
+<p>The web backend is implemented in <a href="https://quarkus.io/">Quarkus</a>. It communicates to the <a href="../core/reference/component-model-server.html" class="xref page">model server</a> using the <a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/model-client/">model-client</a>.</p>
+</div>
+<div class="paragraph">
+<p>The data communicated between the model server and web backend are <strong>modelix-specific data structures</strong> without information about the metamodel.
+In the backend,
+those data structures are wrapped with generated Kotlin classes
+generated by the <a href="../core/reference/component-model-api-gen-gradle.html" class="xref page">Model API generator</a> from the <a href="metamodel.html" class="xref page">metamodel</a>.
+The backend programmer can use this so-called <strong>domain-specific-language API</strong> to access model data more type-safely.</p>
+</div>
+<div class="paragraph">
+<p>The web backend exposes a custom <strong>application-specific API</strong>, which the web frontend uses to communicate and read and write data.
+The web backend, therefore:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>controls how data is read and written to the model server.</p>
+</li>
+<li>
+<p>hides details about <strong>modelix-specific data structures</strong> and <strong>domain-specific-language API</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_demonstration"><a class="anchor" href="#_demonstration"></a>Demonstration</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/use_case_3.gif" alt="use case 3">
+</div>
+<div class="title">Figure 1. Demonstration of synchronization</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/use_case_3_sequence.svg" alt="Static" width="1920">
+</div>
+<div class="title">Figure 2. Interactions in demonstration</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build"><a class="anchor" href="#_build"></a>Build</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use Gradle to build the relevant components.</p>
+</div>
+<div class="listingblock">
+<div class="title">Command to build the needed components</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">./gradlew rest-api-model-server:build spa-dashboard-angular:build mps:project-modelserver-backend:build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Install dependencies in the MPS project <code>mps/project-modelserver-backend</code></p>
+<div class="paragraph">
+<p>The main dependency is the <a href="https://artifacts.itemis.cloud/service/rest/repository/browse/maven-mps/org/modelix/mps/model-server-sync-plugin/">model-server-sync-plugin</a>.</p>
+</div>
+</li>
+<li>
+<p>Generates TypeScript sources in <code>mps/metamodel-api-ts</code></p>
+<div class="paragraph">
+<p>Those sources are  generated from the <a href="metamodel.html" class="xref page">MPS languages</a> in <code>mps/languages</code>.
+They are used in the <code>spa-management-vue</code> and <code>spa-overview-angular</code>.</p>
+</div>
+</li>
+<li>
+<p>builds the web backend <code>rest-api-model-server</code></p>
+</li>
+<li>
+<p>builds the web frontend <code>spa-dashboard-angular</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start"><a class="anchor" href="#_start"></a>Start</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Start up the components.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">docker-compose --profile useCase3 up</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This starts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a <a href="../core/reference/component-model-server.html" class="xref page">model server</a> with initial data under <a href="http://localhost:28101/" class="bare">http://localhost:28101/</a></p>
+</li>
+<li>
+<p>the <strong>web backend</strong> under <a href="http://localhost:8090/" class="bare">http://localhost:8090/</a></p>
+</li>
+<li>
+<p>the <strong>web frontend</strong> under <a href="http://localhost:4201/" class="bare">http://localhost:4201/</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_mps_optionally"><a class="anchor" href="#_mps_optionally"></a>MPS (optionally)</h3>
+<div class="paragraph">
+<p>Start MPS <code>2021.2.6</code>  without any global plugins and open the project in the <code>mps/project-mps-backend</code> folder.</p>
+</div>
+<div class="paragraph">
+<p>This MPS project has a plugin installed and configured to sync the model content automatically with the model server.</p>
+</div>
+<div class="paragraph">
+<p><a href="use_case_1.html" class="xref page">Use case 1</a> describes the synchronization between a model client and an MPS instance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use"><a class="anchor" href="#_use"></a>Use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now you can modify the model through the web frontend.
+Those changes are first communicated to the web backend.
+From there, they are communicated to the model server.</p>
+</div>
+<div class="paragraph">
+<p>The model server syncs those changes to other open web applications. You can see this by opening the dashboard a second time in a different tab.</p>
+</div>
+<div class="paragraph">
+<p>If you have an MPS instance running and connected to the model server, changes made in MPS are synced with web applications, and vice versa.</p>
+</div>
+<div class="paragraph">
+<p>You can also start the web frontends from <a href="use_case_2.html" class="xref page">use case 2</a>
+and see how changes to the model are propagated there.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="use_case_2.html">2. Model server and web frontend</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+<p>Copyright © 2021-present by the <a href="https://modelix.org">modelix open source project</a> and the individual contributors. All Rights Reserved.</p>
+  <p>Except where otherwise noted, docs.modelix.org, modelix, and the modelix framework, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.</p>
+  <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
+  <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
+</footer>
+
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
