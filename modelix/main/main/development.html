@@ -347,6 +347,26 @@ This release cycle starts from 2023 with the first release on the MPS Community 
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="experimental_features"><a class="anchor" href="#experimental_features"></a>Experimental features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes we want to implement a feature or expose an API that is experimental.</p>
+</div>
+<div class="paragraph">
+<p>When doing so, we mark the APIs as experimental.
+In TypeScript, we use the <a href="https://tsdoc.org/pages/tags/experimental/">documentation tag <code>@experimental</code></a>.
+For Kotlin, we use the annotation <code>@UnstableModelixFeature</code> for an <a href="https://kotlinlang.org/docs/opt-in-requirements.html">opt-in requirement</a></p>
+</div>
+<div class="paragraph">
+<p>When marking something as experimental, we document the reason for it being experimental and our plans for stabilizing the feature.</p>
+</div>
+<div class="paragraph">
+<p>An example in our Kotlin code can be found <a href="https://github.com/modelix/modelix.core/blob/e14d15f/model-client/src/jsMain/kotlin/org/modelix/model/client2/ClientJS.kt">here</a>.
+An example in TypeScript can be found <a href="https://github.com/modelix/modelix.core/blob/main/vue-model-api/src/useRootNode.ts">here</a>.</p>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="contribute.html">Contribution Guide</a></span>
   <span class="next"><a href="../tutorial/index.html">Tutorials</a></span>
