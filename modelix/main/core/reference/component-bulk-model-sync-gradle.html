@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/reference/component-bulk-model-sync-gradle.html">
     <link rel="prev" href="component-model-api-gen-gradle.html">
     <link rel="next" href="component-light-model-client.html">
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.5">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
 
@@ -460,7 +460,26 @@ This means that only a minimal amount of write operations is used to update the 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsHome</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">File</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Location of the MPS to be used for the sync.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Location of the MPS to be used for the sync.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can just specify an MPS version that is then downloaded automatically.
+This is handled by a different plugin that you can configure like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">mpsBuild {
+    mpsVersion("2021.2.5")
+}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsLibrary</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A folder containing MPS modules that the MPS project in <code>repositoryDir</code> depends on.
+ Multiple folders can be specified.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsHeapSize</code></p></td>
@@ -526,13 +545,15 @@ This means that only a minimal amount of write operations is used to update the 
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">modelSync {
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">mpsBuild {
+    mpsVersion("2021.2.5")
+}
+
+modelSync {
     dependsOn(someOtherTask)
     direction("pushToMyServer") {
-        registerLanguage(L_MyGeneratedLanguage)
         includeModule("MySolution")
         fromLocal {
-            mpsHome = project.layout.buildDirectory.dir("mps").get().asFile
             mpsHeapSize = "4g"
             repositoryDir = projectDir.resolve("my-repo")
         }

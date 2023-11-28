@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/reference/component-mps-model-server-plugin.html">
     <link rel="prev" href="component-light-model-client.html">
     <link rel="next" href="component-vue-model-api.html">
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.5">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
 
@@ -330,11 +330,39 @@
 <h2 id="_health_checks"><a class="anchor" href="#_health_checks"></a>Health checks</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The plugin offers a set of health checks via HTTP on port 48305 and path <code>/health</code>.
-Health checks can be enabled adding query parameters with the health check name and the value <code>true</code> to the request.</p>
+<p>The plugin offers a set of health checks via HTTP GET on port <code>48305</code> and path <code>/health</code>.</p>
+</div>
+<div class="paragraph">
+<p>Health checks can be enabled adding query parameters with the health check name and the value <code>true</code> to the request.
+Some health checks require further information that needs to be provided by query parameters.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of combining health check</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">http(s)://&lt;host&gt;:48305/health?indexer=true&amp;loadModels=true&amp;loadModelsModuleNamespacePrefix=foo.bar <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>indexer=true</code> enables <a href="#indexer">indexer</a></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>loadModels=true</code> enables <a href="#loadModels">loadModels</a>
+<div class="ulist">
+<ul>
+<li>
+<p><code>loadModelsModuleNamespacePrefix</code> is a parameter related to <code>loadModels</code></p>
+</li>
+</ul>
+</div></td>
+</tr>
+</table>
 </div>
 <div class="sect2">
-<h3 id="_indexer"><a class="anchor" href="#_indexer"></a>indexer</h3>
+<h3 id="indexer"><a class="anchor" href="#indexer"></a>indexer</h3>
 <div class="paragraph">
 <p>The check fails, if the indexer is currently running for one of the opened projects.</p>
 </div>
@@ -365,6 +393,53 @@ Combine it with the <code>projects</code> health check to effectively wait for t
 <div class="paragraph">
 <p>Reports an unhealthy system when no virtual folders are available.
 This might also be true in case a project without virtual folders is fully loaded.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loadModels"><a class="anchor" href="#loadModels"></a>loadModels</h3>
+<div class="paragraph">
+<p>Returns after trying to eagerly load a set of specified modules.
+This check can be used to avoid a slow first ModelQl query after launching an MPS instance running this plugin.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This health check has the side effect of loading the model data.
+It does not just report whether the model data is loaded or not.
+It always tries to load model data before returning a result.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Multiple <code>loadModelsModuleNamespacePrefix</code> parameters can be provided
+to specify the modules from which the models should be loaded.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">http(s)://&lt;host&gt;:48305/health?loadModels=true&amp;loadModelsModuleNamespacePrefix=org.foo&amp;loadModelsModuleNamespacePrefix=org.bar <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>loadModels=true</code> enables <a href="#loadModels">loadModels</a></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>loadModelsModuleNamespacePrefix=org.foo</code> specifies to load all models from modules starting with <code>org.foo</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>loadModelsModuleNamespacePrefix=org.bar</code> specifies to load all models from modules starting with <code>org.bar</code></td>
+</tr>
+</table>
 </div>
 </div>
 </div>
