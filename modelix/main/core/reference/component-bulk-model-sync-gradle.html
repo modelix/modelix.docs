@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/reference/component-bulk-model-sync-gradle.html">
     <link rel="prev" href="component-model-api-gen-gradle.html">
     <link rel="next" href="component-light-model-client.html">
-    <meta name="generator" content="Antora 3.1.5">
+    <meta name="generator" content="Antora 3.1.6">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
 
@@ -536,6 +536,11 @@ If the target branch does not exist on the model-server, it will be created.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>revision</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source model-server revision. Can be used instead of <code>repositoryId</code> and <code>branchName</code>. Only available in ServerSource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>requestTimeoutSeconds</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request timeout measured in seconds to apply when performing HTTP requests towards the model-server. Default: 5 minutes</p></td>
 </tr>
 </tbody>
 </table>
