@@ -12,27 +12,43 @@ In the following we shortly list these key priorities.
 Below you can find more detailed explanations for each of these.
 
 // ------------- 24.1
-* ModelQL: TODO
-* MPS 2023 / 2024 Support: TODO
-* LIonWeb (estimated 24.1): Integration with other web components out there via a new LionWeb bulk API adapter
+* *ModelQL*: Dynamic query language for on-demand loading overcoming issues associated with upfront data retrieval and optimizing performance
+* *MPS 2023 / 2024 Support*: Provide support in modelix for newer MPS versions
+* *LIonWeb* (estimated 24.1): Integration with other web components via a new LionWeb bulk API adapter
 // ------------- 24.2
-* Model-server services: TODO
-* Meta-model in model-server (foundation for Language Evolution): A way to store the meta-model of corresponding model content in the model-server.
+* *Model-server services*: Streamlined interfaces and structure for services working on model data, providing for example model analysis, checking, and transformation
+* *Meta-model in model-server*: A way to store the meta-model of corresponding model content in the model-server (foundation for Language Evolution).
 // ------------- 25.1
-* GraphQL interface: TODO
-* Projectional text editors in browser: TODO
+* *GraphQL interface*: An endpoint for smaller web applications, leveraging the available tooling ecosystem
+* *Projectional text editors in browser*: Projectional text editors for browsers, using Kotlin multiplatform to edit models directly or through server-side rendering
 // ------------- 25.2
-* Graphical Editors: We plan to provide the data synchronization and the generation of a TypeScript model API to enable graphical editors on the wev.
+* *Graphical Editors*: We plan to provide the data synchronization and the generation of a TypeScript model API to enable graphical editors on the wev.
 
 
 // ------------- 24.1
+[#modelql,reftext="ModelQL"]
 === ModelQL (estimated 24.1)
-// TODO
+
+With the modelix 23.2 release we https://modelix.org/blog/2023/11/02/modelix-platform-release-23.2/#modelql[introduced ModelQL]:
+A dynamic way of loading parts of the model on demand while reducing the number of requests to a minimum.
+To learn more, head over to the https://docs.modelix.org/modelix/main/core/explanation/modelql.html[ModelQL documentation] and the corresponding https://docs.modelix.org/modelix/main/core/howto/modelql.html[How-Tos].
+While the early version allowed us to provide a quick win for large models, we were not able to finish this feature fully.
+Especially https://docs.modelix.org/modelix/main/core/howto/modelql-writing.html[writing support] currently needs some further work.
+We also want to integrate ModelQL in our https://github.com/modelix/modelix-samples[samples project] to present a graspable example beyond the documentation.
+
 
 === MPS 2023 / 2024 Support (estimated 24.1)
-// TODO
 
-==== LIonWeb (estimated 24.1)
+In a larger effort to become MPS version independent, we prepare our plugins and interfaces with MPS to provide preliminary support for MPS 2023 for the modelix 24.1 release.
+This effort is needed to provide adequate support today, but in the following release 24.2 we plan to fully transition away from dedicated MPS plugins over to https://plugins.jetbrains.com/docs/intellij/intellij-platform.html?from=IJPluginTemplate[IntelliJ Platform] plugins.
+IntelliJ Platform plugins do not require to be written in MPS and allow to be created using Kotlin - just like everything else in modelix.
+All MPS interfacing parts will use the comparably stable APIs provided by MPS to query and modify MPS models, such as the https://www.jetbrains.com/help/mps/open-api-accessing-models-from-code.html:[Open API] and the https://www.jetbrains.com/help/mps/smodel-language.html:[SModel].
+As a result, we do not have to migrate and maintain MPS plugins for multiple MPS versions at the same time.
+Instead, we have a single Kotlin codebase which can provide the same functionality to all MPS versions.
+This effort will reduce complexity and potential for bugs and allow us to better test and validate our MPS interfacing plugins.
+
+
+=== LIonWeb (estimated 24.1)
 Modelix focuses on a good integration with MPS.
 But if you are interested in the integration of other modeling technologies then check out the LIonWeb project (short for Language Interfaces on the web).
 They specify more general interfaces and use the modelix `model-server` for data storage and exchange in their current prototypes.
@@ -41,34 +57,46 @@ The modelix team co-authored and is involved with the LIonWeb initiative.
 
 
 // ------------- 24.2
+[#services, reftext="model-server services"]
 === Model-server services (estimated 24.2)
-// TODO
+Modelix already allows you to access model data from any web application, either untyped (i.e. on the M3 layer), or typed (i.e. on the M2 layer or domain layer).
+As soon as you have model content in a web application the question regarding correct scoping, typing, and other checks arises.
+In MPS we grew accustomed to easy integration of these different language aspects.
+In modelix we envision `model-server` *services* to do this type of model analysis, checking, and eventually transformation.
+In fact, this can already be done today:
+Any application accessing model data from a `model-server` can provide external APIs for the above-mentioned features.
+However, we plan to streamline interfaces and approaches used by efforts that typical services can provide.
+Our goal is to provide a stable basis for services which will encourage re-use and extension.
+
 
 === Meta-model in model-server (estimated 24.2)
-// foundation for Language Evolution
-// TODO reword this
 When using MPS, model migrations are made easy using the migration aspect.
-However, once stepping outside of MPS, migrations become more difficult.
+However, once stepping outside of MPS, migrations may become more difficult.
 Model migration needs to be carried out across platforms, teams and (web) applications when a new language version is deployed.
 
-We want to support a generated APIs that can work with multiple versions at the same time with which we also can support meta-model versions checks for compatibility.
+We want to support a generated API that can work with multiple versions at the same time with which we also can support meta-model versions checks for compatibility.
+As a consequence, we will need meta-model information in the `model-server` and plan to add this as a foundation for Language Evolution.
+
+Until now, there was no need for this knowledge to be available directly but technically the meta-model is already stored, though implicitly encoded in the storage, but the `model-server` does not use or interpret this knowledge.
 We have some ideas we need to further refine and explore in the following releases.
 
 
 // ------------- 25.1
 === GraphQL interface (estimated 25.1)
-// TODO
+As with all other parts of modelix, we prefer using established and state-of-the-art tools.
+Consequently, for smaller web applications we consider to provide a simple https://graphql.org/[GraphQL] endpoint, which can provide immediate benefit.
+Especially the access to a powerful tooling ecosystem with GUIs, editor integrations, code generation, linting, analytics, and more is a direct win.
+
+However, it is important to note, that this approach will not scale:
+As soon as the model size grows or the strong integration requirements exist, other tools such as our <<modelql>> or the <<services>> are needed.
 
 === Projectional text editors in browser (estimated 25.1)
-// TODO
-
+Similar to our previously developed https://github.com/modelix/modelix/tree/mps/2020.3/mps/org.modelix.notation[notation language] prototype (based on the old shadow models), we want to provide
+A default notation is used for concepts without a web specific notation, just as MPS does it.
+We envision projectional text editor components implemented in Kotlin multiplatform for editing models in the browser, either directly or via server side rendering.
 
 // ------------- 25.2
 === Graphical Editors in the Web (estimated 25.2)
 The experience from MPS shows that the requirements for a graphical editor are too diverse to support all of them with a single framework.
 There are many different frameworks available in the web world where you can choose the one that fits your use case.
 We plan to only provide the data synchronization and the generation of a TypeScript model API, but not the integration of any diagram framework itself.
-
-
-
-
