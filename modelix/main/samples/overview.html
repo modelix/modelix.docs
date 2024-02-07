@@ -254,6 +254,9 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitoring.html">Monitoring the <code>model-server</code></a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -406,6 +409,20 @@ and websocket-based API.</p>
 </div>
 <div class="paragraph">
 <p>See the <a href="use_case_3.html" class="xref page">Use case 3 page</a> for details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="monitoring"><a class="anchor" href="#monitoring"></a>Monitoring the <code>model-server</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is not strictly a use case but rather a bonus to increase the transparency and visibility of the requests happening in the background.
+<a href="../core/howto/metrics.html" class="xref page">The <code>model-server</code> always provides a <code>/metrics</code>
+endpoint</a> which allows you to obtain data on several inner workings, such as HTTP connections or JVM statistics.
+As soon as you start a <code>model-server</code>, you can thus run a dedicated monitoring database (e.g. Prometheus) and a dashboard (e.g. Grafana) to obtain and visualize metrics respectively.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="monitoring.html" class="xref page">Monitoring page</a> for details.</p>
 </div>
 </div>
 </div>

@@ -254,6 +254,9 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../samples/monitoring.html">Monitoring the <code>model-server</code></a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -536,12 +539,21 @@ If the target branch does not exist on the model-server, it will be created.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>revision</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Source model-server revision. Can be used instead of <code>repositoryId</code> and <code>branchName</code>. Only available in ServerSource.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source model-server revision. Can be used instead of <code>repositoryId</code> and <code>branchName</code>.
+Only available in ServerSource.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>requestTimeoutSeconds</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The request timeout measured in seconds to apply when performing HTTP requests towards the model-server. Default: 5 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request timeout measured in seconds to apply when performing HTTP requests towards the model-server.
+Default: 5 minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metaProperties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MutableMap&lt;String, String&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom properties that will be attached to the root node.
+The mapping is <code>propertyName &#8594; propertyValue</code>.
+Only available in ServerTarget.</p></td>
 </tr>
 </tbody>
 </table>
