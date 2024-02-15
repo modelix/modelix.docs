@@ -16,7 +16,8 @@ Below you can find more detailed explanations for each of these.
 * *MPS 2023 / 2024 Support*: Provide support in modelix for newer MPS versions
 * *LIonWeb* (estimated 24.1): Integration with other web components via a new LionWeb bulk API adapter
 // ------------- 24.2
-* *Model-server services*: Streamlined interfaces and structure for services working on model data, providing for example model analysis, checking, and transformation
+* *Model-server services*: Streamlined interfaces and structure for servicesfootnote:[We understand a service in this context as `model-server` independent software which operates on model data to provide some sort of derived knowledge. Within the modelix architecture, it does not matter if services run client or server sided, but we want to ensure that services are independent components which have to define their own endpoints and interfaces to the outside. We envision services to provide model validation, checking, transformation, or any other model data modification - features which language workbenches tightly integrate, for example in https://www.jetbrains.com/help/mps/custom-aspect.html[MPS aspects].]
+
 * *Meta-model in model-server*: A way to store the meta-model of corresponding model content in the model-server (foundation for language evolution).
 // ------------- 25.1
 * *GraphQL interface*: An endpoint for smaller web applications, leveraging the available tooling ecosystem
@@ -30,10 +31,10 @@ Below you can find more detailed explanations for each of these.
 === ModelQL (estimated 24.1)
 
 With the modelix 23.2 release we https://modelix.org/blog/2023/11/02/modelix-platform-release-23.2/#modelql[introduced ModelQL]:
-A dynamic way of loading parts of the model on demand while reducing the number of requests to a minimum.
+A dynamic way of loading and writing parts of the model on demand while reducing the number of requests to a minimum.
 To learn more, head over to the https://docs.modelix.org/modelix/main/core/explanation/modelql.html[ModelQL documentation] and the corresponding https://docs.modelix.org/modelix/main/core/howto/modelql.html[How-Tos].
 While the early version allowed us to provide a quick win for large models, we were not able to finish this feature fully.
-Especially https://docs.modelix.org/modelix/main/core/howto/modelql-writing.html[writing support] currently needs some further work.
+Especially https://docs.modelix.org/modelix/main/core/howto/modelql-writing.html[writing support] currently needs to be stabilized and performance can be improved.
 We also want to integrate ModelQL in our https://github.com/modelix/modelix-samples[samples project] to present a graspable example beyond the documentation.
 
 
@@ -50,9 +51,9 @@ This effort will reduce complexity and potential for bugs and allow us to better
 
 === LIonWeb (estimated 24.1)
 Modelix focuses on a good integration with MPS.
-But if you are interested in the integration of other modeling technologies then check out the LIonWeb project (short for Language Interfaces on the web).
+But if you are interested in the integration of other modeling technologies then check out the https://lionweb.io/[LIonWeb project] (short for Language Interfaces on the web).
 They specify more general interfaces and use the modelix `model-server` for data storage and exchange in their current prototypes.
-For 24.1 we want to extend the modelix `model-server` to support the initial LionWeb bulk protocol for model data storage and retrieval.
+For 24.1 we want to provide an adapter for the modelix `model-server` to support the initial LionWeb bulk protocol for model data storage and retrieval.
 The modelix team co-authored and is involved with the LIonWeb initiative.
 
 
@@ -65,7 +66,7 @@ In MPS we grew accustomed to easy integration of these different language aspect
 In modelix we envision `model-server` *services* to do this type of model analysis, checking, and eventually transformation.
 In fact, this can already be done today:
 Any application accessing model data from a `model-server` can provide external APIs for the above-mentioned features.
-However, we plan to streamline interfaces and approaches used by efforts that typical services can provide.
+However, we plan to streamline interfaces and approaches used by services to communicate with the `model-server`.
 Our goal is to provide a stable basis for services which will encourage re-use and extension.
 
 
@@ -91,7 +92,7 @@ However, it is important to note, that this approach will not scale:
 As soon as the model size grows or the strong integration requirements exist, other tools such as our <<modelql>> or the <<services>> are needed.
 
 === Projectional text editors in browser (estimated 25.1)
-Similar to our previously developed https://github.com/modelix/modelix/tree/mps/2020.3/mps/org.modelix.notation[notation language] prototype (based on the old shadow models), we want to provide
+Similar to our previously developed https://github.com/modelix/modelix/tree/mps/2020.3/mps/org.modelix.notation[notation language] prototype (based on the old shadow models), we want to provide generic projectional text editors in the browser.
 A default notation is used for concepts without a web specific notation, just as MPS does it.
 We envision projectional text editor components implemented in Kotlin multiplatform for editing models in the browser, either directly or via server-side rendering.
 
