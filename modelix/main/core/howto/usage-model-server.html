@@ -135,6 +135,9 @@
     <a class="nav-link" href="usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="usage-model-client-v2.html">Use the <code>model-client</code> v2 (Kotlin)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="usage-light-model-client.html">Use the <code>light-model-client</code></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -316,6 +319,8 @@
 </aside>
 <article class="doc">
 <h1 class="page">How-To start a local <code>model-server</code></h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -328,33 +333,265 @@ If you are interested in a more practical usage of what is presented here, check
 </tr>
 </table>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To run a light version of the <code>model-sever</code>, check out  <a href="mps-model-server-plugin.html" class="xref page">How-To Run the Light <code>model-server</code> in MPS as a Plugin</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_backends_in_memory_vs_database"><a class="anchor" href="#_backends_in_memory_vs_database"></a>Backends: In Memory vs. Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>model-server</code> will by default require a database backend.
+The <code>-jdbcconf</code> flag allows you to provide a custom JDBC configuration file.
+While this setup is ideal for deployment, it might not what you need in the beginning.
+During development or to perform tests, it is recommended to start the <code>model-server</code> with in-memory storage.
+This can be achieved by adding the <code>-inmemory</code> flag to the executable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_a_model_server"><a class="anchor" href="#_running_a_model_server"></a>Running a <code>model-server</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following list gives an overview of the many ways to run a <code>model-server</code>:</p>
+</div>
+<div class="sect2">
+<h3 id="_1_docker"><a class="anchor" href="#_1_docker"></a>1. Docker</h3>
+<div class="paragraph">
+<p>We publish a Docker container of the <code>model-server</code> over on <a href="https://hub.docker.com/r/modelix/model-server/tags" target="_blank" rel="noopener">Docker Hub</a>.
+To run the model-server container with the in-memory backend, simply call the following.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ docker run --rm -p 28101:28101 modelix/modelix-model:latest -inmemory</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_docker_compose"><a class="anchor" href="#_2_docker_compose"></a>2. <code>docker-compose</code></h3>
+<div class="paragraph">
+<p>If you use <code>docker-compose</code>, use the following.</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of <code>docker-compose.yml</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: model-server-run-in-memory
+
+services:
+  model-server:
+    image: modelix/model-server:latest0
+    ports:
+      - 28101:28101
+    command: [ "-inmemory" ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run using <code>docker-compose</code> via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ docker-compose up</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For more integrated examples, have a look at the <a href="metrics.html" class="xref page">metrics and monitoring</a> capabilities, which shows how to start the <code>model-server</code> using <code>docker-compose</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For more complex setups, which require a database backend, you can use the following:</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of <code>docker-compose.yml</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: model-server-run-database
+
+services:
+    model-server:
+        image: modelix/model-server:4.5.0
+        restart: always
+        healthcheck:
+          test: ["CMD-SHELL", "curl http://localhost:28101/health"]
+          interval: 2s
+          timeout: 3s
+          retries: 10
+        depends_on:
+          model-server-db:
+            condition: service_healthy
+        environment:
+          jdbc_url: jdbc:postgresql://model-server-db:5432/modelix?currentSchema=modelix
+        ports:
+        - 28101:28101
+
+    model-server-db:
+      image: postgres:16
+      environment:
+        POSTGRES_PASSWORD: modelix
+        POSTGRES_DB: modelix
+        POSTGRES_USER: modelix
+        PGDATA: /var/lib/postgresql/data/pgdata
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U modelix -d modelix"]
+        interval: 10s
+        timeout: 3s
+        retries: 10
+      volumes:
+        - model-server-db:/var/lib/postgresql/data
+        - ./init-database.sql:/docker-entrypoint-initdb.d/init-database.sql:z
+
+volumes:
+  model-server-db: {}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Content of <code>init-database.sql</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">CREATE SCHEMA modelix;
+GRANT ALL ON SCHEMA modelix TO modelix;
+
+CREATE TABLE modelix.model
+(
+    key character varying NOT NULL,
+    value character varying,
+    reachable boolean,
+    CONSTRAINT kv_pkey PRIMARY KEY (key)
+);
+GRANT ALL ON TABLE modelix.model TO modelix;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run using <code>docker-compose</code> via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ docker-compose up</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_gradle_via_dependency"><a class="anchor" href="#_3_gradle_via_dependency"></a>3. Gradle via Dependency</h3>
+<div class="paragraph">
+<p>When using Gradle, you can run a <code>model-server</code> by adding a dependency to <code>org.modelix:model-server</code>, as shown in the following minimal working example.</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of minimal <code>build.gradle.kts</code> to run a <code>model-server</code> in memory</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">plugins {
+    application
+}
+
+repositories {
+    mavenCentral()
+    maven { url = uri("https://artifacts.itemis.cloud/repository/maven-mps/") }
+}
+
+dependencies {
+    implementation("org.modelix:model-server:4.6.0")
+}
+
+application {
+    mainClass.set("org.modelix.model.server.Main")
+}
+
+tasks.run.configure {
+    args("-inmemory")
+    // note: you can add other arguments here, e.g.
+    // args("-inmemory", "-dumpin", "/path/to/dump/file.dump")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can start the model-server simply by running</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew run</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_gradle_via_source"><a class="anchor" href="#_4_gradle_via_source"></a>4. Gradle via Source</h3>
+<div class="paragraph">
+<p>Use <code>git</code> to check out the modelix core repository from</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">https://github.com/modelix/modelix.core</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>To run the model-server with default configuration run:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[modelix.core] $ ./gradlew model-server:run</code></pre>
 </div>
 </div>
-</li>
-<li>
-<p>To specify a different jdbc configuration, you can add the <code>-jdbcconf</code> arguement:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will have to build the project first, which might take some time depending on your hardware.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To give arguments to the gradle run command, you have to add them via the <code>--args</code> flag:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[modelix.core] $ ./gradlew model-server:run --args='-jdbcconf path-to-my-database.properties'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew model-server:run --args='-jdbcconf path-to-my-database.properties -dumpout'</code></pre>
 </div>
 </div>
-</li>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_in_process_kotlin"><a class="anchor" href="#_5_in_process_kotlin"></a>5. <strong>In Process</strong> (Kotlin)</h3>
+<div class="paragraph">
+<p>This rather advanced version allows you to run the <code>model-server</code> inside your own application.
+We primarily use this approach for testing, but theoretically it could be applied elsewhere.
+You can find an examples of this in the following code fragment:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>During development or to perform tests it is recommended to start the <code>model-server</code> with in-memory storage:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[modelix.core] $ ./gradlew model-server:run --args='-inmemory'</code></pre>
-</div>
-</div>
+<p><a href="https://github.com/modelix/modelix.core/blob/main/model-server/src/test/kotlin/org/modelix/model/server/ModelClientV2Test.kt#L48">ModelClientV2Test (modelix core tests)</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../../platform/howto/usage-platform.html">Use platform to streamline dependencies</a></span>

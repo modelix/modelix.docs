@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How-to use the platform to streamline modelix dependencies :: Modelix Documentation</title>
-    <link rel="canonical" href="https://docs.modelix.org/modelix/main/platform/howto/usage-platform.html">
-    <link rel="prev" href="../../howto/index.html">
-    <link rel="next" href="../../core/howto/usage-model-server.html">
+    <title>How-To Run the Light model-server in MPS as a Plugin :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/howto/mps-model-server-plugin.html">
     <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
@@ -122,32 +120,32 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../howto/index.html">How-To Guides</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="usage-platform.html">Use platform to streamline dependencies</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/howto/usage-platform.html">Use platform to streamline dependencies</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/usage-model-server.html">Start a <code>model-server</code></a>
+    <a class="nav-link" href="usage-model-server.html">Start a <code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/metrics.html"><code>Monitoring/Metrics</code></a>
+    <a class="nav-link" href="metrics.html"><code>Monitoring/Metrics</code></a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+    <a class="nav-link" href="usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/usage-model-client-v2.html">Use the <code>model-client</code> v2 (Kotlin)</a>
+    <a class="nav-link" href="usage-model-client-v2.html">Use the <code>model-client</code> v2 (Kotlin)</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/usage-light-model-client.html">Use the <code>light-model-client</code></a>
+    <a class="nav-link" href="usage-light-model-client.html">Use the <code>light-model-client</code></a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a>
+    <a class="nav-link" href="testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/modelql.html">ModelQL</a>
+    <a class="nav-link" href="modelql.html">ModelQL</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/howto/modelql-writing.html">How-To write via ModelQL</a>
+    <a class="nav-link" href="modelql-writing.html">How-To write via ModelQL</a>
   </li>
 </ul>
   </li>
@@ -167,31 +165,31 @@
     <a class="nav-link" href="../../reference/components-table.html">Table of Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-model-api.html"><code>model-api</code></a>
+    <a class="nav-link" href="../reference/component-model-api.html"><code>model-api</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-model-server.html"><code>model-server</code></a>
+    <a class="nav-link" href="../reference/component-model-server.html"><code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
+    <a class="nav-link" href="../reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-model-api-gen.html"><code>model-api-gen</code></a>
+    <a class="nav-link" href="../reference/component-model-api-gen.html"><code>model-api-gen</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
+    <a class="nav-link" href="../reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a>
+    <a class="nav-link" href="../reference/component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-light-model-client.html"><code>light-model-client</code></a>
+    <a class="nav-link" href="../reference/component-light-model-client.html"><code>light-model-client</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-mps-model-server-plugin.html">mps-model-server-plugin</a>
+    <a class="nav-link" href="../reference/component-mps-model-server-plugin.html">mps-model-server-plugin</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../core/reference/component-vue-model-api.html"><code>vue-model-api</code></a>
+    <a class="nav-link" href="../reference/component-vue-model-api.html"><code>vue-model-api</code></a>
   </li>
 </ul>
   </li>
@@ -206,10 +204,10 @@
     <a class="nav-link" href="../../explanation/index.html">Explanation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../explanation/index.html">Gradle Platform</a>
+    <a class="nav-link" href="../../platform/explanation/index.html">Gradle Platform</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../core/explanation/modelql.html">ModelQL</a>
+    <a class="nav-link" href="../explanation/modelql.html">ModelQL</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../explanation/overview.html">Overview</a>
@@ -299,65 +297,29 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">Modelix Documentation</a></li>
-    <li><a href="../../howto/index.html">How-To Guides</a></li>
-    <li><a href="usage-platform.html">Use platform to streamline dependencies</a></li>
+    <li><a href="mps-model-server-plugin.html">How-To Run the Light <code>model-server</code> in MPS as a Plugin</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">main</button>
   <div class="version-menu">
-    <a class="version is-current" href="usage-platform.html">main</a>
-    <a class="version" href="../../../23.2/platform/howto/usage-platform.html">23.2</a>
-    <a class="version" href="../../../23.1/platform/howto/usage-platform.html">23.1</a>
+    <a class="version is-current" href="mps-model-server-plugin.html">main</a>
+    <a class="version is-missing" href="../../../23.2/index.html">23.2</a>
+    <a class="version is-missing" href="../../../23.1/index.html">23.1</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/modelix/modelix.platform/edit/main/docs/global/modules/platform/pages/howto/usage-platform.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/main/docs/global/modules/core/pages/howto/mps-model-server-plugin.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How-to use the platform to streamline modelix dependencies</h1>
-<div class="sect1">
-<h2 id="_general_usage"><a class="anchor" href="#_general_usage"></a>General Usage</h2>
+<h1 class="page">How-To Run the Light <code>model-server</code> in MPS as a Plugin</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The modelix platform provides component versions.
-To enforce these versions in your project&#8217;s build you can add the platform as an enforcedPlatform.
-We make the following assumptions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the string variable <code>mps_version</code> contains the mps version that is used in your project, e.g. <code>2021-1</code></p>
-</li>
-<li>
-<p>the string variable <code>modelix_platform_version</code> contains the version of the modelix platform you want to use, e. g. <code>23.1.0</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>To enforce the versions provided by the platform in your Gradle build, you can use <code>enforcedPlatform</code> inside of a <code>dependencies</code> block like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">dependencies {
-    implementation(enforcedPlatform("org.modelix:platform-mps-$mps_version:$modelix_platform_version"))
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Dependencies to modelix components can then be declared without a version number (as the version declared in the platform will be used).
-For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">dependencies {
-    implementation(enforcedPlatform("org.modelix:platform-mps-$mps_version:$modelix_platform_version"))
-    implementation("org.modelix:model-client")
-}</code></pre>
-</div>
+<p>You can run a <strong>light version</strong> of the <code>model-server</code> directly in MPS via the dedicated <strong>MPS as Modelix Model Server Plugin</strong>, which is published over at the <a href="https://plugins.jetbrains.com/plugin/22834-mps-as-modelix-model-server" target="_blank" rel="noopener">JetBrains Marketplace</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -366,17 +328,11 @@ For example:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you want to handle dependencies to MPS version-specific modelix components yourself, you can use <code>org.modelix:platform</code> instead, which does not contain these dependencies.
-However, sometimes it might be necessary to pick a specific version of a single component, e.g. when one wants to test new features.
+More information on the component in general can be found in the <a href="../reference/component-mps-model-server-plugin.html" class="xref page">corresponding component reference</a>.
 </td>
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_overriding_versions"><a class="anchor" href="#_overriding_versions"></a>Overriding versions</h2>
-<div class="sectionbody">
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -384,40 +340,58 @@ However, sometimes it might be necessary to pick a specific version of a single 
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Overriding versions may lead to <strong>incompatibilities</strong> between individual modelix components.
+<div class="paragraph">
+<p>A light model-server does not provide the full features as an independent <code>model-server</code> instance will.
+More <strong>advanced features</strong> will not work with this light version (e.g., modelix specific repositories/branches, or the <a href="metrics.html" class="xref page">metrics</a>).</p>
+</div>
+<div class="paragraph">
+<p>If you want the full capabilities of the <code>model-server</code>, check out <a href="usage-model-api-gen-gradle.html" class="xref page">how to start it standalone</a>.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_install_the_plugin"><a class="anchor" href="#_how_to_install_the_plugin"></a>How to Install the Plugin</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>In order to override versions inside the platform during dependency resolution, <code>platform</code> can be used instead of <code>enforcedPlatform</code>:</p>
+<p>In MPS navigate to menu:File[Settings &gt; Plugins (left) &gt; Marketplace (top)].
+Search for "modelix model server" and press btn:[Install] and afterwards btn:[Restart IDE].</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/model-server-plugin-marketplace.png" alt="Installing the MPS model-server plugin">
+</div>
+</div>
+<div class="paragraph">
+<p>You can access the light <code>model-server</code> via the
+<a href="../reference/component-light-model-client.html" class="xref page">light-model-client</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_run_the_plugin"><a class="anchor" href="#_how_to_run_the_plugin"></a>How to Run the Plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you restart MPS, the light <code>model-server</code> will start automatically with MPS.
+There are no graphical user interfaces, but to verify you can check the MPS log for</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">dependencies {
-    implementation(platform("org.modelix:platform-mps-$mps_version:$modelix_platform_version"))
-    implementation("org.modelix:model-client:2.4.0")
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">starting modelix server</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you want to learn more about the difference between <code>platform</code> and <code>enforcedPlatform</code>, you can check out <a href="https://docs.gradle.org/current/userguide/platforms.html#sub:bom_import">this section in the Gradle documentation</a>.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>The <code>model-server</code> will run by default on port <code>48305</code>.
+You can check the health status over at <a href="http://127.0.0.1:48305/health" class="bare" target="_blank" rel="noopener">http://127.0.0.1:48305/health</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you want to find out how connect a client and send queries to the plugin, have a look at the <a href="modelql.html" class="xref page">ModelQL documentation</a> or the <a href="../reference/component-mps-model-server-plugin.html" class="xref page">component reference</a>.</p>
 </div>
 </div>
 </div>
-<nav class="pagination">
-  <span class="prev"><a href="../../howto/index.html">How-To Guides</a></span>
-  <span class="next"><a href="../../core/howto/usage-model-server.html">Start a <code>model-server</code></a></span>
-</nav>
 </article>
   </div>
 </main>
