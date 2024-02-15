@@ -17,12 +17,12 @@ Below you can find more detailed explanations for each of these.
 * *LIonWeb* (estimated 24.1): Integration with other web components via a new LionWeb bulk API adapter
 // ------------- 24.2
 * *Model-server services*: Streamlined interfaces and structure for services working on model data, providing for example model analysis, checking, and transformation
-* *Meta-model in model-server*: A way to store the meta-model of corresponding model content in the model-server (foundation for Language Evolution).
+* *Meta-model in model-server*: A way to store the meta-model of corresponding model content in the model-server (foundation for language evolution).
 // ------------- 25.1
 * *GraphQL interface*: An endpoint for smaller web applications, leveraging the available tooling ecosystem
 * *Projectional text editors in browser*: Projectional text editors for browsers, using Kotlin multiplatform to edit models directly or through server-side rendering
 // ------------- 25.2
-* *Graphical Editors*: We plan to provide the data synchronization and the generation of a TypeScript model API to enable graphical editors on the wev.
+* *Graphical Editors*: We plan to provide the data synchronization and the generation of a TypeScript model API to enable graphical editors on the web.
 
 
 // ------------- 24.1
@@ -41,7 +41,7 @@ We also want to integrate ModelQL in our https://github.com/modelix/modelix-samp
 
 In a larger effort to become MPS version independent, we prepare our plugins and interfaces with MPS to provide preliminary support for MPS 2023 for the modelix 24.1 release.
 This effort is needed to provide adequate support today, but in the following release 24.2 we plan to fully transition away from dedicated MPS plugins over to https://plugins.jetbrains.com/docs/intellij/intellij-platform.html?from=IJPluginTemplate[IntelliJ Platform] plugins.
-IntelliJ Platform plugins do not require to be written in MPS and allow to be created using Kotlin - just like everything else in modelix.
+IntelliJ Platform plugins do not require to be written in MPS and are allowed to be created using Kotlin - just like everything else in modelix.
 All MPS interfacing parts will use the comparably stable APIs provided by MPS to query and modify MPS models, such as the https://www.jetbrains.com/help/mps/open-api-accessing-models-from-code.html:[Open API] and the https://www.jetbrains.com/help/mps/smodel-language.html:[SModel].
 As a result, we do not have to migrate and maintain MPS plugins for multiple MPS versions at the same time.
 Instead, we have a single Kotlin codebase which can provide the same functionality to all MPS versions.
@@ -93,7 +93,7 @@ As soon as the model size grows or the strong integration requirements exist, ot
 === Projectional text editors in browser (estimated 25.1)
 Similar to our previously developed https://github.com/modelix/modelix/tree/mps/2020.3/mps/org.modelix.notation[notation language] prototype (based on the old shadow models), we want to provide
 A default notation is used for concepts without a web specific notation, just as MPS does it.
-We envision projectional text editor components implemented in Kotlin multiplatform for editing models in the browser, either directly or via server side rendering.
+We envision projectional text editor components implemented in Kotlin multiplatform for editing models in the browser, either directly or via server-side rendering.
 
 // ------------- 25.2
 === Graphical Editors in the Web (estimated 25.2)
