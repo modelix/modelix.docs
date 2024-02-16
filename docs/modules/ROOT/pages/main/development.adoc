@@ -2,28 +2,30 @@
 
 == Development
 
-The modelix project is developed open-source under the https://www.apache.org/licenses/LICENSE-2.0.html[Apache-2.0 license].
-All components and software of the platform as well as issue tracking and project management are done in repositories in our https://github.com/modelix[GitHub organisation].
+The modelix project is developed open-source under the https://www.apache.org/licenses/LICENSE-2.0.html[Apache-2.0 license^].
+All components and software of the platform as well as issue tracking and project management are done in repositories in our https://github.com/modelix[GitHub organisation^].
 
 Currently, we use GitHub actions to build, test, and publish the components.
-We deploy all relevant artifacts to the https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix[itemis Nexus server] as well as https://github.com/orgs/modelix/packages?repo_name=modelix[GitHub Packages]
+We deploy all relevant artifacts to the https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix[itemis Nexus server^] as well as https://github.com/orgs/modelix/packages?repo_name=modelix[GitHub Packages^]
 
 Issues are managed in our issue tracker over at https://issues.modelix.org[^].
 
 == Release Cycle
 
 With many components being in various development stages - from stable to early and conceptual - they are released individually for each repository.
-Generally, we follow the https://en.wikipedia.org/wiki/Software_versioning[_Semantic versioning_] scheme for releases.
+Generally, we follow the https://en.wikipedia.org/wiki/Software_versioning[_Semantic versioning_^] scheme for releases.
 However, anything based on JetBrains MPS (e.g. MPS plugins or extensions) are prefixed with the corresponding MPS major and minor version number followed by our own patch version number.
-For example, the https://github.com/modelix/modelix/packages/1077382[`org.modelix.mps-model-plugin`] version `2021.2.103` is the `103rd` release which is compatible with MPS `2021.2.*`.
-
+For example, the https://github.com/modelix/modelix/packages/1077382[`org.modelix.mps-model-plugin`^] version `2021.2.103` is the `103rd` release which is compatible with MPS `2021.2.*`.
 
 To make it easier for developers, the modelix platform is currently released twice a year as a single "platform release" which references compatible component versions.
-We aim to provide a Spring release `R1` and an Autumn release `R2`.
+We aim to provide a Spring release (e.g. `24.1`) and an Autumn release (e.g. `24.2`).
 All development in-between is carried out as patches on the releases.
-This release cycle starts from 2023 with the first release on the MPS Community meetup in May: `2023.R1`.
+This release cycle starts from 2023 with the first release during the 'MPS Community Meetup' in May: `2023.R1`.
 
-To gain an overview over existing components, please refer to the list of components xref:reference/repositories-components.adoc[here].
+To gain an overview over existing components, please refer to the list of components xref:modelix:ROOT:reference/repositories-components.adoc[here].
+
+Our xref:modelix:ROOT:main/roadmap.adoc[roadmap] outlines the current goals on our agenda for modelix.
+
 
 [#experimental_features]
 == Experimental features

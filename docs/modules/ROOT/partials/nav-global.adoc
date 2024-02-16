@@ -1,6 +1,7 @@
 // General section
 * xref:index.adoc[General]
 ** xref:index.adoc[]
+** xref:main/development.adoc[]
 ** xref:main/roadmap.adoc[]
 ** xref:main/contribute.adoc[]
 ** xref:main/development.adoc[]
