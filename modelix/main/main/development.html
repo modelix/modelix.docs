@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Development and Releases :: Modelix Documentation</title>
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/main/development.html">
-    <link rel="prev" href="contribute.html">
-    <link rel="next" href="../tutorial/index.html">
+    <link rel="prev" href="../index.html">
+    <link rel="next" href="roadmap.html">
     <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/link.css">
@@ -89,6 +89,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="development.html">Development and Releases</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="roadmap.html">Roadmap</a>
@@ -326,12 +329,12 @@
 <h2 id="_development"><a class="anchor" href="#_development"></a>Development</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The modelix project is developed open-source under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.
-All components and software of the platform as well as issue tracking and project management are done in repositories in our <a href="https://github.com/modelix">GitHub organisation</a>.</p>
+<p>The modelix project is developed open-source under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache-2.0 license</a>.
+All components and software of the platform as well as issue tracking and project management are done in repositories in our <a href="https://github.com/modelix" target="_blank" rel="noopener">GitHub organisation</a>.</p>
 </div>
 <div class="paragraph">
 <p>Currently, we use GitHub actions to build, test, and publish the components.
-We deploy all relevant artifacts to the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus server</a> as well as <a href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a></p>
+We deploy all relevant artifacts to the <a href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix" target="_blank" rel="noopener">itemis Nexus server</a> as well as <a href="https://github.com/orgs/modelix/packages?repo_name=modelix" target="_blank" rel="noopener">GitHub Packages</a></p>
 </div>
 <div class="paragraph">
 <p>Issues are managed in our issue tracker over at <a href="https://issues.modelix.org" class="bare" target="_blank" rel="noopener">https://issues.modelix.org</a>.</p>
@@ -343,18 +346,21 @@ We deploy all relevant artifacts to the <a href="https://artifacts.itemis.cloud/
 <div class="sectionbody">
 <div class="paragraph">
 <p>With many components being in various development stages - from stable to early and conceptual - they are released individually for each repository.
-Generally, we follow the <a href="https://en.wikipedia.org/wiki/Software_versioning"><em>Semantic versioning</em></a> scheme for releases.
+Generally, we follow the <a href="https://en.wikipedia.org/wiki/Software_versioning" target="_blank" rel="noopener"><em>Semantic versioning</em></a> scheme for releases.
 However, anything based on JetBrains MPS (e.g. MPS plugins or extensions) are prefixed with the corresponding MPS major and minor version number followed by our own patch version number.
-For example, the <a href="https://github.com/modelix/modelix/packages/1077382"><code>org.modelix.mps-model-plugin</code></a> version <code>2021.2.103</code> is the <code>103rd</code> release which is compatible with MPS <code>2021.2.*</code>.</p>
+For example, the <a href="https://github.com/modelix/modelix/packages/1077382" target="_blank" rel="noopener"><code>org.modelix.mps-model-plugin</code></a> version <code>2021.2.103</code> is the <code>103rd</code> release which is compatible with MPS <code>2021.2.*</code>.</p>
 </div>
 <div class="paragraph">
 <p>To make it easier for developers, the modelix platform is currently released twice a year as a single "platform release" which references compatible component versions.
-We aim to provide a Spring release <code>R1</code> and an Autumn release <code>R2</code>.
+We aim to provide a Spring release (e.g. <code>24.1</code>) and an Autumn release (e.g. <code>24.2</code>).
 All development in-between is carried out as patches on the releases.
-This release cycle starts from 2023 with the first release on the MPS Community meetup in May: <code>2023.R1</code>.</p>
+This release cycle starts from 2023 with the first release during the 'MPS Community Meetup' in May: <code>2023.R1</code>.</p>
 </div>
 <div class="paragraph">
 <p>To gain an overview over existing components, please refer to the list of components <a href="../reference/repositories-components.html" class="xref page">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Our <a href="roadmap.html" class="xref page">roadmap</a> outlines the current goals on our agenda for modelix.</p>
 </div>
 </div>
 </div>
@@ -379,8 +385,8 @@ An example in TypeScript can be found <a href="https://github.com/modelix/modeli
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="contribute.html">Contribution Guide</a></span>
-  <span class="next"><a href="../tutorial/index.html">Tutorials</a></span>
+  <span class="prev"><a href="../index.html">General</a></span>
+  <span class="next"><a href="roadmap.html">Roadmap</a></span>
 </nav>
 </article>
   </div>
