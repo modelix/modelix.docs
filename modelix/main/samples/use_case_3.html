@@ -404,13 +404,50 @@ The web backend, therefore:</p>
 </div>
 <div class="title">Figure 2. Interactions in demonstration</div>
 </div>
+<div class="paragraph">
+<p>In this demonstration</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Data is changed in one of the opened web frontends.</p>
+</li>
+<li>
+<p>These changes are first propagated to the web backend.</p>
+</li>
+<li>
+<p>The web backend propagates the changes to the model server.</p>
+</li>
+<li>
+<p>The web backend also propagates the changes to the other opened web frontend.</p>
+</li>
+<li>
+<p>The model server syncs the changes into MPS.</p>
+</li>
+<li>
+<p>Model data is edited again in MPS by reverting the made changes.</p>
+</li>
+<li>
+<p>Those changes are then also propagated to the model server.</p>
+</li>
+<li>
+<p>The model server propagates the changes to the web backend.</p>
+</li>
+<li>
+<p>The web backend propagates the changes to all opened web frontends.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_build"><a class="anchor" href="#_build"></a>Build</h2>
+<h2 id="_instructions"><a class="anchor" href="#_instructions"></a>Instructions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use Gradle to build the relevant components.</p>
+<p>You can try the demo yourself by downloading the <a href="https://github.com/modelix/modelix.samples/">samples repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>In the downloaded repository, use Gradle to build the relevant components.</p>
 </div>
 <div class="listingblock">
 <div class="title">Command to build the needed components</div>
@@ -444,13 +481,8 @@ They are used in the <code>spa-management-vue</code> and <code>spa-overview-angu
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_start"><a class="anchor" href="#_start"></a>Start</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Start up the components.</p>
+<p>Start the components:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -458,7 +490,7 @@ They are used in the <code>spa-management-vue</code> and <code>spa-overview-angu
 </div>
 </div>
 <div class="paragraph">
-<p>This starts:</p>
+<p>This starts</p>
 </div>
 <div class="ulist">
 <ul>
@@ -466,10 +498,10 @@ They are used in the <code>spa-management-vue</code> and <code>spa-overview-angu
 <p>a <a href="../core/reference/component-model-server.html" class="xref page">model server</a> with initial data under <a href="http://localhost:28101/" class="bare">http://localhost:28101/</a></p>
 </li>
 <li>
-<p>the <strong>web backend</strong> under <a href="http://localhost:8090/" class="bare">http://localhost:8090/</a></p>
+<p>the <strong>web backend</strong> at <a href="http://localhost:8090/" class="bare">http://localhost:8090/</a></p>
 </li>
 <li>
-<p>the <strong>web frontend</strong> under <a href="http://localhost:4201/" class="bare">http://localhost:4201/</a></p>
+<p>the <strong>web frontend</strong> at <a href="http://localhost:4201/" class="bare">http://localhost:4201/</a></p>
 </li>
 </ul>
 </div>
@@ -485,25 +517,12 @@ They are used in the <code>spa-management-vue</code> and <code>spa-overview-angu
 <p><a href="use_case_1.html" class="xref page">Use case 1</a> describes the synchronization between a model client and an MPS instance.</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_use"><a class="anchor" href="#_use"></a>Use</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Now you can modify the model through the web frontend.
-Those changes are first communicated to the web backend.
-From there, they are communicated to the model server.</p>
-</div>
-<div class="paragraph">
-<p>The model server syncs those changes to other open web applications. You can see this by opening the dashboard a second time in a different tab.</p>
-</div>
-<div class="paragraph">
-<p>If you have an MPS instance running and connected to the model server, changes made in MPS are synced with web applications, and vice versa.</p>
-</div>
+<div class="sect2">
+<h3 id="_web_frontends_from_use_case_2_optionally"><a class="anchor" href="#_web_frontends_from_use_case_2_optionally"></a>Web frontends from use case 2 (optionally)</h3>
 <div class="paragraph">
 <p>You can also start the web frontends from <a href="use_case_2.html" class="xref page">use case 2</a>
 and see how changes to the model are propagated there.</p>
+</div>
 </div>
 </div>
 </div>
