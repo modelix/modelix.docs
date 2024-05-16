@@ -7,7 +7,9 @@ Components are distributed across the following repositories:
 - https://github.com/modelix/modelix.platform
 - https://github.com/modelix/modelix.core
 - https://github.com/modelix/modelix.mps-build-tools
-- https://github.com/modelix/modelix
+- https://github.com/modelix/modelix.mps
+- https://github.com/modelix/modelix.workspaces
+- https://github.com/modelix/modelix.kubernetes
 - https://github.com/modelix/incremental
 - https://github.com/modelix/modelix.docs
 - https://github.com/modelix/modelix.samples
