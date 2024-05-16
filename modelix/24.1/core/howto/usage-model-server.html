@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>How-To start a local model-server :: Modelix Documentation</title>
+    <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/howto/usage-model-server.html">
+    <link rel="prev" href="../../platform/howto/usage-platform.html">
+    <link rel="next" href="mps-model-server-plugin.html">
+    <meta name="generator" content="Antora 3.1.7">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/link.css">
+
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="https://modelix.org">modelix</a>
+        <span class="separator">//</span>
+        <a href="https://docs.modelix.org">Documentation</a>
+      </div>
+      <div class="navbar-item search hide-for-print">
+        <input id="search-input" type="text" placeholder="Search the docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="https://issues.modelix.org">Issue Tracker</a>
+          <a class="navbar-link" href="https://github.com/modelix">Project Sources</a>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix.core">Repository</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Samples</strong></div>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples">Repository</a>
+            <a class="navbar-item" href="https://github.com/modelix/modelix-samples/issues">Issue Tracker</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tooling</div>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Build Automation</strong></div>
+            <a class="navbar-item has-label" href="https://hub.docker.com/r/modelix">Docker Images</a>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix.modelix.gradle-plugin">Gradle Plugin <small>JVM</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Artifact Publication</strong></div>
+            <a class="navbar-item has-label" href="https://artifacts.itemis.cloud/#browse/browse:maven-mps:org%2Fmodelix">itemis Nexus Server</a>
+            <a class="navbar-item has-label" href="https://github.com/orgs/modelix/packages?repo_name=modelix">GitHub Packages</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>MPS Plugins</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/modelix/modelix/tree/mps/2020.3/mps">JetBrains MPS Plugins<small>MPS</small></a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="../../../main/index.html">Community</a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item has-label" href="https://modelix.org">Website <small>www</small></a>
+            <a class="navbar-item has-label" href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM">Chat <small>Slack</small></a>
+            <a class="navbar-item has-label" href="https://modelix.github.io/blog/">News <small>Blog</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="body">
+<div class="nav-container" data-component="modelix" data-version="24.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../index.html">Modelix Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../index.html">General</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../main/development.html">Development and Releases</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../main/roadmap.html">Roadmap</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../main/contribute.html">Contribution Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorial/index.html">Tutorials</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorial/build-component.html">Build components using Gradle</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../howto/index.html">How-To Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/howto/usage-platform.html">Use platform to streamline dependencies</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="usage-model-server.html">Start a <code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mps-model-server-plugin.html"><code>mps-model-server-plugin</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="metrics.html"><code>Monitoring/Metrics</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="usage-model-api-gen-gradle.html">Generate <code>Kotlin</code>/ <code>Typescript</code> API from MPS language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="usage-model-client-v2.html">Use the <code>model-client</code> v2 (Kotlin)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="usage-light-model-client.html">Use the <code>light-model-client</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modelql.html">ModelQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modelql-writing.html">How-To write via ModelQL</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../reference/index.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../reference/repositories-components.html">List of Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../reference/components-table.html">Table of Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-model-api.html"><code>model-api</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-model-server.html"><code>model-server</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-model-api-gen.html"><code>model-api-gen</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-model-api-gen-gradle.html"><code>model-api-gen-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-light-model-client.html"><code>light-model-client</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-mps-model-server-plugin.html">mps-model-server-plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../reference/component-vue-model-api.html"><code>vue-model-api</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../explanation/index.html">Explanation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../platform/explanation/index.html">Gradle Platform</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../explanation/modelql.html">ModelQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/goals.html">Modelix Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../explanation/glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Samples</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../samples/index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../samples/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../samples/metamodel.html">Metamodel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../samples/use_case_1.html">1. Model server and MPS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../samples/use_case_2.html">2. Model server and web frontend</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../samples/use_case_3.html">3. Model server and web backend</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../samples/monitoring.html">Monitoring the <code>model-server</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Modelix Documentation</span>
+    <span class="version">24.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../../main/index.html">Modelix Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../main/index.html">main</a>
+        </li>
+        <li class="version is-current">
+          <a href="../../index.html">24.1</a>
+        </li>
+        <li class="version">
+          <a href="../../../23.2/index.html">23.2</a>
+        </li>
+        <li class="version">
+          <a href="../../../23.1/index.html">23.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../main/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Modelix Documentation</a></li>
+    <li><a href="../../howto/index.html">How-To Guides</a></li>
+    <li><a href="usage-model-server.html">Start a <code>model-server</code></a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">24.1</button>
+  <div class="version-menu">
+    <a class="version" href="../../../main/core/howto/usage-model-server.html">main</a>
+    <a class="version is-current" href="usage-model-server.html">24.1</a>
+    <a class="version" href="../../../23.2/core/howto/usage-model-server.html">23.2</a>
+    <a class="version" href="../../../23.1/core/howto/usage-model-server.html">23.1</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/modelix/modelix.core/edit/docs/release/24.1/docs/global/modules/core/pages/howto/usage-model-server.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">How-To start a local <code>model-server</code></h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you are interested in a more practical usage of what is presented here, check out the <a href="https://github.com/modelix/modelix.samples" target="_blank" rel="noopener">samples project</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To run a light version of the <code>model-sever</code>, check out  <a href="mps-model-server-plugin.html" class="xref page">How-To Run the Light <code>model-server</code> in MPS as a Plugin</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_backends_in_memory_vs_database"><a class="anchor" href="#_backends_in_memory_vs_database"></a>Backends: In Memory vs. Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>model-server</code> will by default require a database backend.
+The <code>-jdbcconf</code> flag allows you to provide a custom JDBC configuration file.
+While this setup is ideal for deployment, it might not what you need in the beginning.
+During development or to perform tests, it is recommended to start the <code>model-server</code> with in-memory storage.
+This can be achieved by adding the <code>-inmemory</code> flag to the executable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_a_model_server"><a class="anchor" href="#_running_a_model_server"></a>Running a <code>model-server</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following list gives an overview of the many ways to run a <code>model-server</code>:</p>
+</div>
+<div class="sect2">
+<h3 id="_1_docker"><a class="anchor" href="#_1_docker"></a>1. Docker</h3>
+<div class="paragraph">
+<p>We publish a Docker container of the <code>model-server</code> over on <a href="https://hub.docker.com/r/modelix/model-server/tags" target="_blank" rel="noopener">Docker Hub</a>.
+To run the model-server container with the in-memory backend, simply call the following.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ docker run --rm -p 28101:28101 modelix/modelix-model:latest -inmemory</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_docker_compose"><a class="anchor" href="#_2_docker_compose"></a>2. <code>docker-compose</code></h3>
+<div class="paragraph">
+<p>If you use <code>docker-compose</code>, use the following.</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of <code>docker-compose.yml</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: model-server-run-in-memory
+
+services:
+  model-server:
+    image: modelix/model-server:latest0
+    ports:
+      - 28101:28101
+    command: [ "-inmemory" ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run using <code>docker-compose</code> via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ docker-compose up</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For more integrated examples, have a look at the <a href="metrics.html" class="xref page">metrics and monitoring</a> capabilities, which shows how to start the <code>model-server</code> using <code>docker-compose</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For more complex setups, which require a database backend, you can use the following:</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of <code>docker-compose.yml</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: model-server-run-database
+
+services:
+    model-server:
+        image: modelix/model-server:4.5.0
+        restart: always
+        healthcheck:
+          test: ["CMD-SHELL", "curl http://localhost:28101/health"]
+          interval: 2s
+          timeout: 3s
+          retries: 10
+        depends_on:
+          model-server-db:
+            condition: service_healthy
+        environment:
+          jdbc_url: jdbc:postgresql://model-server-db:5432/modelix?currentSchema=modelix
+        ports:
+        - 28101:28101
+
+    model-server-db:
+      image: postgres:16
+      environment:
+        POSTGRES_PASSWORD: modelix
+        POSTGRES_DB: modelix
+        POSTGRES_USER: modelix
+        PGDATA: /var/lib/postgresql/data/pgdata
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U modelix -d modelix"]
+        interval: 10s
+        timeout: 3s
+        retries: 10
+      volumes:
+        - model-server-db:/var/lib/postgresql/data
+        - ./init-database.sql:/docker-entrypoint-initdb.d/init-database.sql:z
+
+volumes:
+  model-server-db: {}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Content of <code>init-database.sql</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-SQL hljs" data-lang="SQL">CREATE SCHEMA modelix;
+GRANT ALL ON SCHEMA modelix TO modelix;
+
+CREATE TABLE modelix.model
+(
+    key character varying NOT NULL,
+    value character varying,
+    reachable boolean,
+    CONSTRAINT kv_pkey PRIMARY KEY (key)
+);
+GRANT ALL ON TABLE modelix.model TO modelix;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run using <code>docker-compose</code> via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ docker-compose up</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_gradle_via_dependency"><a class="anchor" href="#_3_gradle_via_dependency"></a>3. Gradle via Dependency</h3>
+<div class="paragraph">
+<p>When using Gradle, you can run a <code>model-server</code> by adding a dependency to <code>org.modelix:model-server</code>, as shown in the following minimal working example.</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of minimal <code>build.gradle.kts</code> to run a <code>model-server</code> in memory</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">plugins {
+    application
+}
+
+repositories {
+    mavenCentral()
+    maven { url = uri("https://artifacts.itemis.cloud/repository/maven-mps/") }
+}
+
+dependencies {
+    implementation("org.modelix:model-server:4.6.0")
+}
+
+application {
+    mainClass.set("org.modelix.model.server.Main")
+}
+
+tasks.run.configure {
+    args("-inmemory")
+    // note: you can add other arguments here, e.g.
+    // args("-inmemory", "-dumpin", "/path/to/dump/file.dump")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can start the model-server simply by running</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew run</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_gradle_via_source"><a class="anchor" href="#_4_gradle_via_source"></a>4. Gradle via Source</h3>
+<div class="paragraph">
+<p>Use <code>git</code> to check out the modelix core repository from</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">https://github.com/modelix/modelix.core</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To run the model-server with default configuration run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[modelix.core] $ ./gradlew model-server:run</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will have to build the project first, which might take some time depending on your hardware.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To give arguments to the gradle run command, you have to add them via the <code>--args</code> flag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew model-server:run --args='-jdbcconf path-to-my-database.properties -dumpout'</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_in_process_kotlin"><a class="anchor" href="#_5_in_process_kotlin"></a>5. <strong>In Process</strong> (Kotlin)</h3>
+<div class="paragraph">
+<p>This rather advanced version allows you to run the <code>model-server</code> inside your own application.
+We primarily use this approach for testing, but theoretically it could be applied elsewhere.
+You can find an examples of this in the following code fragment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/modelix/modelix.core/blob/main/model-server/src/test/kotlin/org/modelix/model/server/ModelClientV2Test.kt#L48">ModelClientV2Test (modelix core tests)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../../platform/howto/usage-platform.html">Use platform to streamline dependencies</a></span>
+  <span class="next"><a href="mps-model-server-plugin.html"><code>mps-model-server-plugin</code></a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+<p>Copyright © 2021-present by the <a href="https://modelix.org">modelix open source project</a> and the individual contributors. All Rights Reserved.</p>
+  <p>Except where otherwise noted, docs.modelix.org, modelix, and the modelix framework, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache-2.0 license</a>.</p>
+  <p> To contact us join our <a href="https://jetbrains-mps.slack.com/archives/C01ADCD6VSM" target="blank">#modelix Slack channel</a> which is part of the JetBrains MPS workspace or write us <a href="mailto:modelix@itemis.com">an Email with your questions and feedback 📫</a>.</p>
+  <p>This documentation is built using the <a href="https://antora.org/">Antora</a> generator.</p>
+</footer>
+
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>
