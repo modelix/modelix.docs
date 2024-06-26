@@ -523,7 +523,7 @@ This is handled by a different plugin that you can configure like this:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In the future you will be required to specify a <code>repositoryId</code> along the`revision`.</p>
+<p>In the future you will be required to specify a <code>repositoryId</code> along the <code>revision</code>.</p>
 </div>
 </td>
 </tr>
@@ -565,6 +565,11 @@ If the target branch does not exist on the model-server, it will be created.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Source model-server revision. Can be used instead of <code>repositoryId</code> and <code>branchName</code>.
 Only available in ServerSource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>baseRevision</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source model-server base revision. If specified, only the subtrees that changed between <code>baseRevision</code> and <code>revision</code> will be synchronized. Only available in ServerSource.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>requestTimeoutSeconds</code></p></td>
