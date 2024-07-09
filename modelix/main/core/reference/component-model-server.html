@@ -406,6 +406,75 @@ This can also be a local MPS instance without a web editor - both options are su
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_json_web_tokens_jwt_based_authorization"><a class="anchor" href="#_json_web_tokens_jwt_based_authorization"></a>JSON web tokens (JWT) based authorization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, the model server doesn&#8217;t check any permissions.
+To enable it you can specify the following environment variables.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_PERMISSION_CHECKS_ENABLED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, permission checking is enabled when an algorithm for the JWT signature is configured.
+ This variable can be set explicitly to <code>true</code> or <code>false</code> to avoid security issues by a misconfigured algorithm.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_GENERATE_FAKE_JWT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, if no signature algorithm is configured,
+ a token is generated for all requests with the identity <code>unit-tests@example.com</code> and no permissions.
+ This option can be set to <code>true</code> or <code>false</code> to enable/disable this behaviour explicitly.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_JWT_SIGNATURE_HMAC512_KEY
+ MODELIX_JWT_SIGNATURE_HMAC384_KEY
+ MODELIX_JWT_SIGNATURE_HMAC256_KEY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If JWT tokens are signed with the HMAC algorithm, this variable specifies the secret key.</p>
+<p class="tableblock"> The <code>org.modelix:authorization</code> library provides a utility function <code>createModelixAccessToken</code>
+ for creating valid tokens signed with this algorithm,</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_JWT_SIGNATURE_HMAC512_KEY_FILE
+ MODELIX_JWT_SIGNATURE_HMAC384_KEY_FILE
+ MODELIX_JWT_SIGNATURE_HMAC256_KEY_FILE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instead of specifying the key directly via <code>MODELIX_JWT_SIGNATURE_HMAC512_KEY</code>
+ a path to a file containing the key can be specified.
+ This is useful when keys are stored in kubernetes secrets.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_JWK_URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If keys are created and signed by some OpenID connect server the public keys are provided via HTTP.
+ Here you can specify the URI of the key set.
+ Only RSA (256, 284 and 512) keys are currently supported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KEYCLOAK_BASE_URL
+ KEYCLOAK_REALM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Legacy variables for the keycloak based authorization used by the Modelix Helm charts for workspaces.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <code>permissions</code> claim of the token is expected to list directly granted permission.
+Additional granted permissions may be derived from that list.
+For example, an <code>admin</code> permission on a repository will grant write permission on all branches.</p>
+</div>
+<div class="paragraph">
+<p>A detailed list of all permissions can be found on the model server at <code>/permissions</code>.</p>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="component-model-api.html"><code>model-api</code></a></span>
   <span class="next"><a href="component-metamodel-export.html"><code>metamodel-export</code> (MPS)</a></span>
