@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/reference/component-bulk-model-sync-gradle.html">
     <link rel="prev" href="component-model-api-gen-gradle.html">
     <link rel="next" href="component-light-model-client.html">
-    <meta name="generator" content="Antora 3.1.8">
+    <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/link.css">
 
@@ -509,6 +509,16 @@ This is handled by a different plugin that you can configure like this:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsDebugPort</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Int</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If set, the headless MPS will suspend on startup and wait for a remote debugger on the specified port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mpsPlugin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PluginSpec</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a plugin to be loaded when running MPS.
+<code>jetbrains.mps.core</code>, <code>jetbrains.mps.testing</code>, <code>jetbrains.mps.ide.make</code> are always loaded.</p>
+<p class="tableblock">All other plugins, even bundled ones, must be configured explicitly.
+In general cases, the sync does not rely on concepts (and in turn on languages and plugins) of the synced nodes.</p>
+<p class="tableblock">Loading other plugins might become necessary when they provide custom persistence and in other, yet unknown cases.
+First, try if the sync works for your project without adding plugins.</p></td>
 </tr>
 </tbody>
 </table>
