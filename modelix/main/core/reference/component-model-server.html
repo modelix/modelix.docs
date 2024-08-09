@@ -468,7 +468,7 @@ To enable it you can specify the following environment variables.</p>
 <div class="paragraph">
 <p>The <code>permissions</code> claim of the token is expected to list directly granted permission.
 Additional granted permissions may be derived from that list.
-For example, an <code>admin</code> permission on a repository will grant write permission on all branches.</p>
+For example, an <code>model-server/admin</code> permission gives access to all repositories and administrative actions. <code>repository/someRepository/admin</code> on the other hand, gives only permission to all actions on the repository "someRepository".</p>
 </div>
 <div class="paragraph">
 <p>A detailed list of all permissions can be found on the model server at <code>/permissions</code>.</p>
