@@ -448,6 +448,16 @@ This means that only a minimal amount of write operations is used to update the 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Includes all modules, whose fully qualified name starts with the given prefix, in the synchronisation process.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>excludeModule</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excludes the module specified by the fully qualified name from the included modules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>excludeModuleByPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excludes all modules, whose fully qualified name starts with the given prefix, from the included modules.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>enableContinueOnError</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If the sync encounters an error, simply log it and continue instead of terminating. This most likely results in an incomplete sync result. Defaults to <code>false</code>.</p></td>
