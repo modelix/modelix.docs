@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>How-To test model-api client code without a model-server :: Modelix Documentation</title>
     <link rel="canonical" href="https://docs.modelix.org/modelix/main/core/howto/testing-against-model-api.html">
-    <link rel="prev" href="usage-light-model-client.html">
+    <link rel="prev" href="usage-model-client-v2.html">
     <link rel="next" href="modelql.html">
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../../../../_/css/site.css">
@@ -129,9 +129,6 @@
     <a class="nav-link" href="usage-model-server.html">Start a <code>model-server</code></a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="mps-model-server-plugin.html"><code>mps-model-server-plugin</code></a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="metrics.html"><code>Monitoring/Metrics</code></a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -139,9 +136,6 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="usage-model-client-v2.html">Use the <code>model-client</code> v2 (Kotlin)</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="usage-light-model-client.html">Use the <code>light-model-client</code></a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a>
@@ -186,12 +180,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../reference/component-bulk-model-sync-gradle.html"><code>bulk-model-sync-gradle</code></a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../reference/component-light-model-client.html"><code>light-model-client</code></a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../reference/component-mps-model-server-plugin.html">mps-model-server-plugin</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../reference/component-vue-model-api.html"><code>vue-model-api</code></a>
@@ -327,7 +315,7 @@
 <article class="doc">
 <h1 class="page">How-To test <code>model-api</code> client code without a model-server</h1>
 <div class="paragraph">
-<p>If you want to test code that processes <code>model-api</code> instances, you can do this in-process without a running (light-) model-server.
+<p>If you want to test code that processes <code>model-api</code> instances, you can do this in-process without a running model-server.
 Use the following pattern to set up your test fixture containing <code>model-api</code> instances:</p>
 </div>
 <div class="listingblock">
@@ -346,7 +334,7 @@ branch.runWrite {
 <p>All classes of the pattern <code>C_*</code> and <code>N_*</code> are generated using the <code>model-api-gen</code>.</p>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="usage-light-model-client.html">Use the <code>light-model-client</code></a></span>
+  <span class="prev"><a href="usage-model-client-v2.html">Use the <code>model-client</code> v2 (Kotlin)</a></span>
   <span class="next"><a href="modelql.html">ModelQL</a></span>
 </nav>
 </article>
