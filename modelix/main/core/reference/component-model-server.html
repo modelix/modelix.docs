@@ -415,12 +415,12 @@ To enable it you can specify the following environment variables.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_PERMISSION_CHECKS_ENABLED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">By default, permission checking is enabled when an algorithm for the JWT signature is configured.
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, permission checking is enabled when an algorithm for the JWT signature or a <code>MODELIX_JWK_URI</code> is configured.
  This variable can be set explicitly to <code>true</code> or <code>false</code> to avoid security issues by a misconfigured algorithm.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_GENERATE_FAKE_JWT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">By default, if no signature algorithm is configured,
+<td class="tableblock halign-left valign-top"><p class="tableblock">By default, if no signature algorithm and no <code>MODELIX_JWK_URI</code> is configured,
  a token is generated for all requests with the identity <code>unit-tests@example.com</code> and no permissions.
  This option can be set to <code>true</code> or <code>false</code> to enable/disable this behaviour explicitly.</p></td>
 </tr>
@@ -444,7 +444,11 @@ To enable it you can specify the following environment variables.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_JWK_URI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If keys are created and signed by some OpenID connect server the public keys are provided via HTTP.
  Here you can specify the URI of the key set.
- Only RSA (256, 284 and 512) keys are currently supported.</p></td>
+ Only RSA (256, 384 and 512) keys are currently supported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODELIX_JWK_KEY_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional key ID that can be used together with <code>MODELIX_JWK_URI</code>. If specified, it ensures that only tokens that use the specified key are valid. If not specified, a token can use any RSA (256, 384 and 512) key provided by <code>MODELIX_JWK_URI</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">KEYCLOAK_BASE_URL
