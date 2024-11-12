@@ -550,6 +550,49 @@ but inside the <code>onSuccess</code> block you use the Kotlin HTML DSL.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_indicescaching"><a class="anchor" href="#_indicescaching"></a>Indices/Caching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To search for a node efficiently, <code>.find</code> can be used. Internally, it creates a map of all the elements and reuses that
+in following queries.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">val nodeId: String
+root.find(
+    // Provides all nodes to index
+    { it.descendants() },
+    // selects the index key for each node
+    { it.nodeReferenceAsString() },
+    // The key to search for in the current request
+    nodeId.asMono()
+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also possible to search for multiple nodes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">val name: String
+root.findAll({ it.descendants().ofConcept(C_INamedConcept) }, { it.name }, name.asMono())</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Internally, they both use the <code>memoize</code> operation. <code>memoize</code> stores the result of the query and reuses it without
+re-executing the query.</p>
+</div>
+<div class="paragraph">
+<p>The <code>find</code> example is equivalent to this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">root.memoize { it.descendants().associateBy { it.nodeReferenceAsString() } }.get(nodeId.asMono()).filterNotNull()</code></pre>
+</div>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="testing-against-model-api.html">Test <code>model-api</code> client code without a model-server</a></span>
   <span class="next"><a href="modelql-writing.html">How-To write via ModelQL</a></span>
